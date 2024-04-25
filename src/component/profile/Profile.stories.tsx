@@ -1,25 +1,19 @@
 import Profile from "./Profile";
 import {Meta, StoryFn} from "@storybook/react";
-import {ProfileProps} from "./Profile.type";
 
 export default {
     title: 'Profile',
     component: Profile
 } as Meta<typeof Profile>
 
-const Template: (args: ProfileProps) => JSX.Element = (args: ProfileProps) => <Profile {...args} />
+const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />
 
 export const ProfileTest = Template.bind({});
+
+
 ProfileTest.args = {
-    corners: 'lg'
+    radius: 'full',
+    size: 30,
+    src: "https://avatars.githubusercontent.com/u/102360897?v=4"
 }
 
-export const ProfileTest2 = Template.bind({});
-ProfileTest2.args = {
-    corners: 'sm'
-}
-
-export const ProfileTest3 = Template.bind({});
-ProfileTest3.args = {
-    corners: 'md'
-}

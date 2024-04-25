@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "doc": "typedoc --plugin typedoc-plugin-markdown --out docs src/component"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +71,7 @@
     "@storybook/test": "^8.0.8",
     "@types/react": "^18.2.79",
     "eslint-plugin-storybook": "^0.8.0",
+    "jest": "^29.7.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "rollup": "^4.16.0",
@@ -78,6 +80,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^8.0.8",
     "tslib": "^2.6.2",
+    "typedoc": "^0.25.13",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^5.0.2",
     "webpack": "^5.91.0"
   },
