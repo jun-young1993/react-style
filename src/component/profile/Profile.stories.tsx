@@ -8,10 +8,10 @@ export default {
 
 const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />
 
-export const ProfileTest = Template.bind({});
+export const ProfileTemplate = Template.bind({});
 
 
-ProfileTest.args = {
+ProfileTemplate.args = {
     radius: 'full',
     size: 30,
     src: "https://avatars.githubusercontent.com/u/102360897?v=4"

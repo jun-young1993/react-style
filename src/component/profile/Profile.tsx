@@ -4,6 +4,9 @@ import { BorderRadius } from "../../component/index.style";
 
 const defaultSize = 30;
 
+export const ProfileWrapTestId = 'profile-wrap';
+export const ProfileImgTestId = 'profile-img';
+
 /**
  * The Profile component is used to display user profile information.
  * ProfileProps defines the properties that can be passed to the Profile component.
@@ -12,7 +15,7 @@ const defaultSize = 30;
  * 
  * @returns {JSX.Element} The Profile component
  */
-const ProfileWrapStyled = styled.div<ProfileProps>`
+export const ProfileWrapStyled = styled.div<ProfileProps>`
   ${({size, radius}) => `
     text-align: center;
     display:table;
@@ -37,11 +40,22 @@ const ProfileImgStyled = styled.img<ProfileProps>`
   `}
 `;
 
+/**
+ * The Profile component is used to display user profile information.
+ * ProfileProps defines the properties that can be passed to the Profile component.
+ * 
+ * @param {ProfileProps} props - The properties passed to the Profile component
+ * @returns {JSX.Element} The Profile component
+ */
 const Profile = (props: ProfileProps) => {
   return (
-  <ProfileWrapStyled {...props}> 
+  <ProfileWrapStyled 
+    {...props} 
+    data-testid={ProfileWrapTestId}
+  > 
     <ProfileCellStyled>
       <ProfileImgStyled 
+        data-testid={ProfileImgTestId}
         {...props}
       />
     </ProfileCellStyled>

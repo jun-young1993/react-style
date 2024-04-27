@@ -1,6 +1,17 @@
 import { radius } from "./index.types";
 
+export const Width = (width: string) => {
+	console.log()
+	return `
+		width: ${width ?? '10px'};
+	`;
+}
 
+export const Height = (height: string) => {
+	return `
+		height: ${height ?? '10px'};
+	`;
+}
 export const BorderRadius = (radius: string | radius) => {
 	let radiusValue: string;
 	if(radius === undefined){

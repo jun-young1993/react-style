@@ -4,4 +4,5 @@ import { radius, size } from "../index.types";
 export interface ProfileProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>,HTMLImageElement>{
     radius?: radius | string
     size?: size
+    src?: string
 }

@@ -18,8 +18,13 @@
       "strict": true,
       "traceResolution": false,
       "jsx": "react-jsx",
+      "types": ["@testing-library/jest-dom"]
     },
     "compileOnSave": false,
     "exclude": ["node_modules", "dist","**/*.stories","**/stories", "**/*.test.ts"],
-    "include": ["src"]
+    "include": [
+        "src",
+        "./jest-setup.ts"
+    ],
+    
   }
