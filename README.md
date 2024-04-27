@@ -6,10 +6,10 @@
 
 
 ## Version
-### v1.0.4
+### v1.1.4
 - #### Updated
   - build bug edited
-### v1.0.3
+### v1.1.3
 - #### Added
   - GithubProfile
   - Spinner
