@@ -21,7 +21,7 @@
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "doc": "typedoc --plugin typedoc-plugin-markdown --out docs src/component"
+    "doc": "typedoc --plugin typedoc-plugin-markdown --out docs ./src/component"
   },
   "eslintConfig": {
     "extends": [
@@ -61,7 +61,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-essentials": "^8.0.8",
     "@storybook/addon-interactions": "^8.0.8",
-    "@storybook/addon-l#inks": "^8.0.8",
+    "@storybook/addon-links": "^8.0.8",
     "@storybook/addon-onboarding": "^8.0.8",
     "@storybook/blocks": "^8.0.8",
     "@storybook/preset-create-react-app": "^8.0.8",
