@@ -6,6 +6,9 @@
 
 
 ## Version
+### v1.0.4
+- #### Updated
+  - build bug edited
 ### v1.0.3
 - #### Added
   - GithubProfile
