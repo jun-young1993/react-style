@@ -6,65 +6,80 @@
 
 ### Type Aliases
 
-- [sizeType](modules.md#sizetype)
+- [cornersType](modules.md#cornerstype)
+- [radius](modules.md#radius)
+- [size](modules.md#size)
 
 ### Functions
 
-- [Button](modules.md#button)
+- [GithubProfile](modules.md#githubprofile)
 - [Profile](modules.md#profile)
+- [Spinner](modules.md#spinner)
 
 ## Type Aliases
 
-### sizeType
+### cornersType
 
-Ƭ **sizeType**: ``"sm"`` \| ``"md"`` \| ``"lg"``
+Ƭ **cornersType**: ``"sm"`` \| ``"md"`` \| ``"lg"`` \| ``"full"``
 
 #### Defined in
 
-src/component/index.types.ts:1
+[index.types.ts:1](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L1)
+
+___
+
+### radius
+
+Ƭ **radius**: ``"sm"`` \| ``"md"`` \| ``"lg"`` \| ``"full"``
+
+#### Defined in
+
+[index.types.ts:5](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L5)
+
+___
+
+### size
+
+Ƭ **size**: `number`
+
+#### Defined in
+
+[index.types.ts:2](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L2)
 
 ## Functions
 
-### Button
+### GithubProfile
 
-▸ **Button**(`props`, `context?`): `ReactNode`
+▸ **GithubProfile**(`props`): `Element`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | `ButtonProps` |
-| `context?` | `any` |
+| `props` | `GithubProfileProps` |
 
 #### Returns
 
-`ReactNode`
+`Element`
 
 #### Defined in
 
-[src/component/button/Button.tsx:8](https://github.com/jun-young1993/react-style/blob/d88a55a3953a5cf2889a22955e574f6af4b0f5ab/src/component/button/Button.tsx#L8)
+[githubProfile/GithubProfile.tsx:7](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/githubProfile/GithubProfile.tsx#L7)
 
 ___
 
 ### Profile
 
-▸ **Profile**\<`AsTarget`, `ForwardedAsTarget`\>(`props`): `Element`
+▸ **Profile**(`props`): `Element`
 
 The Profile component is used to display user profile information.
 ProfileProps defines the properties that can be passed to the Profile component.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `AsTarget` | extends `void` \| `WebTarget` = `void` |
-| `ForwardedAsTarget` | extends `void` \| `WebTarget` = `void` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | `PolymorphicComponentProps`\<``"web"``, `Substitute`\<`DetailedHTMLProps`\<`HTMLAttributes`\<`HTMLDivElement`\>, `HTMLDivElement`\>, `ProfileProps`\>, `AsTarget`, `ForwardedAsTarget`, `AsTarget` extends `KnownTarget` ? `ComponentPropsWithRef`\<`AsTarget`\<`AsTarget`\>\> : {}, `ForwardedAsTarget` extends `KnownTarget` ? `ComponentPropsWithRef`\<`ForwardedAsTarget`\<`ForwardedAsTarget`\>\> : {}\> | The properties passed to the Profile component |
+| `props` | `ProfileProps` | The properties passed to the Profile component |
 
 #### Returns
 
@@ -74,25 +89,24 @@ The Profile component
 
 #### Defined in
 
-[src/component/profile/Profile.tsx:11](https://github.com/jun-young1993/react-style/blob/d88a55a3953a5cf2889a22955e574f6af4b0f5ab/src/component/profile/Profile.tsx#L11)
+[profile/Profile.tsx:50](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/profile/Profile.tsx#L50)
 
-▸ **Profile**(`props`): `ReactNode`
+___
 
-The Profile component is used to display user profile information.
-ProfileProps defines the properties that can be passed to the Profile component.
+### Spinner
+
+▸ **Spinner**(`props`): `Element`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `props` | `Substitute`\<`DetailedHTMLProps`\<`HTMLAttributes`\<`HTMLDivElement`\>, `HTMLDivElement`\>, `ProfileProps`\> | The properties passed to the Profile component |
+| Name | Type |
+| :------ | :------ |
+| `props` | `SpinnerProps` |
 
 #### Returns
 
-`ReactNode`
-
-The Profile component
+`Element`
 
 #### Defined in
 
-[src/component/profile/Profile.tsx:11](https://github.com/jun-young1993/react-style/blob/d88a55a3953a5cf2889a22955e574f6af4b0f5ab/src/component/profile/Profile.tsx#L11)
+[spinner/Spinner.tsx:28](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/spinner/Spinner.tsx#L28)

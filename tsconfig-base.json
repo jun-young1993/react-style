@@ -24,7 +24,7 @@
     "exclude": ["node_modules", "dist","**/*.stories","**/stories", "**/*.test.ts"],
     "include": [
         "src",
-        "./jest-setup.ts"
+//        "./jest-setup.ts"
     ],
     
   }
