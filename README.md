@@ -6,6 +6,9 @@
 
 
 ## Version
+### v1.1.5
+- #### Updated
+  - build bug edited
 ### v1.1.4
 - #### Updated
   - build bug edited
