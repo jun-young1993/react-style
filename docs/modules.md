@@ -12,7 +12,10 @@
 
 ### Functions
 
+- [AlignBox](modules.md#alignbox)
 - [GithubProfile](modules.md#githubprofile)
+- [LeftRightContainer](modules.md#leftrightcontainer)
+- [Link](modules.md#link)
 - [Profile](modules.md#profile)
 - [Spinner](modules.md#spinner)
 
@@ -24,7 +27,7 @@
 
 #### Defined in
 
-[index.types.ts:1](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L1)
+[index.types.ts:1](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/index.types.ts#L1)
 
 ___
 
@@ -34,7 +37,7 @@ ___
 
 #### Defined in
 
-[index.types.ts:5](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L5)
+[index.types.ts:5](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/index.types.ts#L5)
 
 ___
 
@@ -44,9 +47,39 @@ ___
 
 #### Defined in
 
-[index.types.ts:2](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/index.types.ts#L2)
+[index.types.ts:2](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/index.types.ts#L2)
 
 ## Functions
+
+### AlignBox
+
+▸ **AlignBox**(`«destructured»`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `AlignBoxProps` |
+
+#### Returns
+
+`Element`
+
+**`Example`**
+
+```
+ <AlignBox
+     align={'left'}
+  >
+     <div>left</div>
+ </AlignBox>
+```
+
+#### Defined in
+
+[alignBox/AlignBox.tsx:27](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/alignBox/AlignBox.tsx#L27)
+
+___
 
 ### GithubProfile
 
@@ -64,7 +97,62 @@ ___
 
 #### Defined in
 
-[githubProfile/GithubProfile.tsx:7](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/githubProfile/GithubProfile.tsx#L7)
+[githubProfile/GithubProfile.tsx:7](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/githubProfile/GithubProfile.tsx#L7)
+
+___
+
+### LeftRightContainer
+
+▸ **LeftRightContainer**(`«destructured»`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `LeftRightLayoutProps` |
+
+#### Returns
+
+`Element`
+
+**`Example`**
+
+```
+<LeftRightContainer
+ ratio={0.3}
+>
+    <div>
+        left content
+    </div>
+    <div>
+        right content
+    </div>
+</LeftRightContainer>
+```
+
+#### Defined in
+
+[leftRightContainer/LeftRightContainer.tsx:32](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/leftRightContainer/LeftRightContainer.tsx#L32)
+
+___
+
+### Link
+
+▸ **Link**(`«destructured»`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `LinkProps` |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[link/Link.tsx:14](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/link/Link.tsx#L14)
 
 ___
 
@@ -89,7 +177,7 @@ The Profile component
 
 #### Defined in
 
-[profile/Profile.tsx:50](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/profile/Profile.tsx#L50)
+[profile/Profile.tsx:51](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/profile/Profile.tsx#L51)
 
 ___
 
@@ -109,4 +197,4 @@ ___
 
 #### Defined in
 
-[spinner/Spinner.tsx:28](https://github.com/jun-young1993/react-style/blob/1cb02432109f333cae3236b224fb4e1689997100/src/component/spinner/Spinner.tsx#L28)
+[spinner/Spinner.tsx:28](https://github.com/jun-young1993/react-style/blob/e8a4a922d35bf7e53f2489fd1c6a2322279f8ad9/src/component/spinner/Spinner.tsx#L28)

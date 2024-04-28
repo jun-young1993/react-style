@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "private": false,
   "dependencies": {
     "@testing-library/react": "^13.4.0",
@@ -19,6 +19,7 @@
     "test": "jest test --config jest.config.ts",
     "eject": "react-scripts eject",
     "rollup": "rollup -c --bundleConfigAsCjs",
+    "rollup:watch": "rollup -cw --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "doc": "typedoc --plugin typedoc-plugin-markdown --out docs ./src/component"

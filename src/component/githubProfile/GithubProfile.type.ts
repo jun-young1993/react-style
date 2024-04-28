@@ -9,4 +9,5 @@ export interface GithubUserProfile {
 	avatar_url: string
 	blog?: string
 	html_url?: string
+	name?: string
 }

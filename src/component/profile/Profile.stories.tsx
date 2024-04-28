@@ -13,7 +13,7 @@ export const ProfileTemplate = Template.bind({});
 
 ProfileTemplate.args = {
     radius: 'full',
-    size: 30,
+    size: "30px",
     src: "https://avatars.githubusercontent.com/u/102360897?v=4"
 }
 

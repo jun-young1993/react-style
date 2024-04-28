@@ -1,7 +1,6 @@
 import { radius } from "./index.types";
 
 export const Width = (width: string) => {
-	console.log()
 	return `
 		width: ${width ?? '10px'};
 	`;
@@ -12,6 +11,20 @@ export const Height = (height: string) => {
 		height: ${height ?? '10px'};
 	`;
 }
+
+export const MaxWidth = (width: string) => {
+	return `
+		max-width: ${width ?? '10px'};
+	`;
+}
+
+export const MaxHeight = (height: string) => {
+	return `
+		max-height: ${height ?? '10px'};
+	`;
+}
+
+
 export const BorderRadius = (radius: string | radius) => {
 	let radiusValue: string;
 	if(radius === undefined){

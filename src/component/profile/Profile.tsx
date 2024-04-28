@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {ProfileProps} from "./Profile.types";
-import { BorderRadius } from "../../component/index.style";
+import {BorderRadius, Height, MaxHeight, MaxWidth, Width} from "../../component/index.style";
 
-const defaultSize = 30;
+const defaultSize = '30px';
 
 export const ProfileWrapTestId = 'profile-wrap';
 export const ProfileImgTestId = 'profile-img';
@@ -16,13 +16,14 @@ export const ProfileImgTestId = 'profile-img';
  * @returns {JSX.Element} The Profile component
  */
 export const ProfileWrapStyled = styled.div<ProfileProps>`
-  ${({size, radius}) => `
+  ${({size, radius}: ProfileProps) => `
     text-align: center;
     display:table;
-    height: ${size ?? defaultSize}px;
-    width: ${size ?? defaultSize}px;
+    ${Height(size ?? defaultSize)}
+    ${Width(size ?? defaultSize)}
     ${BorderRadius(radius ?? '50%')}
   `}
+  
 `;
 // border-style: solid;
 //     border-width: 1px;
@@ -34,8 +35,8 @@ const ProfileCellStyled = styled.div`
 
 const ProfileImgStyled = styled.img<ProfileProps>`
   ${({size, radius}) => `
-    max-width: ${size ?? defaultSize}px;
-    max-height: ${size ?? defaultSize}px;
+    ${MaxWidth(size ?? defaultSize)}
+    ${MaxHeight(size ?? defaultSize)}
     ${BorderRadius(radius ?? '50%')}
   `}
 `;

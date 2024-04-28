@@ -11,6 +11,6 @@ const Template: StoryFn<typeof GithubProfile> = (args) => <GithubProfile {...arg
 
 export const ProfileTemplate = Template.bind({})
 ProfileTemplate.args = {
-	size: 30,
+	size: "30px",
 	gitPersonalAccessToken: "ghp_####"	
 }

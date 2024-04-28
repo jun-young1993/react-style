@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {Profile} from "../../component/profile/index";
 import { GithubProfileProps, GithubUserProfile } from "./GithubProfile.type";
 import { Spinner } from "../../component/spinner";
+import {Link} from "../link";
 
 const GithubProfile = (props: GithubProfileProps) => {
 	const [githubUserProfileData, setGithubUserProfileData] = useState<GithubUserProfile | null>(null);
@@ -35,16 +36,31 @@ const GithubProfile = (props: GithubProfileProps) => {
 			// throw new Error(error.toString());
 		});
 	},[]);
-
+console.log(githubUserProfileData);
 	return (
 		(githubUserProfileData === null) 
 			? (githubUserProfileError)
 				? <span>githubUserProfileError</span>
 				: <Spinner />
-			: <Profile 
-				src={githubUserProfileData.avatar_url} 
-				{...styleProps}
-			/>
+			: (
+				<div>
+					<Profile
+						src={githubUserProfileData.avatar_url}
+						{...styleProps}
+					/>
+					{githubUserProfileData.name &&
+						<h1>{githubUserProfileData.name}</h1>}
+					{githubUserProfileData.html_url &&
+						<div>
+							<Link href={githubUserProfileData.html_url} target={"_blank"} rel={"nofollow"}>
+								{githubUserProfileData.html_url}
+							</Link>
+						</div>
+					}
+
+				</div>
+
+			)
 	)
 }
 
