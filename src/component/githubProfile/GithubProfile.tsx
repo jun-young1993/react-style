@@ -2,19 +2,20 @@ import { useEffect, useState } from "react";
 import {Profile} from "../../component/profile/index";
 import { GithubProfileProps, GithubUserProfile } from "./GithubProfile.type";
 import { Spinner } from "../../component/spinner";
-import { ProfileWrapStyled } from "component/profile/Profile";
 
 const GithubProfile = (props: GithubProfileProps) => {
 	const [githubUserProfileData, setGithubUserProfileData] = useState<GithubUserProfile | null>(null);
-	
 	const [githubUserProfileError, setGithubUserProfileError] = useState<string | null>(null);
+
+	const {gitPersonalAccessToken , ...styleProps} = props;
+
 	useEffect(() => {
 		fetch("https://api.github.com/user", {
 			method: 'GET',
 			headers: {
 				'Accept' : "application/vnd.github+json",
 				'X-GitHub-Api-Version': "2022-11-28",
-				'Authorization': `Bearer ${props.gitPersonalAccessToken}`
+				'Authorization': `Bearer ${gitPersonalAccessToken}`
 			},
 		})
 		.then(response => {
@@ -33,7 +34,7 @@ const GithubProfile = (props: GithubProfileProps) => {
 			setGithubUserProfileError(error.toString());
 			// throw new Error(error.toString());
 		});
-	},[])
+	},[]);
 
 	return (
 		(githubUserProfileData === null) 
@@ -42,7 +43,7 @@ const GithubProfile = (props: GithubProfileProps) => {
 				: <Spinner />
 			: <Profile 
 				src={githubUserProfileData.avatar_url} 
-				{...props} 
+				{...styleProps}
 			/>
 	)
 }

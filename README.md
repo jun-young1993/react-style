@@ -4,6 +4,9 @@
 
 [juny-react-module](docs/modules.md) / Modules
 
+```shell
+$ npm install juny-react-style
+```
 
 ## Version
 ### v1.1.5
