@@ -10,4 +10,5 @@ export interface GithubUserProfile {
 	blog?: string
 	html_url?: string
 	name?: string
+	email?:string
 }

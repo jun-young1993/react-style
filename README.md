@@ -12,6 +12,8 @@ $ npm install juny-react-style
 
 ## Version
 ### v1.1.6
+- ### Updated
+  - GithubProfile email added
 - #### Added
   - AlignBox
   - LeftRightContainer

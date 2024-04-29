@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {LinkProps} from "./link.type";
+import { Profile } from "component/profile";
 
 const LinkStyled = styled.a<LinkProps>`
   color: blue;
@@ -11,8 +12,30 @@ const LinkStyled = styled.a<LinkProps>`
   }
 `;
 
-const Link = ({children, ...props}: LinkProps) => {
-    return <LinkStyled {...props}>{children}</LinkStyled>
+/**
+ * 
+ * @param props: LinkProps
+ *  
+ * @returns 
+ * 
+ * @example
+ * ```tsx
+ *  <Link 
+ *    href="https://juny.vercel.app" 
+ *  />
+ * ```
+ */
+const Link = ({children, img,...props}: LinkProps) => {
+    
+    return (
+      <LinkStyled 
+        {...props}
+      >
+        {img &&
+        <Profile {...img}/>}
+        {children}
+      </LinkStyled>
+    )
 }
 
 export default Link;

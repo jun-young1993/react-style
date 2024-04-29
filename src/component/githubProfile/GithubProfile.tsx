@@ -3,14 +3,18 @@ import {Profile} from "../../component/profile/index";
 import { GithubProfileProps, GithubUserProfile } from "./GithubProfile.type";
 import { Spinner } from "../../component/spinner";
 import {Link} from "../link";
-
+import { MissingRequiredPropsVariable } from "../../libs/exception/MissingRequiredPropsVariable";
+// import { ReactComponent as GithubLog } from "../images/github.svg";
 const GithubProfile = (props: GithubProfileProps) => {
 	const [githubUserProfileData, setGithubUserProfileData] = useState<GithubUserProfile | null>(null);
 	const [githubUserProfileError, setGithubUserProfileError] = useState<string | null>(null);
 
 	const {gitPersonalAccessToken , ...styleProps} = props;
-
+	
 	useEffect(() => {
+		if(!gitPersonalAccessToken){
+			throw new MissingRequiredPropsVariable('gitPersonalAccessToken');
+		}
 		fetch("https://api.github.com/user", {
 			method: 'GET',
 			headers: {
@@ -23,7 +27,9 @@ const GithubProfile = (props: GithubProfileProps) => {
 			if(response.status !== 200){
 				setGithubUserProfileError(response.statusText);
 				// throw new Error(response.statusText);
+			
 			}
+			setGithubUserProfileError(response.statusText);
 
 			return response.json();
 		})
@@ -36,7 +42,7 @@ const GithubProfile = (props: GithubProfileProps) => {
 			// throw new Error(error.toString());
 		});
 	},[]);
-console.log(githubUserProfileData);
+
 	return (
 		(githubUserProfileData === null) 
 			? (githubUserProfileError)
@@ -50,10 +56,30 @@ console.log(githubUserProfileData);
 					/>
 					{githubUserProfileData.name &&
 						<h1>{githubUserProfileData.name}</h1>}
+					{githubUserProfileData.email &&
+						<div>
+							<Link 
+								href={githubUserProfileData.email} 
+								target={"_blank"} 
+								rel={"nofollow"}
+								// img={{
+								// 	src:'%PUBLIC_URL%/images/github.png'
+								// }}
+							>
+								✉️ {githubUserProfileData.email}
+							</Link>
+						</div>}
 					{githubUserProfileData.html_url &&
 						<div>
-							<Link href={githubUserProfileData.html_url} target={"_blank"} rel={"nofollow"}>
-								{githubUserProfileData.html_url}
+							<Link 
+								href={githubUserProfileData.html_url} 
+								target={"_blank"} 
+								rel={"nofollow"}
+								// img={{
+								// 	src:'%PUBLIC_URL%/images/github.png'
+								// }}
+							>
+								🔗{githubUserProfileData.html_url}
 							</Link>
 						</div>
 					}
