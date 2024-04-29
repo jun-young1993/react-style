@@ -2,7 +2,9 @@
 
 ## document
 
-[juny-react-module](docs/modules.md) / Modules
+# [👉 move modules document 👈](docs/modules.md)
+
+## install
 
 ```shell
 $ npm install juny-react-style
