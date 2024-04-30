@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import {AlignBoxProps} from "./AlignBox.type";
+import { Children } from "react";
 
 const Container = styled.div<AlignBoxProps>`
     display: flex;
+    width: 100%;
     justify-content: ${({ align }) => {
         if (align === 'left') return 'flex-start';
         if (align === 'right') return 'flex-end';
@@ -10,9 +12,10 @@ const Container = styled.div<AlignBoxProps>`
     }};
 `;
 
+
 /**
  *
- * @param {ReactNode} children
+ * @param {ReactNode[] | ReactNode} children
  * @param {'left' | 'right' | 'center'} align default center
  * @constructor
  * @example
@@ -25,10 +28,15 @@ const Container = styled.div<AlignBoxProps>`
  * ```
  */
 const AlignBox = ({ children, align }: AlignBoxProps) => {
+    const childrens = Children.toArray(children);
     return (
-        <Container align={align ?? 'center'}>
-            {children}
-        </Container>
+        <>
+        {childrens.map((child) => {
+            return <Container align={align ?? 'center'}>
+                    {child}
+                </Container>
+        })}
+        </>
     )
 }
 

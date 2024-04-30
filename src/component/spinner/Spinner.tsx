@@ -24,7 +24,14 @@ const SpinnerStyled = styled.div<SpinnerProps>`
 `;
 
 
-
+/**
+ * 
+ * @param {SpinnerProps} props 
+ * @returns 
+ * ```
+ * 	<Spinner width={"10px"} height={"10px"} />
+ * ```
+ */
 const Spinner = (props: SpinnerProps) => {
 	
 	return <SpinnerStyled {...props}/>

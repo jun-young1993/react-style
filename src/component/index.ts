@@ -5,3 +5,4 @@ export * from './spinner';
 export * from './leftRightContainer';
 export * from './alignBox';
 export * from './link';
+export * from './marginBox';

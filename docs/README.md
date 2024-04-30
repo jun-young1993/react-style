@@ -4,7 +4,9 @@ juny-react-style / [Exports](modules.md)
 
 ## document
 
-[juny-react-module](docs/modules.md) / Modules
+# [👉 move modules document 👈](docs/modules.md)
+
+## install
 
 ```shell
 $ npm install juny-react-style
@@ -12,6 +14,14 @@ $ npm install juny-react-style
 
 ## Version
 ### v1.1.6
+- ### Added
+  - MarginBox
+- ### Updated
+  - Github Profile location added
+  - Github info margin added
+  - Link underline added
+- ### Updated
+  - GithubProfile email added
 - #### Added
   - AlignBox
   - LeftRightContainer

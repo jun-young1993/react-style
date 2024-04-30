@@ -12,6 +12,12 @@ $ npm install juny-react-style
 
 ## Version
 ### v1.1.6
+- ### Added
+  - MarginBox
+- ### Updated
+  - Github Profile location added
+  - Github info margin added
+  - Link underline added
 - ### Updated
   - GithubProfile email added
 - #### Added

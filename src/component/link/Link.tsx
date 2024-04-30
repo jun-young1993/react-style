@@ -9,12 +9,13 @@ const LinkStyled = styled.a<LinkProps>`
 
   &:hover {
     color: red;
+    text-decoration-line: underline;
   }
 `;
 
 /**
  * 
- * @param props: LinkProps
+ * @param {LinkProps} props
  *  
  * @returns 
  * 

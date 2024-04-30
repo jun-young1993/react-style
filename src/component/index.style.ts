@@ -1,4 +1,4 @@
-import { radius } from "./index.types";
+import { lefetOrRightOrTopOrBottom, radius } from "./index.types";
 
 export const Width = (width: string) => {
 	return `
@@ -21,6 +21,35 @@ export const MaxWidth = (width: string) => {
 export const MaxHeight = (height: string) => {
 	return `
 		max-height: ${height ?? '10px'};
+	`;
+}
+
+export const Margin = (margin: lefetOrRightOrTopOrBottom, size?: string) => {
+	return `
+		margin-${margin}: ${size ?? '0px'};
+	`
+}
+export const MarginBottom = (size?: string) => {
+	return `
+		${Margin('bottom',size)}
+	`;
+}
+
+export const MarginTop = (size?: string) => {
+	return `
+		${Margin('top',size)}
+	`;
+}
+
+export const MarginLeft = (size?: string) => {
+	return `
+		${Margin('left',size)}
+	`;
+}
+
+export const MarginRight = (size?: string) => {
+	return `
+		${Margin('right',size)}
 	`;
 }
 
