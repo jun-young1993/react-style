@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import {LinkProps} from "./link.type";
-import { Profile } from "component/profile";
+import {Profile} from "../profile";
+
 
 const LinkStyled = styled.a<LinkProps>`
   color: blue;
   text-decoration: none;
   transition: color 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:hover {
     color: red;

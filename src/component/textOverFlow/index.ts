@@ -1,0 +1,1 @@
+export { default as TextOverFlow} from './TextOverFlow';

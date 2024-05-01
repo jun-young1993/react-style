@@ -6,6 +6,7 @@ import {Link} from "../link";
 import { MissingRequiredPropsVariable } from "../../libs/exception/MissingRequiredPropsVariable";
 import { AlignBox } from "../../component/alignBox";
 import MarginBox  from "../../component/marginBox/MarginBox";
+import {TextOverFlow} from "../textOverFlow";
 
 /**
  * 
@@ -116,7 +117,9 @@ const GithubProfile = (props: GithubProfileProps) => {
 								// 	src:'%PUBLIC_URL%/images/github.png'
 								// }}
 							>
+								{/*<TextOverFlow>*/}
 								🔗 {githubUserProfileData.html_url}
+								{/*</TextOverFlow>*/}
 							</Link>
 						</MarginBox>
 					}

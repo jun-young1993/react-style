@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MarginBoxProps } from "./MarginBox.type";
-import { MarginBottom, MarginLeft, MarginRight, MarginTop } from "component/index.style";
+import { MarginBottom, MarginLeft, MarginRight, MarginTop } from "../index.style";
 
 const Container = styled.div<MarginBoxProps>`
 	${({bottom}) => MarginBottom(bottom)}
