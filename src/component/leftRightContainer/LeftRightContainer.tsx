@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Children} from "react";
 import {ChildrenLeftRightLayoutProps, LeftRightLayoutProps} from "./LeftRightContainer.type";
+import {MediaMobileOnlyStyle, MediaTabletOnlyStyle} from "../../libs/media-query";
 const ChildrenContainer = styled.div<ChildrenLeftRightLayoutProps>`
     ${({ratio}) => `
         flex: ${ratio};
@@ -8,6 +9,11 @@ const ChildrenContainer = styled.div<ChildrenLeftRightLayoutProps>`
 `;
 const Container = styled.div`
     display: flex;
+    flex-direction: row;
+    height: 100%;
+    ${MediaMobileOnlyStyle(`
+            flex-direction: column;
+    `)}
 `;
 
 /**
