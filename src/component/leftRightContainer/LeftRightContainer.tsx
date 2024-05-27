@@ -7,10 +7,14 @@ const ChildrenContainer = styled.div<ChildrenLeftRightLayoutProps>`
         flex: ${ratio};
     `}
 `;
-const Container = styled.div`
+const Container = styled.div<LeftRightLayoutProps>`
     display: flex;
-    flex-direction: row;
-    height: 100%;
+    ${({flexDirection, height, width}) => `
+        flex-direction: ${flexDirection ?? 'row'};
+        height: ${height ?? '100%'};;
+        width: ${width ?? '100%'};;
+    `}
+    
     ${MediaMobileOnlyStyle(`
             flex-direction: column;
     `)}
@@ -35,15 +39,20 @@ const Container = styled.div`
  * </LeftRightContainer>
  * ```
  */
-const LeftRightContainer = ({children, ratio}: LeftRightLayoutProps) => {
+const LeftRightContainer = ({children, ratio, height, width, flexDirection, gap}: LeftRightLayoutProps) => {
     const [leftContent, rightContent] = Children.toArray(children);
     return (
-        <Container>
+        <Container
+            flexDirection={flexDirection}
+            height={height}
+            width={width}
+        >
             <ChildrenContainer
                 ratio={ratio ?? 1}
             >
                 {leftContent}
             </ChildrenContainer>
+            <div style={{width: gap ?? '10px'}}></div>
             <ChildrenContainer
                 ratio={1}
             >

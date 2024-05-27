@@ -5,5 +5,9 @@ export interface ChildrenLeftRightLayoutProps {
     maxWidth?: string
 }
 export interface LeftRightLayoutProps extends ChildrenLeftRightLayoutProps{
-    children: ReactNode[]
+    children: ReactNode[] | ReactNode
+    flexDirection?: 'column' | 'row'
+    height?: string
+    width?: string
+    gap?: string
 }

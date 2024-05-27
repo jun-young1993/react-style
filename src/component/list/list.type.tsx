@@ -27,7 +27,7 @@ export interface ListItemDivStyleProps {
 }
 
 export interface ListProps extends ListDivStyleProps {
-    children?: ReactNode[]
+    children?: ReactNode[] | ReactNode
     title?: string
     headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
     headingAlign?: 'center' | 'left' | 'right'
