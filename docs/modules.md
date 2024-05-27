@@ -4,8 +4,13 @@
 
 ## Table of contents
 
+### References
+
+- [SplitContainer](modules.md#splitcontainer)
+
 ### Type Aliases
 
+- [IntrinsicElementsDiv](modules.md#intrinsicelementsdiv)
 - [cornersType](modules.md#cornerstype)
 - [lefetOrRightOrTopOrBottom](modules.md#lefetorrightortoporbottom)
 - [radius](modules.md#radius)
@@ -17,11 +22,30 @@
 - [GithubProfile](modules.md#githubprofile)
 - [LeftRightContainer](modules.md#leftrightcontainer)
 - [Link](modules.md#link)
+- [List](modules.md#list)
+- [ListItem](modules.md#listitem)
 - [MarginBox](modules.md#marginbox)
 - [Profile](modules.md#profile)
 - [Spinner](modules.md#spinner)
+- [TextOverFlow](modules.md#textoverflow)
+
+## References
+
+### SplitContainer
+
+Renames and re-exports [LeftRightContainer](modules.md#leftrightcontainer)
 
 ## Type Aliases
+
+### IntrinsicElementsDiv
+
+Ƭ **IntrinsicElementsDiv**: `React.DetailedHTMLProps`\<`React.HTMLAttributes`\<`HTMLDivElement`\>, `HTMLDivElement`\>
+
+#### Defined in
+
+[index.types.ts:10](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/index.types.ts#L10)
+
+___
 
 ### cornersType
 
@@ -29,7 +53,7 @@
 
 #### Defined in
 
-[index.types.ts:1](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/index.types.ts#L1)
+[index.types.ts:3](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/index.types.ts#L3)
 
 ___
 
@@ -39,7 +63,7 @@ ___
 
 #### Defined in
 
-[index.types.ts:6](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/index.types.ts#L6)
+[index.types.ts:8](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/index.types.ts#L8)
 
 ___
 
@@ -49,7 +73,7 @@ ___
 
 #### Defined in
 
-[index.types.ts:5](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/index.types.ts#L5)
+[index.types.ts:7](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/index.types.ts#L7)
 
 ___
 
@@ -59,7 +83,7 @@ ___
 
 #### Defined in
 
-[index.types.ts:2](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/index.types.ts#L2)
+[index.types.ts:4](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/index.types.ts#L4)
 
 ## Functions
 
@@ -89,7 +113,7 @@ ___
 
 #### Defined in
 
-[alignBox/AlignBox.tsx:30](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/alignBox/AlignBox.tsx#L30)
+[alignBox/AlignBox.tsx:30](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/alignBox/AlignBox.tsx#L30)
 
 ___
 
@@ -118,7 +142,7 @@ ___
 
 #### Defined in
 
-[githubProfile/GithubProfile.tsx:22](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/githubProfile/GithubProfile.tsx#L22)
+[githubProfile/GithubProfile.tsx:23](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/githubProfile/GithubProfile.tsx#L23)
 
 ___
 
@@ -153,7 +177,7 @@ ___
 
 #### Defined in
 
-[leftRightContainer/LeftRightContainer.tsx:32](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/leftRightContainer/LeftRightContainer.tsx#L32)
+[leftRightContainer/LeftRightContainer.tsx:38](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/leftRightContainer/LeftRightContainer.tsx#L38)
 
 ___
 
@@ -181,7 +205,47 @@ ___
 
 #### Defined in
 
-[link/Link.tsx:29](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/link/Link.tsx#L29)
+[link/Link.tsx:33](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/link/Link.tsx#L33)
+
+___
+
+### List
+
+▸ **List**(`«destructured»`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `ListProps` |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[list/List.tsx:40](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/list/List.tsx#L40)
+
+___
+
+### ListItem
+
+▸ **ListItem**(`«destructured»`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `ListItemProps` |
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[list/List.item.tsx:23](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/list/List.item.tsx#L23)
 
 ___
 
@@ -214,7 +278,7 @@ ___
 
 #### Defined in
 
-marginBox/MarginBox.tsx:28
+[marginBox/MarginBox.tsx:28](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/marginBox/MarginBox.tsx#L28)
 
 ___
 
@@ -239,7 +303,7 @@ The Profile component
 
 #### Defined in
 
-[profile/Profile.tsx:51](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/profile/Profile.tsx#L51)
+[profile/Profile.tsx:51](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/profile/Profile.tsx#L51)
 
 ___
 
@@ -263,4 +327,30 @@ ___
 
 #### Defined in
 
-[spinner/Spinner.tsx:35](https://github.com/jun-young1993/react-style/blob/ccefd3c15eac8d7807ca30c991576257c857db1c/src/component/spinner/Spinner.tsx#L35)
+[spinner/Spinner.tsx:35](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/spinner/Spinner.tsx#L35)
+
+___
+
+### TextOverFlow
+
+▸ **TextOverFlow**(`props`): `Element`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `TextOverFlowProps` |
+
+#### Returns
+
+`Element`
+
+**`Example`**
+
+```tsx
+ <TextOverFlow>foo</TextOverFlow>
+```
+
+#### Defined in
+
+[textOverFlow/TextOverFlow.tsx:20](https://github.com/jun-young1993/react-style/blob/8704f92acecf97c92d63b22ccba748ea060e134d/src/component/textOverFlow/TextOverFlow.tsx#L20)

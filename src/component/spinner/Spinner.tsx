@@ -1,5 +1,5 @@
 import { Height, Width } from "../../component/index.style";
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { SpinnerProps } from "./Spinner.type";
 
 const SpinStyled = keyframes`

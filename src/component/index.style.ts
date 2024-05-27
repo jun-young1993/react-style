@@ -80,7 +80,3 @@ export const BorderRadius = (radius: string | radius) => {
 		border-radius: ${radiusValue}
 	`;
 }
-
-export const StyleProps = (props) => {
-
-}

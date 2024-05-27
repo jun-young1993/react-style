@@ -1,16 +1,14 @@
 import React, {Children} from 'react';
-import styled from 'styled-components';
-import { ListProps } from './list.type';
-import {IntrinsicElementsDiv} from "../index.types";
+import styled, { css } from 'styled-components';
+import { ListDivStyleProps, ListProps } from './list.type';
 
 const WrapContainer = styled.div`
   padding: 3px;
   height: 100%;
 `;
 
-const ListStyled = styled.div`
-  ${(
-    {
+const ListStyled = styled.div<ListDivStyleProps>`
+  ${({
     width,
     height,
     display,
@@ -21,14 +19,15 @@ const ListStyled = styled.div`
     borderStyle,
     borderColor,
     opacity,
-    margin
-    }
-  ) => `
+    margin,
+    backgroundColor,
+    }) => `
     width: ${width ?? '100%'};
     height: ${height ?? '100%'};
     display: ${display ?? '100%'};
     flex-direction: ${flexDirection ?? 'column'};
     overflow-y: ${overflowY ?? 'hidden'};
+    background-color: ${backgroundColor ?? '#f6f8fa'};
     border-radius: ${borderRadius ?? '6px'};
     border-width: ${borderWidth ?? '1px'};
     border-style: ${borderStyle ?? 'solid'};
@@ -38,16 +37,15 @@ const ListStyled = styled.div`
   `}
 `;
 
-const List = ({ children, title, ...divProps }: ListProps) => {
+const List = ({ children, title, headingLevel, headingAlign, ...divProps }: ListProps) => {
     const listItems = Children.toArray(children);
+    
+    const Heading = (headingLevel ?? 'h5') as unknown as keyof JSX.IntrinsicElements;
+    
     return (
         <WrapContainer>
             <ListStyled {...divProps}>
-                {title &&
-                    <h5 style={{
-                        marginLeft: '10px'
-                    }}><strong>{title}</strong></h5>
-                }
+              {title && <Heading style={{ textAlign: headingAlign ?? 'center' }} >{title}</Heading>}
                 {listItems}
             </ListStyled>
         </WrapContainer>

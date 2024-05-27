@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "private": false,
   "dependencies": {
     "@testing-library/react": "^13.4.0",
@@ -104,7 +104,7 @@
   "bugs": {
     "url": "https://github.com/jun-young1993/react-style/issues"
   },
-  "homepage": "https://github.com/jun-young1993/react-style#readme",
+  "homepage": "https://juny.blog/blog/docs/juny-react-github.md",
   "files": [
     "dist"
   ]
