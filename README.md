@@ -2,7 +2,7 @@
 
 ## document
 
-# [👉 move modules document 👈](docs/modules.md)
+# [👉 move modules document 👈](https://juny.blog/blog/docs/juny-react-style.md)
 
 ## install
 
