@@ -8,3 +8,4 @@ export * from './link';
 export * from './marginBox';
 export * from './textOverFlow';
 export * from './list';
+export * from './StyleThemeProvider';

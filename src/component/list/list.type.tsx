@@ -24,6 +24,7 @@ export interface ListItemDivStyleProps {
     margin?: string
     backgroundColor?: string
     padding?: string
+    fontColor?: string
 }
 
 export interface ListProps extends ListDivStyleProps {
@@ -36,4 +37,5 @@ export interface ListProps extends ListDivStyleProps {
 
 export interface ListItemProps extends ListItemDivStyleProps {
     children?: ReactNode
+    theme?: any
 }
