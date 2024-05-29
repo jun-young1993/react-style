@@ -9,6 +9,7 @@ const WrapContainer = styled.div`
 
 const ListStyled = styled.div<ListDivStyleProps>`
   ${({
+    theme,
     width,
     height,
     display,
@@ -27,11 +28,11 @@ const ListStyled = styled.div<ListDivStyleProps>`
     display: ${display ?? '100%'};
     flex-direction: ${flexDirection ?? 'column'};
     overflow-y: ${overflowY ?? 'hidden'};
-    background-color: ${backgroundColor ?? '#f6f8fa'};
+    background-color: ${backgroundColor ?? theme.lightBlueGray};
     border-radius: ${borderRadius ?? '6px'};
     border-width: ${borderWidth ?? '1px'};
     border-style: ${borderStyle ?? 'solid'};
-    border-color: ${borderColor ?? '#d0d7de'};
+    border-color: ${borderColor ?? theme.lightGray};
     opacity:${opacity ?? '100%'};
     margin: ${margin ?? '5px'};
   `}

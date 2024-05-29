@@ -3,4 +3,5 @@ export default interface ThemeType {
 	white: string
 	black: string
 	lightGray: string
+	lightBlueGray: string
 }
