@@ -22,41 +22,93 @@ const JustifyContentStart = styled.div`
 	display: flex;
 	justify-content: start;
 	width: 100%;
-	gap: 20px;
+	gap: 1rem;
 	${MediaMobileOnlyStyle(`
-		gap: 15px;
+		gap: 1.5rem;
 	`)}
 `;
-
-const RoundButton = styled.div`
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	background-color: #4CAF50; /* You can change the color as needed */
+interface RoundButtonProps {
+	color?: 'red' | 'green' | 'yellow'
+}
+const RoundButton = styled.div<RoundButtonProps>`
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	
+	width: 28px;
+	height: 28px;
+	
 	border-radius: 50%;
 	color: white;
-	text-align: center;
+	
 	line-height: 50px;
-	font-size: 16px;
 	cursor: pointer;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	transition: background-color 0.3s ease;
-
+	
 	&:hover {
-		background-color: #45a049;
+
+		> svg {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	${({color}) => {
+		
+		switch(color){
+			case 'yellow':
+				return `
+					background-color: #FFBD2E; /* yellow */
+					&:hover {
+						background-color: #E1A91A;
+					}
+				`
+			case 'green':
+				return `
+					background-color: #27C93F; /* green */
+					&:hover {
+						background-color: #1AAB29;
+					}
+				`
+			default:
+				return `
+					background-color: #FF5F56; /* red */
+					&:hover {
+						background-color: #E0443E;
+					}
+				`
+		}
+	}}
+	> svg {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.3s ease;
 	}
 `;
-const MacContainerHeader = ({...elementProps}: MacContainerHeaderProps) => {
+const MacContainerHeader = ({title, ...elementProps}: MacContainerHeaderProps) => {
+	
 	return (
 		<MacContainerHeaderWrapStyled {...elementProps}>
 			<JustifyContentBetween>
 				<JustifyContentStart>
-					<CloseIcon />
-					<HiddenIcon />
-					<MaximizeIcon />
-					<RoundButton />
+					<RoundButton
+						color={"red"}
+					>
+						<CloseIcon />
+					</RoundButton>
+					<RoundButton
+						color={"yellow"}
+					>
+						<HiddenIcon />
+					</RoundButton>
+					<RoundButton
+						color={"green"}
+					>
+						<MaximizeIcon />
+					</RoundButton>
 				</JustifyContentStart>
-			<span>hi</span>
+				{title}
 			</JustifyContentBetween>
 		</MacContainerHeaderWrapStyled>
 	)

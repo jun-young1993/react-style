@@ -9,5 +9,5 @@ export default {
 const Template: StoryFn<typeof MacContainerHeader> = (args) => <MacContainerHeader {...args} />
 export const MacContainerHeaderTemplate = Template.bind({});
 MacContainerHeaderTemplate.args = {
-	// width: undefined
+	title: "hi"
 }
