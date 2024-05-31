@@ -20,9 +20,9 @@ const ListItemStyled = styled.div<ListItemDivStyleProps>`
         border-style: ${borderStyle ?? 'solid'};
         border-color: ${borderColor ?? theme.lightGray ?? LightTheme.lightGray};
         margin: ${margin ?? '3px'};
-        background-color: ${backgroundColor ?? theme.white ?? LightTheme.white};
+        background-color: ${backgroundColor ?? theme.veryLightGray ?? LightTheme.veryLightGray};
         padding: ${padding ?? '5px'};
-        font-color: ${fontColor ?? theme.black ?? LightTheme.black};
+        color: ${fontColor ?? theme.black ?? LightTheme.black};
     `}
 `; 
 const ListItem = ({ children, ...divProps }: ListItemProps) => {

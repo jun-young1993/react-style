@@ -4,4 +4,6 @@ export default interface ThemeType {
 	black: string
 	lightGray: string
 	lightBlueGray: string
+	lightGrayBlue: string
+	veryLightGray: string
 }
