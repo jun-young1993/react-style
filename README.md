@@ -3,6 +3,7 @@
 ## document
 
 # [👉 move modules document 👈](https://juny.blog/blog/docs/juny-react-style.md)
+# [👉 demo site 👈](https://juny.blog)
 
 ## install
 
@@ -13,8 +14,9 @@ $ npm install juny-react-style
 > dark or light
 
 # Component
+## MacContainer
 ## List 
 ## ListItem
-### SplitContainer
+## SplitContainer
 
 
