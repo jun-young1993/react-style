@@ -23,6 +23,7 @@ export interface MacContainerWrapElementProps extends MacContainerEventProps{
 	backgroundColor?: string
 	padding?: string
 	theme?: ThemeType
+	overflow?: 'scroll' | 'visible' | 'auto' | 'hidden' | string
 }
 export interface MacContainerBodyElementProps {
 	padding?: string

@@ -9,13 +9,15 @@ const MacContainerWrap = styled.div<MacContainerWrapElementProps>`
 		borderRadius,
 		backgroundColor,
 		padding,
+		overflow = 'scroll',
 		theme
 	}) => `
 		padding: ${padding ?? '0.5rem'};
 		width: ${width ?? '100%'};
 		height: ${height ?? '100%'};
 		border-radius: ${borderRadius ?? '0.5rem'};
-		background-color: ${backgroundColor ?? theme.lightGrayBlue ?? LightTheme.lightGrayBlue}
+		background-color: ${backgroundColor ?? theme.lightGrayBlue ?? LightTheme.lightGrayBlue};
+		overflow: ${overflow};
 	`}
 `;
 const MacContainerBodyWrap = styled.div<MacContainerBodyElementProps>`
