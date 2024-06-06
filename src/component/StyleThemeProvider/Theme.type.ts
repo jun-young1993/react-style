@@ -3,6 +3,7 @@ export default interface ThemeType {
 	white: string
 	black: string
 	lightGray: string
+	softGray: string
 	lightBlueGray: string
 	lightGrayBlue: string
 	veryLightGray: string

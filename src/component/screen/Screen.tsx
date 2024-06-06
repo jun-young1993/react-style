@@ -1,6 +1,7 @@
 import React, {Children} from 'react';
 import styled from 'styled-components';
 import {ScreenProps} from "./index.type";
+import {SpacerProps} from "../BetweenContainer/BetweenContainer.type";
 
 const Header = styled.header`
   height: 60px;  /* 원하는 헤더 높이 설정 */
@@ -26,8 +27,10 @@ const LayoutContainer = styled.div`
   width: 100%;
   height: 100vh;
 `;
-
-const Screen = ({children}: ScreenProps) => {
+const Spacer = styled.div<{gap?: string}>`
+  flex: 0 0 ${({ gap }) => gap ?? '1rem'};
+`;
+const Screen = ({children, footerGap}: ScreenProps) => {
     const [header, body, footer] = Children.toArray(children);
     return (
         <LayoutContainer>
@@ -40,6 +43,7 @@ const Screen = ({children}: ScreenProps) => {
             <Footer>
                 {footer}
             </Footer>
+            {footerGap && <Spacer gap={footerGap}/>}
         </LayoutContainer>
     );
 }
