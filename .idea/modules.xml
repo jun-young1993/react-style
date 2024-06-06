@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/react-style.iml" filepath="$PROJECT_DIR$/.idea/react-style.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-svg-icons/.idea/react-svg-icons.iml" filepath="$PROJECT_DIR$/../react-svg-icons/.idea/react-svg-icons.iml" />
     </modules>
   </component>
 </project>
