@@ -8,7 +8,7 @@ export interface MacMenuBarProps extends MacMenuBarElementProps{
 }
 
 export interface MacMenuBarItemProps {
-    size: number;
+    size?: number;
     src: string;
     title?: string
     onClick?: () => void
