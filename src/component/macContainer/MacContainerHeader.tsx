@@ -29,14 +29,22 @@ const JustifyContentStart = styled.div`
 		gap: 1.5rem;
 	`)}
 `;
+
+const RoundButtonWrap = styled.div`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
 interface RoundButtonProps {
 	color?: 'red' | 'green' | 'yellow'
-	size?: string
+	size?: string | undefined
 }
 const RoundButton = styled.div<RoundButtonProps>`
 	${({size}) => `
-		width: ${size ?? '18px'};
-		height: ${size ?? '18px'};
+		width: ${size ?? '1rem'};
+		height: ${size ?? '1rem'};
 	`}
 	display: flex;
 	text-align: center;
@@ -54,6 +62,12 @@ const RoundButton = styled.div<RoundButtonProps>`
 	&:hover {
 
 		> svg {
+			width: 50%;  /* Adjust as needed */
+			height: 50%;  /* Adjust as needed */
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
 			visibility: visible;
 			opacity: 1;
 		}
@@ -85,6 +99,10 @@ const RoundButton = styled.div<RoundButtonProps>`
 		}
 	}}
 	> svg {
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
 		visibility: hidden;
 		opacity: 0;
 		transition: visibility 0s, opacity 0.3s ease;
@@ -100,7 +118,7 @@ const TitleWrap = styled.div<MacContainerHeaderWrapElementProps>`
 	
 `;
 const MacContainerHeader = ({title,
-	buttonSize, 
+	buttonSize,
 	onClose,
 	onMinimize,
 	onHidden,
@@ -116,21 +134,21 @@ const MacContainerHeader = ({title,
 						color={"red"}
 						onClick={() => onClose && onClose()}
 					>
-						<CloseIcon />
+						<CloseIcon viewBox={"0 0 14 14"}/>
 					</RoundButton>
 					<RoundButton
 						size={buttonSize}
 						color={"yellow"}
 						onClick={() => onHidden && onHidden()}
 					>
-						<HiddenIcon />
+						<HiddenIcon viewBox={"0 0 14 14"} />
 					</RoundButton>
 					<RoundButton
 						size={buttonSize}
 						color={"green"}
 						onClick={() => onMinimize && onMinimize()}
 					>
-						<MaximizeIcon />
+						<MaximizeIcon viewBox={"0 0 14 14"} />
 					</RoundButton>
 				</JustifyContentStart>
 				<TitleWrap

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MacMenuBarItemProps } from './MacMenuBar.type';
+import LightTheme from "../StyleThemeProvider/LightTheme";
 
 const IconContainer = styled.div`
   height: 100%;
@@ -50,7 +51,7 @@ const TextFallback = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: ${({ theme }) => theme.softGray ?? LightTheme.softGray};
   color: #333;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;

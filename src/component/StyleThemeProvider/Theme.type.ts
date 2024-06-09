@@ -10,6 +10,10 @@ export default interface ThemeType {
 	lightBlueGray: string
 	lightGrayBlue: string
 	veryLightGray: string
+	paleGray: string
+	snowWhite: string
+	mediumGray: string
+	darkGray: string
 }
 
 export interface StyleThemeProviderProps extends DefaultTheme{
