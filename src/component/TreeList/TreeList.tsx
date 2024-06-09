@@ -7,7 +7,7 @@ const TreeContainer = styled.div`
   background-color: ${({ theme }) => theme.snowWhite ?? LightTheme.snowWhite};
   padding: 10px;
   border-radius: 8px;
-  width: 200px;
+  width: 100%;
 `;
 
 export const TreeHeader = styled.div`
