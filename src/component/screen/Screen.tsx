@@ -32,10 +32,12 @@ const LayoutContainer = styled.div<ScreenProps>`
 const Spacer = styled.div<{gap?: string}>`
   flex: 0 0 ${({ gap }) => gap ?? '1rem'};
 `;
-const Screen = ({children, footerGap}: ScreenProps) => {
+const Screen = ({children, footerGap, ...props}: ScreenProps) => {
     const [header, body, footer] = Children.toArray(children);
     return (
-        <LayoutContainer>
+        <LayoutContainer
+          {...props}
+        >
             <Header>
                 {header}
             </Header>
