@@ -9,7 +9,7 @@ const MacContainerWrap = styled.div<MacContainerWrapElementProps>`
 		borderRadius,
 		backgroundColor,
 		padding,
-		overflow = 'scroll',
+		overflow = 'auto',
 		theme
 	}) => {
 		const paddingValue = padding ?? '0.5rem';

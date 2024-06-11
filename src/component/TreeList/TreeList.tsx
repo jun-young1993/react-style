@@ -7,6 +7,7 @@ const TreeContainer = styled.div`
   background-color: ${({ theme }) => theme.snowWhite ?? LightTheme.snowWhite};
   padding: 10px;
   border-radius: 8px;
+  box-sizing: border-box;
   width: 100%;
 `;
 
