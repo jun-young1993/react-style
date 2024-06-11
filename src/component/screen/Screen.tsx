@@ -21,11 +21,12 @@ const Body = styled.div`
   display: flex;
 `;
 
-const LayoutContainer = styled.div`
+const LayoutContainer = styled.div<ScreenProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  overflow: ${({overflow}) => overflow ?? 'unset'};
   background-color: ${({theme}) => theme.white};
 `;
 const Spacer = styled.div<{gap?: string}>`
