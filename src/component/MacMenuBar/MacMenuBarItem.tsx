@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MacMenuBarItemProps } from './MacMenuBar.type';
+import LightTheme from "../StyleThemeProvider/LightTheme";
 
 const IconContainer = styled.div`
   height: 100%;
@@ -41,12 +42,38 @@ const StyledImage = styled.img`
     transform: scale(1.1);
   }
 `;
+const TextFallback = styled.div`
+  margin-left: 0.75rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+  max-height: 50px;
+  max-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.softGray ?? LightTheme.softGray};
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
 
 function MacMenuBarItem({ size, src, title, onClick, onContextMenu }: MacMenuBarItemProps) {
     return (
         <IconContainer onClick={onClick} onContextMenu={onContextMenu}>
             {title && <Tooltip>{title}</Tooltip>}
-            <StyledImage src={src} width={size} height={size} alt={title} />
+            {src
+            ? (<StyledImage src={src} width={size} height={size} alt={title} />)
+            : <TextFallback>{title}</TextFallback>}
+
         </IconContainer>
     );
 }

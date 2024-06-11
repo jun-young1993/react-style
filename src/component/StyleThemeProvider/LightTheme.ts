@@ -8,6 +8,10 @@ const LightTheme: ThemeType = {
 	softGray: '#f0f0f0',
 	lightBlueGray: '#f6f8fa',
 	lightGrayBlue: '#F1F5F9',
-	veryLightGray: '#fafafa'
+	veryLightGray: '#fafafa',
+	paleGray: '#e0e0e0',
+	snowWhite: '#f6f6f6',
+	mediumGray: '#8c8c8c',
+	darkGray: '#555555'
 }
 export default LightTheme;

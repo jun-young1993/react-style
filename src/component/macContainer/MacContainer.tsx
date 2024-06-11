@@ -11,14 +11,18 @@ const MacContainerWrap = styled.div<MacContainerWrapElementProps>`
 		padding,
 		overflow = 'scroll',
 		theme
-	}) => `
-		padding: ${padding ?? '0.5rem'};
-		width: ${width ?? '100%'};
-		height: ${height ?? '100%'};
-		border-radius: ${borderRadius ?? '0.5rem'};
-		background-color: ${backgroundColor ?? theme.lightGrayBlue ?? LightTheme.lightGrayBlue};
-		overflow: ${overflow};
-	`}
+	}) => {
+		const paddingValue = padding ?? '0.5rem';
+		const borderRadiusValue = borderRadius ?? '0.5rem';
+		return `
+			padding: ${paddingValue};
+			width: ${width ?? '100%'};
+			height: calc(${height ?? '100%'} - ${paddingValue} - ${borderRadiusValue});
+			border-radius: ${borderRadiusValue};
+			background-color: ${backgroundColor ?? theme.lightGrayBlue ?? LightTheme.lightGrayBlue};
+			overflow: ${overflow};
+		`
+	}}
 `;
 const MacContainerBodyWrap = styled.div<MacContainerBodyElementProps>`
 	${({
