@@ -26,7 +26,7 @@ const LayoutContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  bacground-color: ${({theme}) => theme.white};
+  background-color: ${({theme}) => theme.white};
 `;
 const Spacer = styled.div<{gap?: string}>`
   flex: 0 0 ${({ gap }) => gap ?? '1rem'};
