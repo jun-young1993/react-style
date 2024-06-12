@@ -6,7 +6,7 @@ export interface TreeItemProps<T = {[key: string]: any}> {
     userData?: T
     textOption?: TextBoxWrapProps
 }
-export interface TreeListProps<T> {
+export interface TreeListProps<T = {[key: string]: any}> {
     onClick?: (item: TreeItemProps<T>) => void
     title?: string | ReactNode
     icon?: ReactNode
