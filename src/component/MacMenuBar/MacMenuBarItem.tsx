@@ -17,8 +17,8 @@ const Tooltip = styled.div`
   bottom: 100%; /* 아이콘 위에 툴팁을 배치 */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
+  background-color: ${({theme}) => theme.darkCharcoal ?? LightTheme.darkCharcoal};
+  color: ${({theme}) => theme.brightWhite ?? LightTheme.brightWhite};
   padding: 0.5rem;
   border-radius: 0.25rem;
   white-space: nowrap;
@@ -52,7 +52,7 @@ const TextFallback = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.softGray ?? LightTheme.softGray};
-  color: #333;
+  color: ${({theme}) => theme.darkCharcoal ?? LightTheme.darkCharcoal};
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   font-size: 1rem;

@@ -12,6 +12,8 @@ const LightTheme: ThemeType = {
 	paleGray: '#e0e0e0',
 	snowWhite: '#f6f6f6',
 	mediumGray: '#8c8c8c',
-	darkGray: '#555555'
+	darkGray: '#555555',
+	darkCharcoal: '#333',
+	brightWhite: '#fff'
 }
 export default LightTheme;

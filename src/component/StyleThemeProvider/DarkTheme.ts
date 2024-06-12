@@ -12,6 +12,8 @@ const DarkTheme: ThemeType = {
 	paleGray: '#3a3a3a',
 	snowWhite: '#2e2e2e',
 	mediumGray: '#737373',
-	darkGray: '#aaaaaa'
+	darkGray: '#aaaaaa',
+	darkCharcoal: '#cccccc',
+	brightWhite: '#1a1a1a'
 }
 export default DarkTheme;

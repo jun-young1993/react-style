@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SunIcon, MoonIcon } from 'react-symbol';
 import {DarkAndLightModeButtonProps} from "./DarkAndLightModeButton.type";
+import LightTheme from 'component/StyleThemeProvider/LightTheme';
 
 const rotate = keyframes`
   0% {
@@ -38,7 +39,7 @@ const Button = styled.button`
 
 
 
-const DarkAndLightModeButton = ({iconSize, onClick, initMode}:DarkAndLightModeButtonProps) => {
+const DarkAndLightModeButton = ({iconSize, onClick, initMode, moonColor, sunColor}:DarkAndLightModeButtonProps) => {
     const [isDarkMode, setIsDarkMode] = useState(initMode ? initMode : false);
     const [isRotating, setIsRotating] = useState(false);
 
@@ -58,10 +59,10 @@ const DarkAndLightModeButton = ({iconSize, onClick, initMode}:DarkAndLightModeBu
             <Button onClick={handleClick} className={isRotating ? 'rotate' : ''}>
                 {isDarkMode
                     ? <MoonIcon
-                        width={size} height={size} viewBox={"0 0 14 14"}
+                        width={size} height={size} viewBox={"0 0 14 14"} color={moonColor ?? LightTheme.black}
                     />
                     : <SunIcon
-                        width={size} height={size} viewBox={"0 0 14 14"}
+                        width={size} height={size} viewBox={"0 0 14 14"} color={sunColor ?? LightTheme.white}
                     />}
             </Button>
     );
