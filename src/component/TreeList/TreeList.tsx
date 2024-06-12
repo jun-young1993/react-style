@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {TreeItemProps, TreeListProps} from "./TreeList.type";
 import LightTheme from "../StyleThemeProvider/LightTheme";
+import { TextBox } from '../utills';
 
 const TreeContainer = styled.div`
   background-color: ${({ theme }) => theme.snowWhite ?? LightTheme.snowWhite};
@@ -40,7 +41,7 @@ export const TreeItem = styled.div<TreeItemProps>`
 const TreeItemIcon = styled.div`
   width: 16px;
   height: 16px;
-  background-color: ${({ theme }) => theme.softGray ?? LightTheme.softGray};
+  background-color: ${({ theme }) => theme.paleGray ?? LightTheme.paleGray};
   margin-right: 10px;
   border-radius: 2px;
 `;
@@ -53,7 +54,7 @@ const TreeList = ({title, icon, items, onClick}: TreeListProps) => {
             <TreeHeader>
                 {title}
             </TreeHeader>
-            {items && items.map((item, index) => (
+            {items && items.map(({textOption, ...item}, index) => (
                 <TreeItem
                     onClick={()=> {
                         onClick && onClick(item);
@@ -61,7 +62,13 @@ const TreeList = ({title, icon, items, onClick}: TreeListProps) => {
                     key={(item.title ?? '')+index}
                     active={item.active}>
                     {icon ?? <TreeItemIcon />}
-                    {item.title ?? ''}
+                    <TextBox
+                      {...textOption}
+                      scroll={false}
+                    >
+                      {item.title ?? ''}
+                    </TextBox>
+                    
                 </TreeItem>
             ))}
         </TreeContainer>

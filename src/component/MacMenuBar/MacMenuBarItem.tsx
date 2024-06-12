@@ -72,7 +72,9 @@ function MacMenuBarItem({ size, src, title, onClick, onContextMenu }: MacMenuBar
             {title && <Tooltip>{title}</Tooltip>}
             {src
             ? (<StyledImage src={src} width={size} height={size} alt={title} />)
-            : <TextFallback>{title}</TextFallback>}
+            : <TextFallback>
+                {title}
+              </TextFallback>}
 
         </IconContainer>
     );

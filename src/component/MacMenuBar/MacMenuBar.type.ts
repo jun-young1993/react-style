@@ -1,3 +1,4 @@
+import { TextBoxWrapProps } from "../utills/index.type";
 import {ReactNode} from "react";
 
 export interface MacMenuBarElementProps {
@@ -13,4 +14,5 @@ export interface MacMenuBarItemProps {
     title?: string
     onClick?: () => void
     onContextMenu?: () => void
+    textOption?: TextBoxWrapProps
 }
