@@ -4,4 +4,5 @@ export interface SpacerProps {
 }
 export interface BetweenContainerProps extends SpacerProps{
     children?: ReactNode | ReactNode[]
+    justify?: string
 }

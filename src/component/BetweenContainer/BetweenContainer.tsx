@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {BetweenContainerProps, SpacerProps} from "./BetweenContainer.type";
 
-const BetweenContainerStyled = styled.div`
+const BetweenContainerStyled = styled.div<BetweenContainerProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({justify}) => justify ?? 'space-between'};
   width: 100%;
   margin-left: 5px;
   margin-right: 5px;
@@ -15,11 +15,13 @@ const Spacer = styled.div<SpacerProps>`
   flex: 0 0 ${({ gap }) => gap ?? '1rem'};
 `;
 
-const BetweenContainer = ({ children: propsChildren, gap }: BetweenContainerProps) => {
+const BetweenContainer = ({ children: propsChildren, gap , ...props}: BetweenContainerProps) => {
     const children = React.Children.toArray(propsChildren);
 
     return (
-        <BetweenContainerStyled>
+        <BetweenContainerStyled
+            {...props}
+        >
             {children.map((child,index) => {
                 return (
                     <React.Fragment key={index}>
