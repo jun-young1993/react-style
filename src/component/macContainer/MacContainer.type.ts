@@ -15,6 +15,9 @@ export interface MacContainerHeaderProps extends MacContainerHeaderWrapElementPr
 	title?: string | ReactNode
 	buttonSize?: string
 	theme?: ThemeType
+	showClose?: boolean
+	showMinimize?: boolean
+	showHidden?: boolean
 }
 export interface MacContainerWrapElementProps extends MacContainerEventProps{
 	width?: string

@@ -72,7 +72,7 @@ const RoundButton = styled.div<RoundButtonProps>`
 			opacity: 1;
 		}
 	}
-	${({color}) => {
+	${({color,theme}) => {
 		
 		switch(color){
 			case 'yellow':
@@ -89,11 +89,18 @@ const RoundButton = styled.div<RoundButtonProps>`
 						background-color: #1AAB29;
 					}
 				`
-			default:
+			case 'red':
 				return `
 					background-color: #FF5F56; /* red */
 					&:hover {
-						background-color: #E0443E;
+						background-color: #FF5F56; /* red */
+					}
+				`
+			default:
+				return `
+					background-color: ${theme.lightGrayBlue ?? LightTheme.lightGrayBlue};
+					&:hover {
+						background-color: ${theme.veryLightGray ?? LightTheme.veryLightGray};
 					}
 				`
 		}
@@ -117,11 +124,15 @@ const TitleWrap = styled.div<MacContainerHeaderWrapElementProps>`
 	flex: 1;
 	
 `;
-const MacContainerHeader = ({title,
+const MacContainerHeader = ({
+	title,
 	buttonSize,
 	onClose,
 	onMinimize,
 	onHidden,
+	showClose = true,
+	showMinimize = true,
+	showHidden = true,
 	...elementProps
 }: MacContainerHeaderProps) => {
 	
@@ -129,27 +140,32 @@ const MacContainerHeader = ({title,
 		<MacContainerHeaderWrapStyled {...elementProps}>
 			<JustifyContentBetween>
 				<JustifyContentStart>
-					<RoundButton
+					{showClose &&
+						<RoundButton
 						size={buttonSize}
 						color={"red"}
 						onClick={() => onClose && onClose()}
-					>
-						<CloseIcon viewBox={"0 0 14 14"}/>
-					</RoundButton>
+						>
+							<CloseIcon viewBox={"0 0 14 14"}/>
+						</RoundButton>
+					}
+					{showMinimize &&
 					<RoundButton
 						size={buttonSize}
 						color={"yellow"}
 						onClick={() => onHidden && onHidden()}
-					>
-						<HiddenIcon viewBox={"0 0 14 14"} />
-					</RoundButton>
+						>
+							<HiddenIcon viewBox={"0 0 14 14"} />
+					</RoundButton>}
+					{showHidden &&
 					<RoundButton
-						size={buttonSize}
-						color={"green"}
-						onClick={() => onMinimize && onMinimize()}
+					size={buttonSize}
+					color={"green"}
+					onClick={() => onMinimize && onMinimize()}
 					>
 						<MaximizeIcon viewBox={"0 0 14 14"} />
 					</RoundButton>
+					}	
 				</JustifyContentStart>
 				<TitleWrap
 					{...elementProps}
