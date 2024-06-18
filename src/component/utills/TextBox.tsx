@@ -1,4 +1,4 @@
-import LightTheme from "component/StyleThemeProvider/LightTheme";
+import LightTheme from "../StyleThemeProvider/LightTheme";
 import styled, { css, keyframes } from "styled-components";
 import { TextBoxWrapProps } from "./index.type";
 

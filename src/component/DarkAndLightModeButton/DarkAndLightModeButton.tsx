@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SunIcon, MoonIcon } from 'react-symbol';
 import {DarkAndLightModeButtonProps} from "./DarkAndLightModeButton.type";
-import LightTheme from 'component/StyleThemeProvider/LightTheme';
+import LightTheme from '../StyleThemeProvider/LightTheme';
 
 const rotate = keyframes`
   0% {

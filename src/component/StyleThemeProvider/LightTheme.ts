@@ -14,6 +14,14 @@ const LightTheme: ThemeType = {
 	mediumGray: '#8c8c8c',
 	darkGray: '#555555',
 	darkCharcoal: '#333',
-	brightWhite: '#fff'
+	brightWhite: '#fff',
+	slateBlue: '#3c4d69',
+	preiwinkle: '#7889e8',
+	ghostWhite: '#f8fbfc',
+	skyBlue: '#37d5f2',
+	mintGreen: '#4fd69c',
+	coralRed: '#f75676',
+	salmon: '#fc7c5f',
+	
 }
 export default LightTheme;

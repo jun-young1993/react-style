@@ -16,6 +16,13 @@ export default interface ThemeType {
 	darkGray: string
 	darkCharcoal: string
 	brightWhite: string
+	slateBlue: string
+	preiwinkle: string
+	ghostWhite: string
+	skyBlue: string
+	mintGreen: string
+	coralRed: string
+	salmon: string
 }
 
 export interface StyleThemeProviderProps extends DefaultTheme{

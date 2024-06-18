@@ -14,6 +14,13 @@ const DarkTheme: ThemeType = {
 	mediumGray: '#737373',
 	darkGray: '#aaaaaa',
 	darkCharcoal: '#cccccc',
-	brightWhite: '#1a1a1a'
+	brightWhite: '#1a1a1a',
+	slateBlue: '#c3ccd9',
+	preiwinkle: '#272c52',
+	ghostWhite: '#242526',
+	skyBlue: '#1a6b7a',
+	mintGreen: '#256b59',
+	coralRed: '#7a2c3c',
+	salmon: '#7a3c2f',
 }
 export default DarkTheme;
