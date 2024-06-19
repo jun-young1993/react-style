@@ -32,7 +32,7 @@ export const TreeItem = styled.div<TreeItemProps>`
   margin-bottom: 5px;
   cursor: pointer;
   background-color: ${({active, theme}) => active ? (theme.paleGray ?? LightTheme.paleGray) : 'transparent'};
-
+  color: ${({ theme }) => theme.black ?? LightTheme.black};
   &:hover {
     background-color: ${({ theme }) => theme.paleGray ?? LightTheme.paleGray};
   }

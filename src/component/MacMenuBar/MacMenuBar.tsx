@@ -20,6 +20,7 @@ const InnerContainer = styled.div<MacMenuBarElementProps>`
   border: 2px solid ${({ theme }) => theme.softGray ?? LightTheme.softGray}; /* border-2 border-inherit */
   opacity: 90%;
   
+  
   min-height: ${({ minHeight }) => minHeight ?? '50px'};
 `;
 
