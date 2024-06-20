@@ -30,10 +30,10 @@ const BetweenContainer = ({ children: propsChildren, gap , ...props}: BetweenCon
             {children.map((child,index) => {
                 return (
                     <React.Fragment key={index}>
-                        <>
+                        <ChildrenContainer>
                             {child}
                             {index < children.length - 1 && <Spacer gap={gap} />}
-                        </>
+                        </ChildrenContainer>
                     </React.Fragment>
                 )
             })}
