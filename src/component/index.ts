@@ -16,3 +16,4 @@ export * from './BetweenContainer';
 export * from './MacMenuBar';
 export * from './TreeList';
 export * from './utills'
+export * from './Alert';
