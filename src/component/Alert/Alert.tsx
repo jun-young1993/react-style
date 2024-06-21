@@ -1,51 +1,55 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styled, { DefaultTheme, css } from 'styled-components';
 import { AlertProps } from './Alert.type';
 import { AlertZIndex } from '../utills/ZIndexes';
 import LightTheme from '../StyleThemeProvider/LightTheme';
 import ThemeType from '../StyleThemeProvider/Theme.type';
+import RoundButton from '../utills/RoundButton';
+import { CloseIcon } from 'react-symbol';
+import { MarginBox } from '../marginBox';
 
 
-const positionStyles  = {
-  'top-right': css`
-    top: 1rem;
+
+const positionStyles = {
+  'top-right': (index: number, gap: string) => css`
+    top: calc(1rem + ${index} * ${gap});
     right: 1rem;
   `,
-  'top-center': css`
-    top: 1rem;
+  'top-center': (index: number, gap: string) => css`
+    top: calc(1rem + ${index} * ${gap});
     left: 50%;
     transform: translateX(-50%);
   `,
-  'top-left': css`
-    top: 1rem;
+  'top-left': (index: number, gap: string) => css`
+    top: calc(1rem + ${index} * ${gap});
     left: 1rem;
   `,
-  'middle-left': css`
-    top: 50%;
+  'middle-left': (index: number, gap: string) => css`
+    top: calc(50% + ${index} * ${gap});
     left: 1rem;
     transform: translateY(-50%);
   `,
-  'middle-center': css`
-    top: 50%;
+  'middle-center': (index: number, gap: string) => css`
+    top: calc(50% + ${index} * ${gap});
     left: 50%;
     transform: translate(-50%, -50%);
   `,
-  'middle-right': css`
-    top: 50%;
+  'middle-right': (index: number, gap: string) => css`
+    top: calc(50% + ${index} * ${gap});
     right: 1rem;
     transform: translateY(-50%);
   `,
-  'bottom-left': css`
-    bottom: 1rem;
+  'bottom-left': (index: number, gap: string) => css`
+    bottom: calc(1rem + ${index} * ${gap});
     left: 1rem;
   `,
-  'bottom-center': css`
-    bottom: 1rem;
+  'bottom-center': (index: number, gap: string) => css`
+    bottom: calc(1rem + ${index} * ${gap});
     left: 50%;
     transform: translateX(-50%);
   `,
-  'bottom-right': css`
-    bottom: 1rem;
+  'bottom-right': (index: number, gap: string) => css`
+    bottom: calc(1rem + ${index} * ${gap});
     right: 1rem;
   `,
 };
@@ -84,20 +88,77 @@ const AlertColor = (value?: AlertProps['level'], theme?: ThemeType | DefaultThem
 	}	
 }
 
-const StyledAlert = styled.div<{ position: AlertProps['position'], level:AlertProps['level'], theme: DefaultTheme | ThemeType }>`
+const StyledAlert = styled.div<{ 
+  position: AlertProps['position'], 
+  index: number,
+  gap: string
+}>`
   position: fixed;
+  z-index: ${AlertZIndex};
+  ${({ position, index, gap }) => positionStyles[position ?? 'top-right'](index,gap)}
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 간격 설정 */
+`;
+
+const ALertItem = styled.div<{ 
+  level:AlertProps['level'], 
+  theme: DefaultTheme | ThemeType,
+}>`
   background-color: ${({level, theme}) => AlertBackgrounColor(level,theme)};
   color: ${({level, theme}) => AlertColor(level, theme)};
   padding: 1rem;
-  border-radius: 0.25rem;
-  z-index: ${AlertZIndex};
-  ${({ position }) => positionStyles[position ?? 'top-right']}
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
 `;
 
-const Alert: React.FC<AlertProps> = ({ position, children, level, theme }) => {
+const Alert: React.FC<AlertProps> = ({ 
+  position = 'top-right', 
+  children, 
+  level, 
+  theme, 
+  index=1, 
+  gap='3.5rem' ,
+  closeButtonSize,
+  onClose
+}) => {
+  const childrens = Children.toArray(children);
   return (
-    <StyledAlert position={position} level={level} theme={theme}>
-      {children}
+    <StyledAlert 
+      position={position} 
+      theme={theme} 
+      index={index} 
+      gap={gap}
+    >
+      {childrens.map((children) => {
+        return <ALertItem
+        level={level} 
+        theme={theme} 
+        >
+          <RoundButton
+            style={{
+              left:"1rem",
+            }}
+            size={closeButtonSize}
+						color={"red"}
+						onClick={() => onClose && onClose()}
+						>
+							<CloseIcon viewBox={"0 0 14 14"}/>
+          </RoundButton>
+          <MarginBox
+            top='10px'
+            left='10px'
+          >
+            {children}
+          </MarginBox>
+        </ALertItem>
+      })}
+      
     </StyledAlert>
   );
 };

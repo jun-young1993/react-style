@@ -5,7 +5,11 @@ export interface AlertProps {
   position?: 'top-right' | 'top-center' | 'top-left' | 
              'middle-left' | 'middle-center' | 'middle-right' | 
              'bottom-left' | 'bottom-center' | 'bottom-right';
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactNode[];
   theme?: DefaultTheme | ThemeContextType
   level?: 'default' | 'primary' | 'secondary' | 'info' | 'success' | 'danger' | 'warning'
+  index?: number;
+  gap?: string;
+  closeButtonSize?: string
+  onClose?: () => void
 }
