@@ -11,7 +11,7 @@ const AlertContainerStyled = styled.div`
   z-index: 1000; /* 적절한 z-index 설정 */
 `;
 
-const AlertContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const AlertContainer: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <AlertContainerStyled>{children}</AlertContainerStyled>;
 };
 

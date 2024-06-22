@@ -1,5 +1,5 @@
-import React, { Children } from 'react';
-import styled, { DefaultTheme, css } from 'styled-components';
+import React, {Children, useEffect, useRef, useState} from 'react';
+import styled, {DefaultTheme, css, keyframes} from 'styled-components';
 import { AlertProps } from './Alert.type';
 import { AlertZIndex } from '../utills/ZIndexes';
 import LightTheme from '../StyleThemeProvider/LightTheme';
@@ -104,10 +104,31 @@ const StyledAlert = styled.div<{
   flex-direction: column;
   gap: 10px; /* 간격 설정 */
 `;
+const slideIn = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
-const ALertItem = styled.div<{ 
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+`;
+const AlertItem = styled.div<{ 
   level:AlertProps['level'], 
   theme: DefaultTheme | ThemeType,
+    $isExiting?: boolean
 }>`
   background-color: ${({level, theme}) => AlertBackgrounColor(level,theme)};
   color: ${({level, theme}) => AlertColor(level, theme)};
@@ -115,6 +136,7 @@ const ALertItem = styled.div<{
   border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
+  animation: ${({ $isExiting }) => ($isExiting ? slideOut : slideIn)} 0.5s ease-out; // 애니메이션 적용
 `;
 
 const Alert: React.FC<AlertProps> = ({ 
@@ -127,28 +149,50 @@ const Alert: React.FC<AlertProps> = ({
   closeButtonSize,
   onClose
 }) => {
-  const childrens = Children.toArray(children);
+  const [visibleItems, setVisibleItems] = useState(Children.toArray(children));
+    const [exitingItems, setExitingItems] = useState<React.ReactNode[]>([]);
+    const timers = useRef<NodeJS.Timeout[]>([]);
+    useEffect(() => {
+        return () => {
+            // 컴포넌트 언마운트 시 타이머 정리
+            timers.current.forEach(clearTimeout);
+        };
+    }, []);
+
+const handleRemove = (child: React.ReactNode) => {
+    setExitingItems((prev) => [...prev, child]);
+
+    const timer = setTimeout(() => {
+        setVisibleItems([...visibleItems.filter((item) => item !== child)])
+        onClose && onClose(child);
+    },500);
+    timers.current.push(timer);
+
+
+
+};
   return (
-    <StyledAlert 
-      position={position} 
-      theme={theme} 
-      index={index} 
+    <StyledAlert
+      position={position}
+      theme={theme}
+      index={index}
       gap={gap}
     >
-      {childrens.map((children) => {
-        return <ALertItem
-        level={level} 
-        theme={theme} 
+      {visibleItems.map((children) => {
+        return <AlertItem
+        level={level}
+        theme={theme}
+        $isExiting={exitingItems.includes(children)}
         >
           <RoundButton
             style={{
               left:"1rem",
             }}
             size={closeButtonSize}
-						color={"red"}
-						onClick={() => onClose && onClose()}
-						>
-							<CloseIcon viewBox={"0 0 14 14"}/>
+            color={"red"}
+            onClick={() => handleRemove(children)}
+            >
+            <CloseIcon viewBox={"0 0 14 14"}/>
           </RoundButton>
           <MarginBox
             top='10px'
@@ -156,9 +200,9 @@ const Alert: React.FC<AlertProps> = ({
           >
             {children}
           </MarginBox>
-        </ALertItem>
+        </AlertItem>
       })}
-      
+
     </StyledAlert>
   );
 };

@@ -3,7 +3,7 @@ export interface SpacerProps {
     gap?: string | undefined
 }
 export interface BetweenContainerProps extends SpacerProps{
-    children?: ReactNode | ReactNode[]
+    children?: ReactNode | ReactNode[] | undefined | string
     justify?: string
     equalSpacing?: boolean
 }
