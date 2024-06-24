@@ -13,3 +13,13 @@ export interface AlertProps {
   closeButtonSize?: string
   onClose?: (item: React.ReactNode) => void
 }
+
+export interface StyledAlertProps {
+  position: AlertProps['position'], 
+  index: number,
+  gap: string,
+  $columnGap?: string
+  $opacity?: string
+  $maxWidth?: string
+  $maxHeight?: string
+}

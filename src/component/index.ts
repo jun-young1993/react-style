@@ -17,3 +17,4 @@ export * from './MacMenuBar';
 export * from './TreeList';
 export * from './utills'
 export * from './Alert';
+export * from './AlertWrap'

@@ -1,6 +1,6 @@
 import React, {Children, useEffect, useRef, useState} from 'react';
 import styled, {DefaultTheme, css, keyframes} from 'styled-components';
-import { AlertProps } from './Alert.type';
+import { AlertProps, StyledAlertProps } from './Alert.type';
 import { AlertZIndex } from '../utills/ZIndexes';
 import LightTheme from '../StyleThemeProvider/LightTheme';
 import ThemeType from '../StyleThemeProvider/Theme.type';
@@ -88,21 +88,29 @@ const AlertColor = (value?: AlertProps['level'], theme?: ThemeType | DefaultThem
 	}	
 }
 
-const StyledAlert = styled.div<{ 
-  position: AlertProps['position'], 
-  index: number,
-  gap: string
-}>`
+export const StyledAlert = styled.div<StyledAlertProps>`
   position: fixed;
   z-index: ${AlertZIndex};
   ${({ position, index, gap }) => positionStyles[position ?? 'top-right'](index,gap)}
-  max-width: 80%;
-  max-height: 80%;
+  max-width: ${({$maxWidth}) => $maxWidth ?? '80%'};
+  max-height: ${({$maxHeight}) => $maxHeight ?? '80%'};
   overflow: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 간격 설정 */
+  opacity: ${({$opacity}) => $opacity ?? '100%'};
+  gap: ${({$columnGap}) => $columnGap ?? '10px'}; /* 간격 설정 */
+
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  
+  &:hover {
+    opacity: 100%;
+    transform: scale(1.05);
+  }
+  &.active {
+    opacity: 100%;
+    transform: scale(1.05);
+  }
 `;
 const slideIn = keyframes`
   from {
@@ -125,7 +133,7 @@ const slideOut = keyframes`
     opacity: 0;
   }
 `;
-const AlertItem = styled.div<{ 
+export const AlertItem = styled.div<{ 
   level:AlertProps['level'], 
   theme: DefaultTheme | ThemeType,
     $isExiting?: boolean
