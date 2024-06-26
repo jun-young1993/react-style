@@ -1,4 +1,4 @@
-import { AlertProps, StyledAlertProps } from "component/Alert/Alert.type";
+import { AlertProps, StyledAlertProps } from "../Alert/Alert.type";
 import { ReactNode } from "react";
 
 export interface AlertWrapProps extends StyledAlertProps {

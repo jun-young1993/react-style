@@ -22,6 +22,12 @@ const LightTheme: ThemeType = {
 	mintGreen: '#4fd69c',
 	coralRed: '#f75676',
 	salmon: '#fc7c5f',
+	silverGray: '#d1d5da',
+	azureBlue: '#0366d6',
+	forestGreen: '#279443',
+	emeraldGreen: '#2c974b',
+	lightAsh: '#ddd',
+	lightSkyBlue: '#e6f7ff'
 	
 }
 export default LightTheme;

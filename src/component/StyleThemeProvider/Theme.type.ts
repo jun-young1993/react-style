@@ -23,6 +23,12 @@ export default interface ThemeType {
 	mintGreen: string
 	coralRed: string
 	salmon: string
+	silverGray: string
+	azureBlue: string
+	forestGreen: string
+	emeraldGreen: string,
+	lightAsh: string,
+	lightSkyBlue: string
 }
 
 export interface StyleThemeProviderProps extends DefaultTheme{

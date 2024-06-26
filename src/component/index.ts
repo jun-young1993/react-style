@@ -18,3 +18,5 @@ export * from './TreeList';
 export * from './utills'
 export * from './Alert';
 export * from './AlertWrap'
+export * from './GithubComment'
+export * from './GithubReply';
