@@ -1,3 +1,4 @@
+import { CursorType } from "../index.types";
 import { ThemeContextType } from "../StyleThemeProvider/Theme.type";
 import { DefaultTheme } from "styled-components";
 
@@ -22,4 +23,6 @@ export interface StyledAlertProps {
   $opacity?: string
   $maxWidth?: string
   $maxHeight?: string
+  $active?: boolean
+  $cursor?: CursorType
 }

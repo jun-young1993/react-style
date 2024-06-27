@@ -100,9 +100,10 @@ export const StyledAlert = styled.div<StyledAlertProps>`
   flex-direction: column;
   opacity: ${({$opacity}) => $opacity ?? '100%'};
   gap: ${({$columnGap}) => $columnGap ?? '10px'}; /* 간격 설정 */
-
+  cursor: ${({$cursor = 'default'}) => $cursor};
   transition: opacity 0.5s ease, transform 0.5s ease;
   
+  visibility:${({$active = true}) => $active ? 'visible' : 'hidden' };
   &:hover {
     opacity: 100%;
     transform: scale(1.05);
