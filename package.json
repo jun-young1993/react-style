@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.8.50",
+  "version": "1.8.51",
   "private": false,
   "dependencies": {
     "@testing-library/react": "^13.4.0",
@@ -105,7 +105,7 @@
   "bugs": {
     "url": "https://github.com/jun-young1993/react-style/issues"
   },
-  "homepage": "https://juny.blog/blog/docs/juny-react-style.md",
+  "homepage": "https://www.juny.blog/markdown-viewer/blog/docs/juny-react-style.md",
   "files": [
     "dist"
   ]
