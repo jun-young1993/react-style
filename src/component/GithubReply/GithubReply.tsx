@@ -22,7 +22,7 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-left: 10px;
-
+  min-height: 20px;
   &:before {
     content: '';
     position: absolute;
@@ -50,12 +50,13 @@ const CommentBody = styled.div`
 `;
 
 const GithubReply = ({
-	comment
+	comment,
+  title
 }: GithubReplyProps) => {
 	return (
 		<CommentContainer>
 			<Header>
-				temp
+				{title}
 			</Header>
 			<CommentBody>
 				{comment}

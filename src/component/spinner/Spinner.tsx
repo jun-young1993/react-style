@@ -2,7 +2,7 @@ import { Height, Width } from "../../component/index.style";
 import styled, { keyframes } from "styled-components";
 import { SpinnerProps } from "./Spinner.type";
 
-const SpinStyled = keyframes`
+export const SpinStyled = keyframes`
 	0% { 
 		transform: rotate(0deg); 
 	}

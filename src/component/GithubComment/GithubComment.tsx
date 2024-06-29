@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ActiveMode, GithubCommentProps } from "./GithubComment.type";
 import { LightTheme } from "../StyleThemeProvider";
 import { ChangeEvent, TextareaHTMLAttributes, useState } from "react";
 import { MediaMobileOnlyStyle } from "../../libs/media-query";
 import { capitalize } from "../utills/capitalize";
+
 const CommentEditorContainer = styled.div`
   border: 1px solid ${({theme}) => theme.silverGray ?? LightTheme.silverGray};
   border-radius: 6px;
@@ -73,20 +74,39 @@ const CommentButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
+  max-height: 35px;
   &:hover {
     background-color: ${({theme}) => theme.forestGreen ?? LightTheme.forestGreen};
   }
 `;
+const spin = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const SpinnerContainer = styled.div`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #333;
+  animation: ${spin} 0.8s ease-in-out infinite;
+`;
+
+
 const GithubComment = ({
 	active='write',
 	preview,
+  isLoading,
 	onClick,
 	onSubmit,
 	onChange
 
 }: GithubCommentProps) => {
 	const [comment, setComment] = useState<string>('');
+  
 	const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		setComment(e.target.value);
 		onChange && onChange(e.target.value);
@@ -119,13 +139,20 @@ const GithubComment = ({
 				/>
 				:<PreviewBox>{preview}</PreviewBox>}
 			</CommentBoxWrap>
-			<CommentButton
-				onSubmit={() => {
-					onSubmit && onSubmit(comment);
-				}}
-			>
-				Comment
-			</CommentButton>
+      
+      <CommentButton
+      onClick={async () => {
+        if(!isLoading){
+          const result = onSubmit && await onSubmit(comment);
+          if(result !== undefined){
+            setComment(result ?? '');
+          }
+        }
+      }}
+    >
+      {isLoading ? <SpinnerContainer />: 'Comment'}
+    </CommentButton>
+			
 		</CommentEditorContainer>
 	)
 }

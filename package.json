@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.8.53",
+  "version": "1.8.54",
   "private": false,
   "dependencies": {
     "@testing-library/react": "^13.4.0",
