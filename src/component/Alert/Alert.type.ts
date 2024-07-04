@@ -12,6 +12,7 @@ export interface AlertProps {
   index?: number;
   gap?: string;
   closeButtonSize?: string
+  $backgroundColor?: string
   onClose?: (item: React.ReactNode) => void
 }
 

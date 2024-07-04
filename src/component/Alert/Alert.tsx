@@ -137,9 +137,10 @@ const slideOut = keyframes`
 export const AlertItem = styled.div<{ 
   level:AlertProps['level'], 
   theme: DefaultTheme | ThemeType,
+  $backgroundColor?: string,
     $isExiting?: boolean
 }>`
-  background-color: ${({level, theme}) => AlertBackgrounColor(level,theme)};
+  background-color: ${({level, theme, $backgroundColor}) => $backgroundColor ?? AlertBackgrounColor(level,theme)};
   color: ${({level, theme}) => AlertColor(level, theme)};
   padding: 1rem;
   border-radius: 0.3rem;
@@ -156,6 +157,7 @@ const Alert: React.FC<AlertProps> = ({
   index=1, 
   gap='3.5rem' ,
   closeButtonSize,
+  $backgroundColor,
   onClose
 }) => {
   const [visibleItems, setVisibleItems] = useState(Children.toArray(children));
@@ -191,6 +193,7 @@ const handleRemove = (child: React.ReactNode) => {
         return <AlertItem
         level={level}
         theme={theme}
+        $backgroundColor={$backgroundColor}
         $isExiting={exitingItems.includes(children)}
         >
           <RoundButton
