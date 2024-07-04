@@ -10,4 +10,5 @@ export interface AlertWrapProps extends StyledAlertProps {
 	$onClick?: () => void
 	$topChildren?: ReactNode
 	$hiddenChildren?: boolean
+	$backgroundColor?: string
 }

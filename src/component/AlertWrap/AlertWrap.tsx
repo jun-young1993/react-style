@@ -11,6 +11,7 @@ const AlertWrap = ({
 	$topChildren,
 	$hiddenChildren = false,
 	$onClick,
+	$backgroundColor,
 	children
 }: AlertWrapProps) => {
 	return (
@@ -28,11 +29,11 @@ const AlertWrap = ({
 		>
 			<>
 			{$topChildren &&
-				{$topChildren}
-			}
+				$topChildren}
 			{!$hiddenChildren &&
 			<AlertItem
 			level={$level}
+			$backgroundColor={	$backgroundColor}
 			$isExiting={$isExiting}
 			>	
 				{children}	
