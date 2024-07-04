@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { GithubReplyProps } from "./GithubReply.type";
 import { MediaMobileOnlyStyle } from "../../libs/media-query";
-import { LightTheme } from "component/StyleThemeProvider";
+import { LightTheme } from "../StyleThemeProvider";
 
 const CommentContainer = styled.div`
   ${({theme}) => theme.lightGrayBlue ?? LightTheme.lightGrayBlue};
