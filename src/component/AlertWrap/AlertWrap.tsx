@@ -28,12 +28,7 @@ const AlertWrap = ({
 		>
 			<>
 			{$topChildren &&
-			<AlertItem
-				level={$level}
-				$isExiting={$isExiting}
-			>
-			{$topChildren}
-			</AlertItem>
+				{$topChildren}
 			}
 			{!$hiddenChildren &&
 			<AlertItem
