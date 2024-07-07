@@ -19,6 +19,7 @@ const InnerContainer = styled.div<MacMenuBarElementProps>`
   background-color: ${({ theme }) => theme.softGray ?? LightTheme.softGray};
   border: 2px solid ${({ theme }) => theme.softGray ?? LightTheme.softGray}; /* border-2 border-inherit */
   opacity: 90%;
+  overflow: scroll;
   
   
   min-height: ${({ minHeight }) => minHeight ?? '50px'};
