@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { SearchBarProps } from "./search-bar.type";
+import {SearchBarInputElement, SearchBarProps} from "./search-bar.type";
 import {SearchIcon} from "react-symbol";
 import {LightTheme} from "../StyleThemeProvider";
 
@@ -14,9 +14,10 @@ const SearchBarWrapper = styled.div<SearchBarProps>`
   background-color: ${({theme, $backgroundColor}) => $backgroundColor ?? (theme.softGray ?? LightTheme.softGray)};
   border-radius: 5px;
   box-shadow: ${({$boxShadow}) => $boxShadow ?? `0 2px 4px rgba(0, 0, 0, 0.1)`};
+
 `;
 
-const Input = styled.input`
+const Input = styled.input<SearchBarProps>`
   width: 100%;
   padding: 10px;
   border: none;
@@ -24,9 +25,13 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
   background-color: ${({theme}) => theme.white ?? LightTheme.white};
-
+  cursor: ${({$cursor = 'none'}) => $cursor};
+  &:hover {
+    box-shadow: ${({$inputHoverBoxShadow = "none"}) => $inputHoverBoxShadow};
+  }
   &:focus {
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: ${({$inputFocusBoxShadow = "0 0 5px rgba(0, 123, 255, 0.5)"}) => $inputFocusBoxShadow};
+    cursor: ${({$cursor = 'none'}) => $cursor};
   }
 `;
 
@@ -47,7 +52,15 @@ const SearchIconWrapper = styled.div`
 `;
 
 // SearchBar 컴포넌트 정의
-const SearchBar = ({ placeholder, onSearch, $backgroundColor, $boxShadow }: SearchBarProps) => {
+const SearchBar = ({ placeholder,
+                       onSearch,
+                       $backgroundColor,
+                       $boxShadow,
+                       $cursor,
+    $inputFocusBoxShadow,
+    $inputHoverBoxShadow,
+    $onClick
+}: SearchBarProps) => {
     const [query, setQuery] = React.useState<string>('');
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -62,16 +75,26 @@ const SearchBar = ({ placeholder, onSearch, $backgroundColor, $boxShadow }: Sear
 
     return (
         <SearchBarWrapper
+
             $backgroundColor={$backgroundColor}
             $boxShadow={$boxShadow}
+            $cursor={$cursor}
         >
             <Input
+                onClick={() => {
+                    $onClick && $onClick();
+                }}
                 type="text"
                 placeholder={placeholder || "Search..."}
                 value={query}
+                $cursor={$cursor}
+                $inputFocusBoxShadow={$inputFocusBoxShadow}
+                $inputHoverBoxShadow={$inputHoverBoxShadow}
                 onChange={handleInputChange}
+
             />
-            <SearchIconWrapper onClick={handleSearchClick}>
+            <SearchIconWrapper
+                onClick={handleSearchClick}>
                 <SearchIcon
                     width={"14px"}
                     height={"14px"}
