@@ -35,7 +35,7 @@ const positionStyles = {
     transform: translate(-50%, -50%);
   `,
   'middle-right': (index: number, gap: string) => css`
-    top: calc(50% + ${index} * ${gap});
+    top: calc(50% + ${index} * ${gap}rem);
     right: 1rem;
     transform: translateY(-50%);
   `,
@@ -53,6 +53,7 @@ const positionStyles = {
     right: 1rem;
   `,
 };
+
 
 const AlertBackgrounColor = (value?: AlertProps['level'], theme?: ThemeType | DefaultTheme) => {
 
@@ -91,7 +92,7 @@ const AlertColor = (value?: AlertProps['level'], theme?: ThemeType | DefaultThem
 export const StyledAlert = styled.div<StyledAlertProps>`
   position: fixed;
   z-index: ${AlertZIndex};
-  ${({ position, index=1, gap = 1 }) => positionStyles[position ?? 'top-right'](index,gap)}
+  ${({ position, index=1, gap = '1' }) => positionStyles[position ?? 'top-right'](index,gap)}
   max-width: ${({$maxWidth}) => $maxWidth ?? '80%'};
   max-height: ${({$maxHeight}) => $maxHeight ?? '80%'};
   overflow: auto;
