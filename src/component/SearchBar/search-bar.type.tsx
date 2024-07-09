@@ -1,7 +1,7 @@
-import React from "react";
+import React, {ReactNode} from "react";
 
 export interface SearchBarProps {
-    placeholder?: string
+    placeholder?: string | ReactNode
     onSearch?: (query: string) => void | string
     $backgroundColor?: string | undefined
     $boxShadow?: string | undefined
@@ -10,6 +10,8 @@ export interface SearchBarProps {
     $onClick?: () => void
     BoxShadow?: string | undefined
     $cursor?: string | undefined
+    $as?: 'input' | 'div'
+    $hiddenIcon?: boolean
 }
 
 export interface InputElement extends React.InputHTMLAttributes<HTMLInputElement> {

@@ -14,6 +14,7 @@ export interface AlertProps {
   closeButtonSize?: string
   $backgroundColor?: string
   onClose?: (item: React.ReactNode) => void
+  $animation?: boolean
 }
 
 export interface StyledAlertProps {
@@ -26,4 +27,5 @@ export interface StyledAlertProps {
   $maxHeight?: string
   $active?: boolean
   $cursor?: CursorType
+  $animation?: boolean
 }

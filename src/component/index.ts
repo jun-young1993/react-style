@@ -21,3 +21,4 @@ export * from './AlertWrap'
 export * from './GithubComment'
 export * from './GithubReply';
 export * from './SearchBar';
+export * from './SearchModal';

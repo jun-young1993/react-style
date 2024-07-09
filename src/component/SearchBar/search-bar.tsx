@@ -1,9 +1,10 @@
 import React, { ChangeEvent } from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import {SearchBarInputElement, SearchBarProps} from "./search-bar.type";
 import {SearchIcon} from "react-symbol";
 import {LightTheme} from "../StyleThemeProvider";
+import {StyledAlert} from "../Alert";
 
 // 스타일 컴포넌트 정의
 const SearchBarWrapper = styled.div<SearchBarProps>`
@@ -16,8 +17,7 @@ const SearchBarWrapper = styled.div<SearchBarProps>`
   box-shadow: ${({$boxShadow}) => $boxShadow ?? `0 2px 4px rgba(0, 0, 0, 0.1)`};
 
 `;
-
-const Input = styled.input<SearchBarProps>`
+const InputStyle = css<SearchBarProps>`
   width: 100%;
   padding: 10px;
   border: none;
@@ -33,7 +33,14 @@ const Input = styled.input<SearchBarProps>`
     box-shadow: ${({$inputFocusBoxShadow = "0 0 5px rgba(0, 123, 255, 0.5)"}) => $inputFocusBoxShadow};
     cursor: ${({$cursor = 'none'}) => $cursor};
   }
+`
+const Input = styled.input<SearchBarProps>`
+    ${InputStyle}
 `;
+const InputDiv = styled.div<SearchBarProps>`
+    width: 100%;
+    ${InputStyle}
+`
 
 const SearchIconWrapper = styled.div`
   display: flex;
@@ -59,7 +66,9 @@ const SearchBar = ({ placeholder,
                        $cursor,
     $inputFocusBoxShadow,
     $inputHoverBoxShadow,
-    $onClick
+    $onClick,
+    $as,
+    $hiddenIcon
 }: SearchBarProps) => {
     const [query, setQuery] = React.useState<string>('');
 
@@ -80,27 +89,42 @@ const SearchBar = ({ placeholder,
             $boxShadow={$boxShadow}
             $cursor={$cursor}
         >
-            <Input
-                onClick={() => {
-                    $onClick && $onClick();
-                }}
-                type="text"
-                placeholder={placeholder || "Search..."}
-                value={query}
-                $cursor={$cursor}
-                $inputFocusBoxShadow={$inputFocusBoxShadow}
-                $inputHoverBoxShadow={$inputHoverBoxShadow}
-                onChange={handleInputChange}
+            {$as === 'div'
+            ? <InputDiv
+                    onClick={() => {
+                        $onClick && $onClick();
+                    }}
+                    $cursor={$cursor}
+                    $inputFocusBoxShadow={$inputFocusBoxShadow}
+                    $inputHoverBoxShadow={$inputHoverBoxShadow}
+                    onChange={handleInputChange}
+                >
+                    {placeholder || "Search..."}
+                </InputDiv>
+            :<Input
+                    onClick={() => {
+                        $onClick && $onClick();
+                    }}
+                    type="text"
+                    placeholder={placeholder || "Search..."}
+                    value={query}
+                    $cursor={$cursor}
+                    $inputFocusBoxShadow={$inputFocusBoxShadow}
+                    $inputHoverBoxShadow={$inputHoverBoxShadow}
+                    onChange={handleInputChange}
 
-            />
-            <SearchIconWrapper
-                onClick={handleSearchClick}>
-                <SearchIcon
-                    width={"14px"}
-                    height={"14px"}
-                    viewBox={"0 0 12 12"}
-                />
-            </SearchIconWrapper>
+                />}
+            {!$hiddenIcon &&
+                <SearchIconWrapper
+                    onClick={handleSearchClick}>
+                    <SearchIcon
+                        width={"14px"}
+                        height={"14px"}
+                        viewBox={"0 0 12 12"}
+                    />
+                </SearchIconWrapper>
+            }
+
         </SearchBarWrapper>
     );
 };

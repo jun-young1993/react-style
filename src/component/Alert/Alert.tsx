@@ -30,7 +30,7 @@ const positionStyles = {
     transform: translateY(-50%);
   `,
   'middle-center': (index: number, gap: string) => css`
-    top: calc(50% + ${index} * ${gap});
+    top: calc(50% + (${index} * ${gap}rem));
     left: 50%;
     transform: translate(-50%, -50%);
   `,
@@ -40,16 +40,16 @@ const positionStyles = {
     transform: translateY(-50%);
   `,
   'bottom-left': (index: number, gap: string) => css`
-    bottom: calc(1rem + ${index} * ${gap});
+    bottom: calc(1rem + (${index} * ${gap}rem));
     left: 1rem;
   `,
   'bottom-center': (index: number, gap: string) => css`
-    bottom: calc(1rem + ${index} * ${gap});
+    bottom: calc(1rem + (${index} * ${gap}rem));
     left: 50%;
     transform: translateX(-50%);
   `,
   'bottom-right': (index: number, gap: string) => css`
-    bottom: calc(1rem + ${index} * ${gap});
+    bottom: calc(1rem + (${index} * ${gap}rem));
     right: 1rem;
   `,
 };
@@ -91,7 +91,7 @@ const AlertColor = (value?: AlertProps['level'], theme?: ThemeType | DefaultThem
 export const StyledAlert = styled.div<StyledAlertProps>`
   position: fixed;
   z-index: ${AlertZIndex};
-  ${({ position, index, gap }) => positionStyles[position ?? 'top-right'](index,gap)}
+  ${({ position, index=1, gap = 1 }) => positionStyles[position ?? 'top-right'](index,gap)}
   max-width: ${({$maxWidth}) => $maxWidth ?? '80%'};
   max-height: ${({$maxHeight}) => $maxHeight ?? '80%'};
   overflow: auto;
@@ -105,12 +105,15 @@ export const StyledAlert = styled.div<StyledAlertProps>`
   
   visibility:${({$active = true}) => $active ? 'visible' : 'hidden' };
   &:hover {
+  
     opacity: 100%;
-    transform: scale(1.05);
+    transform: ${({$animation = true}) => $animation && 'scale(1.05)'};
+             
+    
   }
   &.active {
     opacity: 100%;
-    transform: scale(1.05);
+    transform: ${({$animation = true}) => $animation && 'scale(1.05)'};
   }
 `;
 const slideIn = keyframes`
@@ -158,7 +161,9 @@ const Alert: React.FC<AlertProps> = ({
   gap='3.5rem' ,
   closeButtonSize,
   $backgroundColor,
+    $animation,
   onClose
+
 }) => {
   const [visibleItems, setVisibleItems] = useState(Children.toArray(children));
     const [exitingItems, setExitingItems] = useState<React.ReactNode[]>([]);
@@ -188,6 +193,7 @@ const handleRemove = (child: React.ReactNode) => {
       theme={theme}
       index={index}
       gap={gap}
+      $animation={$animation}
     >
       {visibleItems.map((children) => {
         return <AlertItem
