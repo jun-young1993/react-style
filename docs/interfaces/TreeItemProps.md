@@ -1,0 +1,58 @@
+[juny-react-style](../README.md) / [Exports](../modules.md) / TreeItemProps
+
+# Interface: TreeItemProps\<T\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | \{ `[key: string]`: `any`;  } |
+
+## Table of contents
+
+### Properties
+
+- [active](TreeItemProps.md#active)
+- [textOption](TreeItemProps.md#textoption)
+- [title](TreeItemProps.md#title)
+- [userData](TreeItemProps.md#userdata)
+
+## Properties
+
+### active
+
+• `Optional` **active**: `any`
+
+#### Defined in
+
+[src/component/TreeList/TreeList.type.ts:4](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/TreeList/TreeList.type.ts#L4)
+
+___
+
+### textOption
+
+• `Optional` **textOption**: `TextBoxWrapProps`
+
+#### Defined in
+
+[src/component/TreeList/TreeList.type.ts:7](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/TreeList/TreeList.type.ts#L7)
+
+___
+
+### title
+
+• `Optional` **title**: `string`
+
+#### Defined in
+
+[src/component/TreeList/TreeList.type.ts:5](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/TreeList/TreeList.type.ts#L5)
+
+___
+
+### userData
+
+• `Optional` **userData**: `T`
+
+#### Defined in
+
+[src/component/TreeList/TreeList.type.ts:6](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/TreeList/TreeList.type.ts#L6)

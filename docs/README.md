@@ -4,7 +4,8 @@ juny-react-style / [Exports](modules.md)
 
 ## document
 
-# [👉 move modules document 👈](docs/modules.md)
+# [👉 move modules document 👈](https://www.juny.blog/markdown-viewer/blog/docs/juny-react-style.md)
+# [👉 demo site 👈](https://juny.blog)
 
 ## install
 
