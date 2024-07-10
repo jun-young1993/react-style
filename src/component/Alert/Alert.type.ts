@@ -19,8 +19,8 @@ export interface AlertProps {
 
 export interface StyledAlertProps {
   position: AlertProps['position'], 
-  index: number,
-  gap: string,
+  index?: number,
+  gap?: string,
   $columnGap?: string
   $opacity?: string
   $maxWidth?: string
