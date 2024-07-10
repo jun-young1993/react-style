@@ -96,7 +96,7 @@ const SearchBar = ({ placeholder,
                         $onClick && $onClick();
                     }}
                     onKeyUp={(e: React.KeyboardEvent<HTMLDivElement>)=>{
-                        $onKeyUp && $onKeyUp(e);
+                        $onKeyUp && $onKeyUp(e,query);
                     }}
                     $cursor={$cursor}
                     $inputFocusBoxShadow={$inputFocusBoxShadow}

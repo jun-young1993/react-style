@@ -8,7 +8,7 @@ export interface SearchBarProps {
     $inputHoverBoxShadow?: string | undefined
     $inputFocusBoxShadow?: string | undefined
     $onClick?: () => void
-    $onKeyUp?: (e: React.KeyboardEvent<HTMLDivElement>) => void
+    $onKeyUp?: (e: React.KeyboardEvent<HTMLDivElement>, query: string) => void
     BoxShadow?: string | undefined
     $cursor?: string | undefined
     $as?: 'input' | 'div'
