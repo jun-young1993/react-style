@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, KeyboardEventHandler } from 'react';
 import styled, {css} from 'styled-components';
 
 import {SearchBarInputElement, SearchBarProps} from "./search-bar.type";
@@ -67,6 +67,7 @@ const SearchBar = ({ placeholder,
     $inputFocusBoxShadow,
     $inputHoverBoxShadow,
     $onClick,
+    $onKeyUp,
     $as,
     $hiddenIcon
 }: SearchBarProps) => {
@@ -94,6 +95,9 @@ const SearchBar = ({ placeholder,
                     onClick={() => {
                         $onClick && $onClick();
                     }}
+                    onKeyUp={(e: React.KeyboardEvent<HTMLDivElement>)=>{
+                        $onKeyUp && $onKeyUp(e);
+                    }}
                     $cursor={$cursor}
                     $inputFocusBoxShadow={$inputFocusBoxShadow}
                     $inputHoverBoxShadow={$inputHoverBoxShadow}
@@ -106,6 +110,9 @@ const SearchBar = ({ placeholder,
                         $onClick && $onClick();
                     }}
                     type="text"
+                    onKeyUp={(e: React.KeyboardEvent<HTMLDivElement>)=>{
+                        $onKeyUp && $onKeyUp(e);
+                    }}
                     placeholder={placeholder || "Search..."}
                     value={query}
                     $cursor={$cursor}

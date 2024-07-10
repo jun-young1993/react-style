@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React, {KeyboardEventHandler, ReactNode} from "react";
 
 export interface SearchBarProps {
     placeholder?: string | ReactNode
@@ -8,6 +8,7 @@ export interface SearchBarProps {
     $inputHoverBoxShadow?: string | undefined
     $inputFocusBoxShadow?: string | undefined
     $onClick?: () => void
+    $onKeyUp?: (e: React.KeyboardEvent<HTMLDivElement>) => void
     BoxShadow?: string | undefined
     $cursor?: string | undefined
     $as?: 'input' | 'div'
