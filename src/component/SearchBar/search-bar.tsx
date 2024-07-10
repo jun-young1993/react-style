@@ -111,7 +111,7 @@ const SearchBar = ({ placeholder,
                     }}
                     type="text"
                     onKeyUp={(e: React.KeyboardEvent<HTMLDivElement>)=>{
-                        $onKeyUp && $onKeyUp(e);
+                        $onKeyUp && $onKeyUp(e, query);
                     }}
                     placeholder={placeholder || "Search..."}
                     value={query}
