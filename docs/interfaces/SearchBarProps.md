@@ -14,6 +14,7 @@
 - [$inputFocusBoxShadow](SearchBarProps.md#$inputfocusboxshadow)
 - [$inputHoverBoxShadow](SearchBarProps.md#$inputhoverboxshadow)
 - [$onClick](SearchBarProps.md#$onclick)
+- [$onKeyUp](SearchBarProps.md#$onkeyup)
 - [BoxShadow](SearchBarProps.md#boxshadow)
 - [onSearch](SearchBarProps.md#onsearch)
 - [placeholder](SearchBarProps.md#placeholder)
@@ -26,7 +27,7 @@
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:13](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L13)
+[src/component/SearchBar/search-bar.type.tsx:14](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L14)
 
 ___
 
@@ -36,7 +37,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:6](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L6)
+[src/component/SearchBar/search-bar.type.tsx:6](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L6)
 
 ___
 
@@ -46,7 +47,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:7](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L7)
+[src/component/SearchBar/search-bar.type.tsx:7](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L7)
 
 ___
 
@@ -56,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:12](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L12)
+[src/component/SearchBar/search-bar.type.tsx:13](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L13)
 
 ___
 
@@ -66,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:14](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L14)
+[src/component/SearchBar/search-bar.type.tsx:15](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L15)
 
 ___
 
@@ -76,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:9](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L9)
+[src/component/SearchBar/search-bar.type.tsx:9](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L9)
 
 ___
 
@@ -86,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:8](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L8)
+[src/component/SearchBar/search-bar.type.tsx:8](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L8)
 
 ___
 
@@ -104,7 +105,32 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:10](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L10)
+[src/component/SearchBar/search-bar.type.tsx:10](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L10)
+
+___
+
+### $onKeyUp
+
+• `Optional` **$onKeyUp**: (`e`: `KeyboardEvent`\<`HTMLDivElement`\>, `query`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`e`, `query`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `e` | `KeyboardEvent`\<`HTMLDivElement`\> |
+| `query` | `string` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[src/component/SearchBar/search-bar.type.tsx:11](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L11)
 
 ___
 
@@ -114,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:11](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L11)
+[src/component/SearchBar/search-bar.type.tsx:12](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L12)
 
 ___
 
@@ -138,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:5](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L5)
+[src/component/SearchBar/search-bar.type.tsx:5](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L5)
 
 ___
 
@@ -148,4 +174,4 @@ ___
 
 #### Defined in
 
-[src/component/SearchBar/search-bar.type.tsx:4](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/SearchBar/search-bar.type.tsx#L4)
+[src/component/SearchBar/search-bar.type.tsx:4](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/SearchBar/search-bar.type.tsx#L4)

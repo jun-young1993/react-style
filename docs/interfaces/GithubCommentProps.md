@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:4](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L4)
+[src/component/GithubComment/GithubComment.type.ts:4](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L4)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:5](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L5)
+[src/component/GithubComment/GithubComment.type.ts:5](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L5)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:6](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L6)
+[src/component/GithubComment/GithubComment.type.ts:6](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L6)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:10](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L10)
+[src/component/GithubComment/GithubComment.type.ts:10](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L10)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:8](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L8)
+[src/component/GithubComment/GithubComment.type.ts:8](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L8)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:9](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L9)
+[src/component/GithubComment/GithubComment.type.ts:9](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L9)
 
 ___
 
@@ -125,4 +125,4 @@ ___
 
 #### Defined in
 
-[src/component/GithubComment/GithubComment.type.ts:7](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubComment/GithubComment.type.ts#L7)
+[src/component/GithubComment/GithubComment.type.ts:7](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubComment/GithubComment.type.ts#L7)

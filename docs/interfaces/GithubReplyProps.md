@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/component/GithubReply/GithubReply.type.ts:4](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubReply/GithubReply.type.ts#L4)
+[src/component/GithubReply/GithubReply.type.ts:4](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubReply/GithubReply.type.ts#L4)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/component/GithubReply/GithubReply.type.ts:5](https://github.com/jun-young1993/react-style/blob/89c93868f379e277e13847fd9207195046ae251b/src/component/GithubReply/GithubReply.type.ts#L5)
+[src/component/GithubReply/GithubReply.type.ts:5](https://github.com/jun-young1993/react-style/blob/4abd92ee00cf87c10f8dd66e04c24d62ede0ae9b/src/component/GithubReply/GithubReply.type.ts#L5)

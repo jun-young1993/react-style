@@ -31,6 +31,26 @@ const MacContainerBodyWrap = styled.div<MacContainerBodyElementProps>`
 		padding: ${padding ?? '1rem'};
 	`}
 `
+/**
+ *
+ * ![[Pasted image 20240528174307.png]]
+ *
+ * @param header
+ * @param body
+ * @param children
+ * @param onClose
+ * @param onHidden
+ * @param onMinimize
+ * @param props
+ * @constructor
+ * @example
+ * ```tsx
+ * import { MacContainer } from "juny-react-style";
+ *
+ * <MacContainer><div>children</div></MacContainer>
+ * ```
+ *
+ */
 const MacContainer = ({header,body,children, onClose, onHidden, onMinimize, ...props}: MacContainerProps) => {
 	return (
 		<MacContainerWrap
