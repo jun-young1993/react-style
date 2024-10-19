@@ -1,6 +1,6 @@
 import React from "react";
 
-export default interface ScreenContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     display?: string;
     alignItems?: string;
     justifyContent?: string;
@@ -9,3 +9,5 @@ export default interface ScreenContainerProps extends React.HTMLAttributes<HTMLD
     backgroundColor?: string;
     children?: React.ReactNode;
 }
+
+

@@ -1,11 +1,11 @@
 import React from 'react';
-import DivContainer from "./DivContainer";
-import ScreenContainerProps from "./container.type";
+import DivContainer from "./div-container";
+import ContainerProps from "./container.type";
 
 
 
 
-const ScreenContainer: React.FC<ScreenContainerProps> = (props) => {
+const Container: React.FC<ContainerProps> = (props) => {
     return (
         <DivContainer
             display="flex"
@@ -21,4 +21,4 @@ const ScreenContainer: React.FC<ScreenContainerProps> = (props) => {
     );
 };
 
-export default ScreenContainer;
+export default Container;
