@@ -12,21 +12,6 @@ const DarkTheme: ThemeType = {
 	paleGray: '#3a3a3a',
 	snowWhite: '#2e2e2e',
 	mediumGray: '#737373',
-	darkGray: '#aaaaaa',
-	darkCharcoal: '#cccccc',
-	brightWhite: '#1a1a1a',
-	slateBlue: '#c3ccd9',
-	preiwinkle: '#272c52',
-	ghostWhite: '#242526',
-	skyBlue: '#1a6b7a',
-	mintGreen: '#256b59',
-	coralRed: '#7a2c3c',
-	salmon: '#7a3c2f',
-	silverGray: '#2e3136',
-	azureBlue: '#002a6b',
-	forestGreen: '#164d2a',
-	emeraldGreen: '#175a2e',
-	lightAsh: '#333333',
-	lightSkyBlue: '#24313a'
+	darkGray: '#aaaaaa'
 }
 export default DarkTheme;

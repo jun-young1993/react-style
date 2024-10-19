@@ -22,6 +22,7 @@ const InnerContainer = styled.div<MacMenuBarElementProps>`
   overflow: scroll;
   
   
+  
   min-height: ${({ minHeight }) => minHeight ?? '50px'};
 `;
 
