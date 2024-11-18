@@ -1,2 +1,2 @@
 export * from './components';
-export * from "./utills";
+export * from "./shared";

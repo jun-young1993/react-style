@@ -1,14 +1,20 @@
 import styled from "styled-components";
-import { FlexContainerProps } from "./flex-container.interface";
-import { useDefaultTheme } from "utills/theme/theme.hook";
+import { useDefaultTheme } from "../../shared";
+import { FlexContainerProps } from "./flex-container.props";
+
+
+
 
 const FlexContainer = styled.div<FlexContainerProps>`
   width: ${({ width }) => width || '100vw'};
   height: ${({ height }) => height || '100vh'};
   display: ${({ display }) => display || 'flex'};
-  align-items: ${({ alignItems }) => alignItems || 'center'};
-  justify-content: ${({ justifyContent }) => justifyContent || 'center'};
-  background-color: ${({ backgroundColor }) => backgroundColor || useDefaultTheme().white};
+  color: ${({ color }) => color || useDefaultTheme().black};
+  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  background-color: ${({ backgroundColor }) => backgroundColor || useDefaultTheme().lightGray};
+  z-index: ${({ zIndex }) => zIndex};
+  filter: brightness(${({filterBrightness}) => filterBrightness || '1'});
 `;
 
 export default FlexContainer;

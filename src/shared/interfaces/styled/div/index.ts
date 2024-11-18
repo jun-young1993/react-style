@@ -1,0 +1,1 @@
+export { HTMLDivElementInterface } from "./div.interface";

@@ -1,11 +1,18 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+
 import FlexContainer from "./flex-container";
 
 export default {
-	title: 'FlexContainer',
-	Component: FlexContainer
+	title: 'Components/FlexContainer',
+	component: FlexContainer
 } as Meta<typeof FlexContainer>
 
-const Template: StoryFn<typeof FlexContainer> = (args) => <FlexContainer {...args} />
+type Story = StoryObj<typeof FlexContainer>;
 
-export const DefaultTemplate = Template.bind({});
+export const Default: Story = {};
+
+export const DarkTheme: Story = {
+	parameters: {
+		theme: 'dark'
+	}
+};

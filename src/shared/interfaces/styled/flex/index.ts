@@ -1,0 +1,1 @@
+export { HTMLFlexInterface } from "./flex.interface";
