@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SideBarProps } from "./side-bar.props";
-import { useDefaultTheme, zIndexConstants } from "../../shared";
+import { useStyledTheme, zIndexConstants } from "../../shared";
 import { FlexContainer } from "../../components/flex-container";
 
 
@@ -12,7 +12,8 @@ const StyledSidebar = styled.div<SideBarProps>`
   z-index: ${zIndexConstants.sideBar};
   height: ${({$height}) => $height};
   width: ${({$width}) => $width};
-  border-right:  ${({$borderRight}) => $borderRight || '1px solid ' + useDefaultTheme().darkGray};
+  border-right:  ${({$borderRight}) => $borderRight || '1px solid ' + useStyledTheme().darkGray};
+  border-radius: ${({$borderRadius}) => $borderRadius};
   background-color: ${({$backgroundColor}) => $backgroundColor};
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.07);
   outline: none;
@@ -40,23 +41,25 @@ const StyledHeader = styled.div<SideBarProps>`
 
 const SideBar = ({ 
   $isOpen = false, 
-  $width = '45%', 
+  $width = '25%', 
   $height = '100%',
   $padding = '0 1rem',
   $position= 'fixed',
   $borderRight, 
+  $borderRadius = '0.5rem',
   $backgroundColor,
   children,
   $header,
   $opacity,
   $headerHeight = '60px'
 }: SideBarProps) => {
-  const defaultBackgroundColor = useDefaultTheme().midLightGray;
+  const defaultBackgroundColor = useStyledTheme().midLightGray;
   
   $backgroundColor = $backgroundColor || defaultBackgroundColor;
   
   return (
     <StyledSidebar 
+      $borderRadius={$borderRadius}
       $position={$position}
       $isOpen={$isOpen} 
       $width={$width} 

@@ -11,4 +11,5 @@ export interface SideBarProps {
     $header?: ReactNode
     $headerHeight?: string
     $opacity?: string
+    $borderRadius?: string
 }

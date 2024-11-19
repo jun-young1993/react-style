@@ -22,7 +22,7 @@ export const DarkTheme: Story = {
 	args: {
 		$isOpen: true,
 		$sideBar: <p>다크모드 사이드바 콘텐츠</p>,
-		children: <div>다크모드 콘텐츠</div>,
+		children: <div style={{width: '100%'}}>다크모드 콘텐츠</div>,
 	},
 	parameters: {
 		theme: 'dark'

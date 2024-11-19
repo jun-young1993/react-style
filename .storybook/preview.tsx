@@ -10,11 +10,14 @@ const preview: Preview = {
       const { theme = 'light' } = parameters;
       
       return (
-        <ThemeProvider theme={
-            (theme == 'light') ? lightTheme 
-            : (theme == 'dark') ? darkTheme
-            : lightTheme
-          }>
+        <ThemeProvider 
+            theme={
+              (theme == 'light') ? lightTheme 
+              : (theme == 'dark') ? darkTheme
+              : lightTheme
+            }
+            
+          >
           <FlexContainer>
             <Story />
           </FlexContainer>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useDefaultTheme } from "../../shared";
+import { useStyledTheme } from "../../shared";
 import { FlexContainerProps } from "./flex-container.props";
 
 
@@ -9,10 +9,10 @@ const FlexContainer = styled.div<FlexContainerProps>`
   width: ${({ $width }) => $width || '100vw'};
   height: ${({ $height }) => $height || '100vh'};
   display: ${({ $display }) => $display || 'flex'};
-  color: ${({ $color }) => $color || useDefaultTheme().black};
+  color: ${({ $color }) => $color || useStyledTheme().black};
   align-items: ${({ $alignItems }) => $alignItems};
   justify-content: ${({ $justifyContent }) => $justifyContent};
-  background-color: ${({ $backgroundColor }) => $backgroundColor || useDefaultTheme().lightGray};
+  background-color: ${({ $backgroundColor }) => $backgroundColor || useStyledTheme().lightGray};
   z-index: ${({ $zIndex }) => $zIndex};
   filter: brightness(${({$filterBrightness}) => $filterBrightness || '1'});
   padding: ${({$padding}) => $padding || 0};

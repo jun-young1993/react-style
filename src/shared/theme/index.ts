@@ -1,6 +1,9 @@
 export { default as darkTheme } from "./dark-theme";
 export { default as lightTheme } from "./light-theme";
 export { default as theme } from "./theme";
-export { useDefaultTheme } from "./theme.hook";
+export { default as defaultStyledTheme } from "./styled-theme";
+export { StyledTheme, Variant, Size, ButtonSize } from "./styled-theme.interface";
+export { useStyledTheme } from "./theme.hook";
 export { CustomTheme } from "./theme.interface";
+
 
