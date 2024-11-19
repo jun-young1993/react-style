@@ -3,27 +3,88 @@ import { SideBarProps } from "./side-bar.props";
 import { useDefaultTheme, zIndexConstants } from "../../shared";
 import { FlexContainer } from "../../components/flex-container";
 
-const defaultWidth = '300px';
-const SideBarS = styled.div<SideBarProps>`
-  position: fixed;
-  top: 0;
+
+
+const StyledSidebar = styled.div<SideBarProps>`
+  position: ${({$position}) => $position};
   left: 0;
-  width: ${({ width }) => width || defaultWidth};
-  height: 100vh;
-  background-color: ${({ backgroundColor }) => backgroundColor || '#ffffff'};
-  color: ${({ color }) => color || '#000000'};
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transform: translateX(${({ width }) => `-${width || defaultWidth}`});
-  transition: transform 0.3s ease;
-  transform: translateX(${({ isOpen, width }) => (isOpen ? '0' : `-${width || defaultWidth}`)})
+  top: 0;
   z-index: ${zIndexConstants.sideBar};
+  height: ${({$height}) => $height};
+  width: ${({$width}) => $width};
+  border-right:  ${({$borderRight}) => $borderRight || '1px solid ' + useDefaultTheme().darkGray};
+  background-color: ${({$backgroundColor}) => $backgroundColor};
+  box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.07);
+  outline: none;
+  pointer-events: auto;
+  transform: translateX(${({$isOpen}) => ($isOpen ? '0' : '-100vw')});
+  transition: transform 0.3s ease;
+  opacity: ${({$opacity}) => $opacity || '100%'};
 `;
-const SideBar = () => {
-  return <FlexContainer
-  filterBrightness={3.5}
-  >
-    sdfaasdf
-  </FlexContainer>
-}
+
+const StyledNav = styled.nav<SideBarProps>`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: ${({$padding}) => $padding};
+  box-sizing: border-box;
+`;
+
+const StyledHeader = styled.div<SideBarProps>`
+  display: flex;
+  justify-content: space-between;
+  height: ${({$headerHeight}) => $headerHeight};
+  align-items: center;
+`;
+
+const SideBar = ({ 
+  $isOpen = false, 
+  $width = '45%', 
+  $height = '100%',
+  $padding = '0 1rem',
+  $position= 'fixed',
+  $borderRight, 
+  $backgroundColor,
+  children,
+  $header,
+  $opacity,
+  $headerHeight = '60px'
+}: SideBarProps) => {
+  const defaultBackgroundColor = useDefaultTheme().midLightGray;
+  
+  $backgroundColor = $backgroundColor || defaultBackgroundColor;
+  
+  return (
+    <StyledSidebar 
+      $position={$position}
+      $isOpen={$isOpen} 
+      $width={$width} 
+      $height={$height}
+      $borderRight={$borderRight}
+      $backgroundColor={$backgroundColor}
+      $opacity={$opacity}
+    >
+      <StyledNav
+        $padding={$padding}
+      >
+        {$header &&
+          <StyledHeader
+            $headerHeight={$headerHeight}
+          >
+            {$header}
+          </StyledHeader>
+        }
+        <FlexContainer
+          $width="100%"
+          $backgroundColor={$backgroundColor}
+        >
+          {children}
+        </FlexContainer>
+      </StyledNav>
+    </StyledSidebar>
+  );
+};
+
+
 export default SideBar;

@@ -1,5 +1,14 @@
-import { HTMLFlexInterface } from "../../shared";
-
-export interface SideBarProps extends HTMLFlexInterface {
-    isOpen?: boolean
+import { ReactNode } from "react";
+export interface SideBarProps {
+    $position?: string
+    $width?: string
+    $height?: string
+    $isOpen?: boolean
+    $borderRight?: string
+    $backgroundColor?: string
+    $padding?: string
+    children?: ReactNode
+    $header?: ReactNode
+    $headerHeight?: string
+    $opacity?: string
 }

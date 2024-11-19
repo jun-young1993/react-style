@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import type { Preview } from "@storybook/react";
 import { lightTheme, darkTheme } from "../src/shared/theme";
-
+import { FlexContainer } from "../src/index";
 const preview: Preview = {
   decorators: [
     (Story, { parameters }) => {
@@ -15,12 +15,15 @@ const preview: Preview = {
             : (theme == 'dark') ? darkTheme
             : lightTheme
           }>
-          <Story />
+          <FlexContainer>
+            <Story />
+          </FlexContainer>
         </ThemeProvider>
       )
     }
   ],
   parameters: {
+    layout: 'fullscreen',
     controls: {
       matchers: {
         color: /(background|color)$/i,
