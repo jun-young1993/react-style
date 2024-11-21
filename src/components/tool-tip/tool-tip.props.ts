@@ -1,4 +1,7 @@
+import { Position } from "../../shared"
+
 export interface ToolTipProps {
-    message: string
+    $message?: string
     children: React.ReactNode
+    $position?: Position
 }
