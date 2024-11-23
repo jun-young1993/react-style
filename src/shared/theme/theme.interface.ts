@@ -1,4 +1,7 @@
 import { DefaultTheme } from "styled-components";
+import {ReactNode} from "react";
+import {StyledTheme} from "./styled-theme.interface";
+
 export interface CustomTheme extends DefaultTheme {
     white: string;
     black: string;
@@ -8,4 +11,9 @@ export interface CustomTheme extends DefaultTheme {
     lightPink: string;
     beige: string;
     lightBlue: string;
+}
+
+export interface ThemeProviderInterface {
+    children: ReactNode,
+    theme?: CustomTheme & StyledTheme
 }

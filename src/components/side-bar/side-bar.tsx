@@ -12,7 +12,7 @@ const StyledSidebar = styled.div<SideBarProps>`
   z-index: ${zIndexConstants.sideBar};
   height: ${({$height}) => $height};
   width: ${({$width}) => $width};
-  border-right:  ${({$borderRight}) => $borderRight || '1px solid ' + useStyledTheme().darkGray};
+  border-right:  ${({$borderRight, theme}) => $borderRight || '1px solid ' + useStyledTheme(theme).darkGray};
   border-radius: ${({$borderRadius}) => $borderRadius};
   background-color: ${({$backgroundColor}) => $backgroundColor};
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.07);
@@ -39,41 +39,42 @@ const StyledHeader = styled.div<SideBarProps>`
   align-items: center;
 `;
 
-const SideBar = ({ 
-  $isOpen = false, 
-  $width = '25%', 
-  $height = '100%',
-  $padding = '0 1rem',
-  $position= 'fixed',
+const SideBar = ({
+  $isOpen,
+  $width,
+  $height,
+  $padding,
+  $position,
   $borderRight, 
-  $borderRadius = '0.5rem',
+  $borderRadius,
   $backgroundColor,
   children,
   $header,
   $opacity,
-  $headerHeight = '60px'
+  $headerHeight,
+                   theme,
 }: SideBarProps) => {
-  const defaultBackgroundColor = useStyledTheme().midLightGray;
+  const defaultBackgroundColor = useStyledTheme(theme).midLightGray;
   
   $backgroundColor = $backgroundColor || defaultBackgroundColor;
   
   return (
     <StyledSidebar 
-      $borderRadius={$borderRadius}
-      $position={$position}
-      $isOpen={$isOpen} 
-      $width={$width} 
-      $height={$height}
+      $borderRadius={$borderRadius || '0.5rem'}
+      $position={$position || 'fixed'}
+      $isOpen={$isOpen || false}
+      $width={$width || '25%'}
+      $height={$height || '100%'}
       $borderRight={$borderRight}
       $backgroundColor={$backgroundColor}
       $opacity={$opacity}
     >
       <StyledNav
-        $padding={$padding}
+        $padding={$padding || '0 1rem'}
       >
         {$header &&
           <StyledHeader
-            $headerHeight={$headerHeight}
+            $headerHeight={$headerHeight || '60px'}
           >
             {$header}
           </StyledHeader>

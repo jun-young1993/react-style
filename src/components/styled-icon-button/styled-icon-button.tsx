@@ -3,8 +3,8 @@ import { StyledButton } from "../styled-button";
 import { StyledIconButtonProps } from "./styled-icon-button.props";
 
 const StyledIconButton = (props: StyledIconButtonProps) => {
-    const { $width, $height, $fill,  children, ...styledButtonProps } = props;
-    const theme = useStyledTheme();
+    const { theme: styledTheme, $width, $height, $fill,  children, ...styledButtonProps } = props;
+    const theme = useStyledTheme(styledTheme);
     
     return (
         <StyledButton {...styledButtonProps}> 

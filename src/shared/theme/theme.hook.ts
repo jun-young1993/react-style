@@ -4,8 +4,8 @@ import lightTheme from "./light-theme";
 import { StyledTheme } from "./styled-theme.interface";
 import { CustomTheme } from "./theme.interface";
 
-export const useStyledTheme = (): CustomTheme & StyledTheme => {
-    const theme = useContext(ThemeContext);
+export const useStyledTheme = (theme: CustomTheme & StyledTheme): CustomTheme & StyledTheme => {
+    // const theme = useContext(ThemeContext);
     
     const result = theme || lightTheme;
     if(isCustomStyledTheme(result)){
