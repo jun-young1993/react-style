@@ -1,9 +1,10 @@
 export type Variant = "primary" | "secondary" | "tertiary";
 export type Size = "xs" | "small" | "medium" | "large";
 export type ButtonSize = Size;
+export type ButtonStyledThemeType = Variant | string;
 export interface StyledTheme {
-    buttonDefault: Variant;
-    button: Record<Variant, {
+    buttonDefault: ButtonStyledThemeType;
+    button: Record<ButtonStyledThemeType, {
       backgroundColor: string;
       color: string;
       borderColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.

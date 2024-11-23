@@ -1,7 +1,8 @@
-import { ButtonSize, Variant } from "../../shared";
+import { ButtonSize } from "../../shared";
+import {ButtonStyledThemeType} from "../../shared/theme/styled-theme.interface";
 
 export interface ButtonProps {
-    $variant?: Variant;
+    $variant?: ButtonStyledThemeType;
     $size?: ButtonSize;
     $fullWidth?: boolean;
     $onClick?: () => void;

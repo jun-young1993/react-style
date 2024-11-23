@@ -19,6 +19,12 @@ export const Default: Story = {
 export const BottomTooltip: Story = {
 	render: (args) => <FlexContainer $justifyContent="center" $alignItems="center"><ToolTip $position="bottom" $message="search"><SearchIconButton /></ToolTip></FlexContainer>
 }
+export const BottomTooltipDarkTheme: Story = {
+	render: (args) => <FlexContainer $justifyContent="center" $alignItems="center"><ToolTip $position="bottom" $message="search"><SearchIconButton /></ToolTip></FlexContainer>,
+	parameters: {
+		theme: 'dark'
+	}
+}
 export const RightTooltip: Story = {
 	render: (args) => <FlexContainer $justifyContent="center" $alignItems="center"><ToolTip $position="right" $message="search"><SearchIconButton /></ToolTip></FlexContainer>
 }

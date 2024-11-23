@@ -2,8 +2,9 @@ import styled, { css } from "styled-components";
 import { DefaultTheme } from "styled-components";
 import { Size, Variant, useStyledTheme } from "../../shared";
 import { ButtonProps } from "./styled-button.props";
+import {ButtonStyledThemeType} from "../../shared/theme/styled-theme.interface";
 
-const getButtonStyles = (theme: DefaultTheme, variant: Variant) => {
+const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) => {
   return css`
     background-color: ${theme.button[variant].backgroundColor};
     color: ${theme.button[variant].color};
