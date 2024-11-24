@@ -2,17 +2,14 @@ import styled from "styled-components";
 import { useStyledTheme } from "../../shared";
 import { FlexContainerProps } from "./flex-container.props";
 
-
-
-
-const FlexContainer = styled.div<FlexContainerProps>`
+const FlexContainerStyled = styled.div<FlexContainerProps>`
   width: ${({ $width }) => $width || '100vw'};
   height: ${({ $height }) => $height || '100vh'};
   display: ${({ $display }) => $display || 'flex'};
-  color: ${({ $color, theme }) => $color || useStyledTheme(theme).black};
+  color: ${({ $color }) => $color};
   align-items: ${({ $alignItems }) => $alignItems};
   justify-content: ${({ $justifyContent }) => $justifyContent};
-  background-color: ${({ $backgroundColor, theme }) => $backgroundColor || useStyledTheme(theme).lightGray};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
   z-index: ${({ $zIndex }) => $zIndex};
   filter: brightness(${({$filterBrightness}) => $filterBrightness || '1'});
   padding: ${({$padding}) => $padding || 0};
@@ -20,5 +17,15 @@ const FlexContainer = styled.div<FlexContainerProps>`
   transition: ${({$transition}) => $transition};
   transform: ${({$transform}) => $transform};
 `;
+const FlexContainer = (props: FlexContainerProps) => {
+    const theme = useStyledTheme();
 
+    return (
+        <FlexContainerStyled
+            {...props}
+            $color={theme.black}
+            $backgroundColor={theme.lightGray}
+        />
+    )
+}
 export default FlexContainer;

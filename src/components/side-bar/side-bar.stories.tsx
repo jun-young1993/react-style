@@ -2,7 +2,6 @@ import { Meta, ReactRenderer, StoryObj } from "@storybook/react";
 
 import SideBar from "./side-bar";
 import { SideBarProps } from "./side-bar.props";
-import { StoryAnnotations } from "storybook/internal/types";
 
 export default {
 	title: 'Components/SideBar',

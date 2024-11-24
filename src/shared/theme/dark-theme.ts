@@ -1,9 +1,9 @@
-import defaultStyledTheme from "./styled-theme";
-import { StyledTheme } from "./styled-theme.interface";
+import { StyledThemeInterface } from "./styled-theme.interface";
 import { CustomTheme } from "./theme.interface";
+import styledTheme from "./styled-theme";
 
-const darkTheme: CustomTheme & StyledTheme= {
-    ...defaultStyledTheme,
+const darkTheme: CustomTheme & StyledThemeInterface= {
+    ...styledTheme,
     white: '#000000',
     black: '#ffffff',
     lightGray: "#333333",

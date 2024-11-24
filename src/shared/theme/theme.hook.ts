@@ -1,12 +1,12 @@
-import { useContext } from "react"
-import { ThemeContext } from "styled-components"
+import {ThemeContext} from "styled-components"
 import lightTheme from "./light-theme";
-import { StyledTheme } from "./styled-theme.interface";
+import {StyledThemeInterface} from "./styled-theme.interface";
 import { CustomTheme } from "./theme.interface";
+import {useContext} from "react";
 
-export const useStyledTheme = (theme: CustomTheme & StyledTheme): CustomTheme & StyledTheme => {
-    // const theme = useContext(ThemeContext);
-    
+export const useStyledTheme = (): CustomTheme & StyledThemeInterface => {
+    const theme = useContext(ThemeContext);
+
     const result = theme || lightTheme;
     if(isCustomStyledTheme(result)){
         return result;
@@ -15,7 +15,7 @@ export const useStyledTheme = (theme: CustomTheme & StyledTheme): CustomTheme & 
     return lightTheme;
 }
 
-function isCustomStyledTheme(theme: any): theme is CustomTheme & StyledTheme {
+function isCustomStyledTheme(theme: any): theme is CustomTheme & StyledThemeInterface {
     return theme 
         && typeof theme === 'object' 
         && 'button' in theme 

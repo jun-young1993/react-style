@@ -2,7 +2,7 @@ export type Variant = "primary" | "secondary" | "tertiary";
 export type Size = "xs" | "small" | "medium" | "large";
 export type ButtonSize = Size;
 export type ButtonStyledThemeType = Variant | string;
-export interface StyledTheme {
+export interface StyledThemeInterface {
     buttonDefault: ButtonStyledThemeType;
     button: Record<ButtonStyledThemeType, {
       backgroundColor: string;

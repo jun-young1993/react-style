@@ -1,5 +1,5 @@
-import { StyledTheme } from "./styled-theme.interface";
-const defaultStyledTheme: StyledTheme = {
+import {StyledThemeInterface} from "./styled-theme.interface";
+const styledTheme: StyledThemeInterface = {
     buttonDefault: 'secondary',
     button: {
       primary: {
@@ -60,4 +60,4 @@ const defaultStyledTheme: StyledTheme = {
       },
     },
   };
-export default defaultStyledTheme;
+export default styledTheme;

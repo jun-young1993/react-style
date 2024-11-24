@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-export interface SideBarProps {
+import {JunyReactStyleInterface} from "../../shared";
+export interface SideBarProps extends JunyReactStyleInterface{
     $position?: string
     $width?: string
     $height?: string

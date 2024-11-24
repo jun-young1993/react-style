@@ -21,7 +21,7 @@ const TooltipText = styled.div<ToolTipProps>`
   font-weight: 500;
   
   ${({ $zIndex, theme: styledTheme }) => {
-    const theme = useStyledTheme(styledTheme);
+    const theme = useStyledTheme();
     return css`
       z-index: ${$zIndex};
       color: ${theme.white};
@@ -35,7 +35,7 @@ const TooltipText = styled.div<ToolTipProps>`
   transition: opacity 0.3s ease;
 
   ${({ $position, theme: styledTheme }) => {
-    const theme = useStyledTheme(styledTheme);
+    const theme = useStyledTheme();
     return css`
       ${() => {
       switch ($position) {

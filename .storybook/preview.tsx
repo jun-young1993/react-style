@@ -8,9 +8,8 @@ const preview: Preview = {
     (Story, { parameters }) => {
       
       const { theme = 'light' } = parameters;
-      
       return (
-        <ThemeProvider 
+        <ThemeProvider
             theme={
               (theme == 'light') ? lightTheme 
               : (theme == 'dark') ? darkTheme

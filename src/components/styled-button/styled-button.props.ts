@@ -1,7 +1,6 @@
-import { ButtonSize } from "../../shared";
-import {ButtonStyledThemeType} from "../../shared/theme/styled-theme.interface";
+import {ButtonSize, JunyReactStyleInterface, ButtonStyledThemeType } from "../../shared";
 
-export interface ButtonProps {
+export interface ButtonProps extends JunyReactStyleInterface{
     $variant?: ButtonStyledThemeType;
     $size?: ButtonSize;
     $fullWidth?: boolean;

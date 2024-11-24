@@ -4,7 +4,7 @@ import { StyledIconButtonProps } from "./styled-icon-button.props";
 
 const StyledIconButton = (props: StyledIconButtonProps) => {
     const { theme: styledTheme, $width, $height, $fill,  children, ...styledButtonProps } = props;
-    const theme = useStyledTheme(styledTheme);
+    const theme = useStyledTheme();
     
     return (
         <StyledButton {...styledButtonProps}> 

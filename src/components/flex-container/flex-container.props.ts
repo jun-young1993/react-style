@@ -1,6 +1,7 @@
-import { HTMLFlexInterface } from "../../shared";
+import {HTMLFlexInterface, JunyReactStyleInterface} from "../../shared";
+import {ReactNode} from "react";
 
-export interface FlexContainerProps{
+export interface FlexContainerProps extends JunyReactStyleInterface{
     $width?: string
     $height?: string
     $display?: HTMLFlexInterface['display']
@@ -14,4 +15,5 @@ export interface FlexContainerProps{
     $filterBrightness?: string | number
     $transition?: string
     $transform?: string
+    children?: ReactNode
 }
