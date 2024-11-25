@@ -1,10 +1,10 @@
 import {ButtonSize, JunyReactStyleInterface, ButtonStyledThemeType } from "../../shared";
+import {ButtonHTMLAttributes} from "react";
 
-export interface ButtonProps extends JunyReactStyleInterface{
+export interface ButtonProps extends JunyReactStyleInterface, ButtonHTMLAttributes<HTMLButtonElement>{
     $variant?: ButtonStyledThemeType;
     $size?: ButtonSize;
     $fullWidth?: boolean;
-    $onClick?: () => void;
     $disabled?: boolean;
     children?: React.ReactNode;
 }

@@ -19,6 +19,9 @@ const TooltipText = styled.div<ToolTipProps>`
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
+  min-width: ${({ $minWidth }) => $minWidth || 'auto'};
+  max-width: ${({ $maxWidth }) => $maxWidth || 'auto'};
+  white-space: nowrap;
   
   ${({ $zIndex, theme: styledTheme }) => {
     const theme = useStyledTheme();
@@ -114,17 +117,23 @@ const Tooltip = ({
                    children,
                    $message,
                     $zIndex,
-                   $position
+                   $position,
+                   $minWidth,
+                     $maxWidth
 }: ToolTipProps) => {
   return (
     <TooltipWrapper>
       {children}
-      <TooltipText
-          $position ={$position || 'bottom'}
-          $zIndex = {$zIndex || zIndexConstants.tooltip}
-      >
-        {$message}
-      </TooltipText>
+        {$message &&
+            <TooltipText
+                $maxWidth={$maxWidth}
+                $minWidth={$minWidth}
+                $position ={$position || 'bottom'}
+                $zIndex = {$zIndex || zIndexConstants.tooltip}
+            >
+                {$message}
+            </TooltipText>
+        }
     </TooltipWrapper>
   );
 };

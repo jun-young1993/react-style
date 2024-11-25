@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.10.65",
+  "version": "1.10.67",
   "private": false,
   "dependencies": {
     "jsx-runtime": "^1.2.0",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rollup -c --bundleConfigAsCjs",
-    "start:watch": "rollup -cw --bundleConfigAsCjs",
+    "build:watch": "rollup -cw --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest test --config jest.config.ts",

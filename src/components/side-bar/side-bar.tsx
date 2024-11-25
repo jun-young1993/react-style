@@ -12,9 +12,9 @@ const StyledSidebar = styled.div<SideBarProps>`
   z-index: ${zIndexConstants.sideBar};
   height: ${({$height}) => $height};
   width: ${({$width}) => $width};
-  border-right:  ${({$borderRight, theme}) => $borderRight + useStyledTheme().darkGray};
+  border-right:  ${({$borderRight}) => $borderRight + useStyledTheme().darkGray};
   border-radius: ${({$borderRadius}) => $borderRadius};
-  background-color: ${({$backgroundColor, theme}) => $backgroundColor || useStyledTheme().midLightGray};
+  background-color: ${({$backgroundColor}) => $backgroundColor};
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.07);
   outline: none;
   pointer-events: auto;
@@ -51,11 +51,10 @@ const SideBar = ({
   children,
   $header,
   $opacity,
-  $headerHeight,
-                   theme: styledTheme,
+  $headerHeight
 }: SideBarProps) => {
-
-
+  const theme = useStyledTheme();
+  $backgroundColor = $backgroundColor || theme.midLightGray;
 
   
   return (
@@ -70,7 +69,7 @@ const SideBar = ({
       $opacity={$opacity || '100%'}
     >
       <StyledNav
-        $padding={$padding || '0 1rem'}
+        $padding={$padding || '0.0rem'}
       >
         {$header &&
           <StyledHeader

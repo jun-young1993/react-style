@@ -8,6 +8,8 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   display: ${({ $display }) => $display || 'flex'};
   color: ${({ $color }) => $color};
   align-items: ${({ $alignItems }) => $alignItems};
+  flex-direction: ${({$flexDirection}) => $flexDirection};
+  gap: ${({$gap}) => $gap};
   justify-content: ${({ $justifyContent }) => $justifyContent};
   background-color: ${({ $backgroundColor }) => $backgroundColor};
   z-index: ${({ $zIndex }) => $zIndex};
@@ -23,8 +25,8 @@ const FlexContainer = (props: FlexContainerProps) => {
     return (
         <FlexContainerStyled
             {...props}
-            $color={theme.black}
-            $backgroundColor={theme.lightGray}
+            $color={props.$color || theme.black}
+            $backgroundColor={props.$backgroundColor || theme.lightGray}
         />
     )
 }

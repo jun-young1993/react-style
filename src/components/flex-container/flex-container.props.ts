@@ -8,6 +8,7 @@ export interface FlexContainerProps extends JunyReactStyleInterface{
     $color?: string
     $alignItems?: HTMLFlexInterface['alignItems']
     $justifyContent?: HTMLFlexInterface['justifyContent']
+    $gap?: HTMLFlexInterface['gap']
     $backgroundColor?: string
     $zIndex?: number
     $padding?: string
@@ -15,5 +16,6 @@ export interface FlexContainerProps extends JunyReactStyleInterface{
     $filterBrightness?: string | number
     $transition?: string
     $transform?: string
+    $flexDirection?: HTMLFlexInterface['flexDirection']
     children?: ReactNode
 }

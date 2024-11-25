@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import {JunyReactStyleInterface} from "../../shared";
 export interface SideBarProps extends JunyReactStyleInterface{
     $position?: string
-    $width?: string
+    $width?: string | undefined
     $height?: string
-    $isOpen?: boolean
+    $isOpen?: boolean | undefined
     $borderRight?: string
     $backgroundColor?: string
     $padding?: string
