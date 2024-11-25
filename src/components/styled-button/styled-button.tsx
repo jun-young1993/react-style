@@ -39,7 +39,7 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  ${({$variant, $size, theme: styledTheme}: ButtonProps) => {
+  ${({ $variant, $size }: ButtonProps) => {
     const theme = useStyledTheme(); // 테마를 여기서 사용합니다.
     
     return css`

@@ -17,5 +17,6 @@ export interface FlexContainerProps extends JunyReactStyleInterface{
     $transition?: string
     $transform?: string
     $flexDirection?: HTMLFlexInterface['flexDirection']
+    $overflow?:HTMLFlexInterface['overflow']
     children?: ReactNode
 }

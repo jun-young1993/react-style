@@ -18,6 +18,7 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   flex: ${({ $flex }) => $flex || '0 1 auto'};
   transition: ${({$transition}) => $transition};
   transform: ${({$transform}) => $transform};
+  overflow: ${({$overflow}) => $overflow};
 `;
 const FlexContainer = (props: FlexContainerProps) => {
     const theme = useStyledTheme();

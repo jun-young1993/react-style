@@ -3,4 +3,5 @@ export interface HTMLDivElementInterface extends React.HTMLAttributes<HTMLDivEle
     height?: string
     backgroundColor?: string
     zIndex?: string
+    overflow?: 'scroll'
 }
