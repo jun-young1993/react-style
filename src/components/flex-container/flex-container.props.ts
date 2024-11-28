@@ -4,6 +4,7 @@ import {ReactNode} from "react";
 export interface FlexContainerProps extends JunyReactStyleInterface{
     $width?: string
     $height?: string
+    $minHeight?: string
     $display?: HTMLFlexInterface['display']
     $color?: string
     $alignItems?: HTMLFlexInterface['alignItems']
@@ -18,5 +19,5 @@ export interface FlexContainerProps extends JunyReactStyleInterface{
     $transform?: string
     $flexDirection?: HTMLFlexInterface['flexDirection']
     $overflow?:HTMLFlexInterface['overflow']
-    children?: ReactNode
+    children?: ReactNode | ReactNode[]
 }

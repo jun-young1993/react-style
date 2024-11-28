@@ -1,5 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import SideBarContainer from './side-bar-container';
+import { Meta, StoryObj } from "@storybook/react"
+import SideBarContainer from './side-bar-container'
+import { ItemListContainer, ListItem } from "../../components"
 
 export default {
 	title: 'Components/SideBarContainer',
@@ -12,8 +13,14 @@ export const Default: Story = {
 	args: {
 		$isOpen: true,
 		$header: <div>header</div>,
-		$sideBar: <p>기본 콘텐츠</p>,
-		children: <div>기본 사이드바 콘텐츠</div>,
+		$items: [...Array.from({length: 100}, (_, index) => <ListItem><div> ITEM {index} </div></ListItem>)],
+		children: (
+			<ItemListContainer>
+				<ListItem>
+					<div>ITEM 1</div>
+				</ListItem>
+			</ItemListContainer>
+		),
 	}
 };
 
@@ -21,7 +28,9 @@ export const Default: Story = {
 export const DarkTheme: Story = {
 	args: {
 		$isOpen: true,
-		$sideBar: <p>다크모드 사이드바 콘텐츠</p>,
+		$items: [
+			<ListItem><div>ITEM 1</div></ListItem>
+		],
 		children: <div style={{width: '100%'}}>다크모드 콘텐츠</div>,
 	},
 	parameters: {

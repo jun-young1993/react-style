@@ -59,5 +59,37 @@ const styledTheme: StyledThemeInterface = {
         width: 'auto',
       },
     },
+    itemDefault: 'seconday',
+    item: {
+      primary: {
+        backgroundColor: '#007bff',
+        color: '#ffffff',
+        borderColor: '#007bff',
+        hoverBackgroundColor: '#0056b3',
+        hoverBorderColor: '#0056b3',
+        disabledBackgroundColor: '#a0a0a0',
+        disabledBorderColor: '#a0a0a0',
+        disabledColor: "a0a0a0"
+      },
+      secondary: {
+        backgroundColor: '#ffffff',
+        color: '#007bff',
+        borderColor: '#007bff',
+        hoverBackgroundColor: '#f0f8ff',
+        disabledColor: '#a0a0a0',
+        disabledBorderColor: '#a0a0a0',
+        hoverBorderColor: "",
+        disabledBackgroundColor: ""
+      },
+      tertiary: {
+        backgroundColor: 'transparent',
+        color: '#007bff',
+        hoverBackgroundColor: 'rgba(0, 123, 255, 0.1)',
+        disabledColor: '#a0a0a0',
+        borderColor: "",
+        hoverBorderColor: "",
+        disabledBackgroundColor: ""
+      },
+    },
   };
 export default styledTheme;

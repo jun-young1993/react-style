@@ -1,9 +1,8 @@
 import { SideBarContainerProps } from "./side-bar-container.props";
-import { FlexContainer, SideBar } from "../index";
-
+import { FlexContainer, ItemListContainer, SideBar } from "../index";
 
 const SideBarContainer = (props: SideBarContainerProps) => {
-    const {children, $sideBar, $isOpen, $sideGap, ...sideBarProps } = props;
+    const {children, $items, $isOpen, $sideGap, ...sideBarProps } = props;
     return (
         <FlexContainer
             $gap={$isOpen ? ($sideGap || '1rem') : undefined}
@@ -14,7 +13,11 @@ const SideBarContainer = (props: SideBarContainerProps) => {
                 $position="static"
                 $width={$isOpen ? sideBarProps.$width : '0px'}
             >
-                {$sideBar}
+                {
+                    $items &&
+                    Array.isArray($items) &&
+                    <ItemListContainer $overflow="unset" $items={$items} />
+                }
             </SideBar>
             <FlexContainer
                 $width="100%"

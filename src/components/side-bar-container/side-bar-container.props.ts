@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
 import { SideBarProps } from "../index";
 import {HTMLFlexInterface} from "../../shared";
+import { ItemListContainerProps } from "../../components/item-list-container/item-list-container.props";
 export interface SideBarContainerProps extends SideBarProps{
-    $sideBar: ReactNode
+    $items?: ItemListContainerProps['$items'],
     $sideGap?: HTMLFlexInterface['gap']
 }

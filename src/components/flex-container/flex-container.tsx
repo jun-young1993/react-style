@@ -5,6 +5,7 @@ import { FlexContainerProps } from "./flex-container.props";
 const FlexContainerStyled = styled.div<FlexContainerProps>`
   width: ${({ $width }) => $width || '100vw'};
   height: ${({ $height }) => $height || '100vh'};
+  min-height: ${({ $minHeight }) => $minHeight};
   display: ${({ $display }) => $display || 'flex'};
   color: ${({ $color }) => $color};
   align-items: ${({ $alignItems }) => $alignItems};
@@ -18,7 +19,7 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   flex: ${({ $flex }) => $flex || '0 1 auto'};
   transition: ${({$transition}) => $transition};
   transform: ${({$transform}) => $transform};
-  overflow: ${({$overflow}) => $overflow};
+  overflow: ${({$overflow}) => $overflow || 'auto'};
 `;
 const FlexContainer = (props: FlexContainerProps) => {
     const theme = useStyledTheme();

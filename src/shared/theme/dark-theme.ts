@@ -12,6 +12,7 @@ const darkTheme: CustomTheme & StyledThemeInterface= {
     lightPink: '#5c3f41',
     beige: '#4a4735',
     lightBlue: '#3e4c5b',
+    primaryGray: '#7C7C7C'
 };
   
 export default darkTheme;
