@@ -6,31 +6,31 @@ export type ButtonStyledThemeType = StyledThemeType;
 export interface StyledThemeInterface {
     buttonDefault: StyledThemeType;
     button: Record<StyledThemeType, {
-      backgroundColor: string;
-      color: string;
-      borderColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      hoverBackgroundColor: string;
-      hoverBorderColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      disabledBackgroundColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      backgroundColor?: string;
+      color?: string;
+      border?: string
+      hoverBackgroundColor?: string;
+      hoverBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      disabledBackgroundColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      disabledColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      disabledColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
     }>;
     buttonSizeDefault: Size;
     buttonSize: Record<Size, {
-      padding: string;
-      fontSize: string;
-      width: string;
-      height: string;
+      padding?: string;
+      fontSize?: string;
+      width?: string;
+      height?: string;
     }>;
     itemDefault: StyledThemeType;
     item: Record<StyledThemeType, {
-      backgroundColor: string;
-      color: string;
-      borderColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      hoverBackgroundColor: string;
-      hoverBorderColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      disabledBackgroundColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      backgroundColor?: string;
+      color?: string;
+      borderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      hoverBackgroundColor?: string;
+      hoverBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      disabledBackgroundColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
-      disabledColor: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+      disabledColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
     }>;
   }

@@ -5,5 +5,6 @@ export interface StyledIconButtonProps extends ButtonProps {
     $width?: string
     $height?: string
     $fill?: string
+    $label?: string
     $tooltip?: ToolTipProps
 }

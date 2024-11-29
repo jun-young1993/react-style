@@ -8,7 +8,7 @@ const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) =>
   return css`
     background-color: ${theme.button[variant].backgroundColor};
     color: ${theme.button[variant].color};
-    border: 1px solid ${theme.button[variant].borderColor};
+    border: ${theme.button[variant].border};
 
     &:hover {
       background-color: ${theme.button[variant].hoverBackgroundColor};
@@ -38,6 +38,7 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 0.25rem;
   font-weight: 500;
   cursor: pointer;
+  gap: ${({$gap}) => $gap};
   transition: background-color 0.2s ease, border-color 0.2s ease;
   ${({ $variant, $size }: ButtonProps) => {
     const theme = useStyledTheme(); // 테마를 여기서 사용합니다.

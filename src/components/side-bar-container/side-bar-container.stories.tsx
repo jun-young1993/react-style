@@ -21,6 +21,11 @@ export const Default: Story = {
 				</ListItem>
 			</ItemListContainer>
 		),
+	},
+	argTypes: {
+		$isOpen: {
+			control: 'boolean'
+		}
 	}
 };
 

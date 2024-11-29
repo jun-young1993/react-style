@@ -4,7 +4,7 @@ export interface SideBarProps extends JunyReactStyleInterface{
     $position?: string
     $width?: string | undefined
     $height?: string
-    $isOpen?: boolean | undefined
+    $isOpen?: boolean
     $borderRight?: string
     $backgroundColor?: string
     $padding?: string

@@ -3,6 +3,7 @@ const styledTheme: StyledThemeInterface = {
     buttonDefault: 'secondary',
     button: {
       primary: {
+        border: false,
         backgroundColor: '#007bff',
         color: '#ffffff',
         borderColor: '#007bff',
@@ -13,9 +14,9 @@ const styledTheme: StyledThemeInterface = {
         disabledColor: "a0a0a0"
       },
       secondary: {
-        backgroundColor: '#ffffff',
-        color: '#007bff',
-        borderColor: '#007bff',
+        border: 'none',
+        backgroundColor: undefined,
+        color: undefined,
         hoverBackgroundColor: '#f0f8ff',
         disabledColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
@@ -23,11 +24,11 @@ const styledTheme: StyledThemeInterface = {
         disabledBackgroundColor: ""
       },
       tertiary: {
+        border: undefined,
         backgroundColor: 'transparent',
         color: '#007bff',
         hoverBackgroundColor: 'rgba(0, 123, 255, 0.1)',
         disabledColor: '#a0a0a0',
-        borderColor: "",
         hoverBorderColor: "",
         disabledBackgroundColor: ""
       },
