@@ -3,10 +3,9 @@ const styledTheme: StyledThemeInterface = {
     buttonDefault: 'secondary',
     button: {
       primary: {
-        border: false,
+        border: 'none',
         backgroundColor: '#007bff',
         color: '#ffffff',
-        borderColor: '#007bff',
         hoverBackgroundColor: '#0056b3',
         hoverBorderColor: '#0056b3',
         disabledBackgroundColor: '#a0a0a0',
@@ -24,7 +23,7 @@ const styledTheme: StyledThemeInterface = {
         disabledBackgroundColor: ""
       },
       tertiary: {
-        border: undefined,
+        border: 'none',
         backgroundColor: 'transparent',
         color: '#007bff',
         hoverBackgroundColor: 'rgba(0, 123, 255, 0.1)',

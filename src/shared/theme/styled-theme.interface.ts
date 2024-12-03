@@ -8,7 +8,7 @@ export interface StyledThemeInterface {
     button: Record<StyledThemeType, {
       backgroundColor?: string;
       color?: string;
-      border?: string
+      border?: string | 'none'
       hoverBackgroundColor?: string;
       hoverBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledBackgroundColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.

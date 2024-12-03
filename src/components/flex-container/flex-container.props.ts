@@ -19,5 +19,13 @@ export interface FlexContainerProps extends JunyReactStyleInterface{
     $transform?: string
     $flexDirection?: HTMLFlexInterface['flexDirection']
     $overflow?:HTMLFlexInterface['overflow']
+    $pointerEvents?: HTMLFlexInterface['pointerEvents']
+    $visibility?: HTMLFlexInterface['visibility']
+    $position?: HTMLFlexInterface['position']
+    $top?: HTMLFlexInterface['top']
+    $left?: HTMLFlexInterface['left']
+    $right?: HTMLFlexInterface['right']
+    $bottom?: HTMLFlexInterface['bottom']
     children?: ReactNode | ReactNode[]
+
 }

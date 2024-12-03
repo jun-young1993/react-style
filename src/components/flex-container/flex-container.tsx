@@ -20,6 +20,13 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   transition: ${({$transition}) => $transition};
   transform: ${({$transform}) => $transform};
   overflow: ${({$overflow}) => $overflow || 'auto'};
+  pointer-events: ${({$pointerEvents}) => $pointerEvents || 'auto'};
+  visibility: ${({$visibility}) => $visibility};
+  position: ${({$position}) => $position};
+  top: ${({$top}) => $top};
+  left: ${({$left}) => $left};
+  right: ${({$right}) => $right};
+  bottom: ${({$bottom}) => $bottom};
 `;
 const FlexContainer = (props: FlexContainerProps) => {
     const theme = useStyledTheme();

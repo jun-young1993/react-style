@@ -18,4 +18,8 @@ export interface HTMLFlexInterface extends HTMLDivElementInterface {
     order?: number;
     borderColor?: string;
     alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+    top?: number;
+    left?: number;
+    right?: number;
+    bottom?: number;
 }
