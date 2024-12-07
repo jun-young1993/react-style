@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import type { Preview } from "@storybook/react";
 import { lightTheme, darkTheme } from "../src/shared/theme";
 import { FlexContainer } from "../src/index";
+import {ToastProvider} from "../src/components/toast/toast.provider";
 const preview: Preview = {
   decorators: [
     (Story, { parameters }) => {
@@ -17,9 +18,11 @@ const preview: Preview = {
             }
             
           >
-          <FlexContainer>
-            <Story />
-          </FlexContainer>
+            <ToastProvider>
+              <FlexContainer>
+                <Story />
+              </FlexContainer>
+            </ToastProvider>
         </ThemeProvider>
       )
     }

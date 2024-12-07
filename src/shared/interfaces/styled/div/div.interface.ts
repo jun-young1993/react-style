@@ -7,4 +7,11 @@ export interface HTMLDivElementInterface extends React.HTMLAttributes<HTMLDivEle
     pointerEvents?: 'none' | 'auto' | string
     visibility: string | 'hidden' | 'visible'
     position?: string | 'absolute' | 'fixed'
+    borderColor?: string;
+    alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+    top?: number | string;
+    left?: number | string;
+    right?: number | string;
+    bottom?: number | string;
+    boxSizing?: string
 }

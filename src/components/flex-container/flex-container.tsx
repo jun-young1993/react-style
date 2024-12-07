@@ -27,6 +27,7 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   left: ${({$left}) => $left};
   right: ${({$right}) => $right};
   bottom: ${({$bottom}) => $bottom};
+  box-sizing: ${({$boxSizing}) => $boxSizing};
 `;
 const FlexContainer = (props: FlexContainerProps) => {
     const theme = useStyledTheme();

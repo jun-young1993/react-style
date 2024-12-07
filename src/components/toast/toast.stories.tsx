@@ -1,17 +1,36 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Toast from "./toast"
+import ToastMessage from "./toast-message"
+import {useState} from "react";
+import useToast from "./toast.hook";
 
 export default {
-    title: 'Components/Toast',
-    component: Toast
-} as Meta<typeof Toast>
+    title: 'Components/ToastMessage',
+    component: ToastMessage
+} as Meta<typeof ToastMessage>
 
-type Story = StoryObj<typeof Toast>
+type Story = StoryObj<typeof ToastMessage>
 
+const TestButton = () => {
+    const { addToast } = useToast()
+    const [count, setCount] = useState(1)
+    const handleClick = () => {
+        addToast('test'+ count)
+        setCount(count+1)
+    }
+    return (
+        <div>
+            <button
+                onClick={handleClick}>
+                click
+            </button>
+        </div>
+
+    )
+}
 
 export const Default: Story = {
-    args: {
-        $isVisible: true,
-        $message: 'test'
-    }
+    render: (args) => (
+        <TestButton />
+    )
 }
+
