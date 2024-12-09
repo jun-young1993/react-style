@@ -14,6 +14,7 @@ export interface StyledThemeInterface {
       disabledBackgroundColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
+        hoverColor?: string
     }>;
     buttonSizeDefault: Size;
     buttonSize: Record<Size, {

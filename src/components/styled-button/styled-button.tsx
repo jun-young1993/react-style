@@ -5,6 +5,7 @@ import { ButtonProps } from "./styled-button.props";
 import {ButtonStyledThemeType} from "../../shared/theme/styled-theme.interface";
 
 const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) => {
+  console.log('theme',theme)
   return css`
     background-color: ${theme.button[variant].backgroundColor};
     color: ${theme.button[variant].color};
@@ -13,6 +14,7 @@ const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) =>
     &:hover {
       background-color: ${theme.button[variant].hoverBackgroundColor};
       border-color: ${theme.button[variant].hoverBorderColor || theme.button[variant].borderColor};
+      color: ${theme.button[variant].hoverColor}
     }
 
     &:disabled {
@@ -38,6 +40,7 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 0.25rem;
   font-weight: 500;
   cursor: pointer;
+  pointer-events: ${({$pointerEvents}: ButtonProps) => $pointerEvents};
   gap: ${({$gap}) => $gap};
   transition: background-color 0.2s ease, border-color 0.2s ease;
   ${({ $variant, $size }: ButtonProps) => {

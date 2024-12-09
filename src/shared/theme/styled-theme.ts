@@ -14,12 +14,13 @@ const styledTheme: StyledThemeInterface = {
       },
       secondary: {
         border: 'none',
-        backgroundColor: undefined,
+        backgroundColor: 'transparent',
         color: undefined,
-        hoverBackgroundColor: '#f0f8ff',
+        hoverBackgroundColor: 'transparent',
         disabledColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
-        hoverBorderColor: "",
+        hoverBorderColor: "#ffffff",
+        hoverColor: "#ffffff",
         disabledBackgroundColor: ""
       },
       tertiary: {
@@ -62,20 +63,20 @@ const styledTheme: StyledThemeInterface = {
     itemDefault: 'seconday',
     item: {
       primary: {
-        backgroundColor: '#007bff',
+        backgroundColor: 'transparent',
         color: '#ffffff',
         borderColor: '#007bff',
-        hoverBackgroundColor: '#0056b3',
+        hoverBackgroundColor: undefined,
         hoverBorderColor: '#0056b3',
         disabledBackgroundColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
         disabledColor: "a0a0a0"
       },
       secondary: {
-        backgroundColor: '#ffffff',
+        backgroundColor: 'transparent',
         color: '#007bff',
         borderColor: '#007bff',
-        hoverBackgroundColor: '#f0f8ff',
+        hoverBackgroundColor: undefined,
         disabledColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
         hoverBorderColor: "",

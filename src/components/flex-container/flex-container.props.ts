@@ -13,6 +13,7 @@ export interface FlexContainerProps extends JunyReactStyleInterface {
     $backgroundColor?: string | number
     $zIndex?: number
     $padding?: string
+    $margin?: string
     $flex?: string
     $filterBrightness?: string | number
     $transition?: string

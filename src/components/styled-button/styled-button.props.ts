@@ -1,4 +1,4 @@
-import {ButtonSize, JunyReactStyleInterface, ButtonStyledThemeType } from "../../shared";
+import {ButtonSize, JunyReactStyleInterface, ButtonStyledThemeType, HTMLFlexInterface} from "../../shared";
 import {ButtonHTMLAttributes} from "react";
 
 export interface ButtonProps extends JunyReactStyleInterface, ButtonHTMLAttributes<HTMLButtonElement>{
@@ -7,5 +7,7 @@ export interface ButtonProps extends JunyReactStyleInterface, ButtonHTMLAttribut
     $gap?: string;
     $fullWidth?: boolean;
     $disabled?: boolean;
+    $backgroundColor?: string
+    $pointerEvents?: HTMLFlexInterface['pointerEvents']
     children?: React.ReactNode;
 }

@@ -1,7 +1,11 @@
 import {ReactNode} from "react";
 import {DetailedPosition} from "../../shared";
 
-export interface ToastProps {
+export interface ToastContainerProps {
+    $position: DetailedPosition
+    children: ReactNode
+}
+export interface ToastProps extends ToastContainerProps{
     $messages: string[]
     $duration: number
     children: ReactNode
@@ -24,8 +28,8 @@ export interface ToastProviderProps {
 
 export interface Toast {
     id: string
-    message: string
     duration: number
+    message: string
     fadeInSecond: string | number
     fadeOutSecond: string | number
     position: DetailedPosition

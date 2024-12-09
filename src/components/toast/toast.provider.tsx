@@ -3,6 +3,7 @@ import {AddToast, Toast, ToastContextProps, ToastProviderProps} from "./toast.pr
 import ToastMessage from "./toast-message";
 import ToastContainer from "./toast-container";
 import {DetailedPosition} from "../../shared";
+import CycleCloseIconButton from "../styled-icon-button/icon-button/cycle-close.icon-button";
 
 export const ToastContext = createContext<ToastContextProps>({
     addToast: () => {
@@ -40,11 +41,11 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
         const timer = setTimeout(() => {
             setToasts((prev) => prev.filter((toast) => toast.id !== id));
             clearTimeout(timer)
-        }, duration + (fadeOutSecond + 0.2 * 1000))
+        }, duration + (parseInt(String(fadeOutSecond))  * 1000))
     },[])
 
     useEffect(() => {
-        const positions = []
+        const positions: DetailedPosition[] = []
         toasts.forEach((toast) => {
             if(!positions.includes(toast.position)){
                 positions.push(toast.position)
@@ -62,11 +63,21 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
                         key={positionToast}
                         $position={positionToast}
                     >
-                        {toasts.filter(({position}) => position === positionToast).map(({id, duration, message, fadeInSecond, fadeOutSecond, position}, index) => {
+                        {toasts.filter(({position}) => position === positionToast)
+                            .map(({
+                                      id,
+                                      duration,
+                                      message,
+                                      fadeInSecond,
+                                      fadeOutSecond,
+                                      position
+                              }, index) => {
                             return (
                                  <ToastMessage
                                     key={id}
+                                    id={id}
                                     duration={duration}
+                                    message={message}
                                     delay={index * 0.1}
                                     fadeInSecond={fadeInSecond}
                                     fadeOutSecond={fadeOutSecond}

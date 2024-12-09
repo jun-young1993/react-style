@@ -1,6 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import StyledIconButton from "./styled-icon-button";
-import { SearchIconButton, SqaureIconButton, SideBarIconButton, MenuIconButton } from "./icon-button";
+import {
+	SearchIconButton,
+	SqaureIconButton,
+	SideBarIconButton,
+	MenuIconButton,
+	CloseIconButton,
+	CycleCloseIconButton
+} from "./icon-button";
 
 
 export default {
@@ -24,4 +31,12 @@ export const SideBar: Story = {
 
 export const Menu: Story = {
 	render: (args) => <MenuIconButton {...args} />
+}
+
+export const Close: Story = {
+	render: (args) => <CloseIconButton {...args} />
+}
+
+export const CycleClose: Story = {
+	render: (args) => <CycleCloseIconButton {...args} />
 }

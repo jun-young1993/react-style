@@ -3,6 +3,7 @@ import ToastMessage from "./toast-message"
 import {useState} from "react";
 import useToast from "./toast.hook";
 import {FlexContainer} from "../flex-container";
+import {DetailedPosition} from "../../shared";
 
 export default {
     title: 'Components/ToastMessage',
@@ -14,26 +15,12 @@ type Story = StoryObj<typeof ToastMessage>
 const TestButton = () => {
     const { addToast } = useToast()
     const [count, setCount] = useState(1)
-    const handleTopLeftClick = () => {
-        addToast('top-left'+ count,{
-            position: 'top-left'
+
+    const handleClick = (position: DetailedPosition) => {
+        addToast(position+ count,{
+            position: position,
+            duration: 900000
         })
-        setCount(count+1)
-    }
-    const handleTopRightClick = () => {
-        addToast('top-right'+ count,{
-            position: 'top-right'
-        })
-        setCount(count+1)
-    }
-    const handleTopMiddleClick = () => {
-        addToast('top-middle'+ count,{
-            position: 'top-middle',
-        })
-        setCount(count+1)
-    }
-    const handleBottomLeftClick = () => {
-        addToast('test'+ count)
         setCount(count+1)
     }
     return (
@@ -49,19 +36,19 @@ const TestButton = () => {
             >
                 <div>
                     <button
-                        onClick={handleTopLeftClick}>
+                        onClick={() => handleClick('top-left')}>
                         top-left
                     </button>
                 </div>
                 <div>
                     <button
-                        onClick={handleTopMiddleClick}>
+                        onClick={() => handleClick('top-middle')}>
                         top-middle
                     </button>
                 </div>
                 <div>
                     <button
-                        onClick={handleTopRightClick}>
+                        onClick={() => handleClick('top-right')}>
                         top-right
                     </button>
                 </div>
@@ -69,11 +56,24 @@ const TestButton = () => {
             <FlexContainer
                 $justifyContent={'center'}
                 $alignItems={'center'}
+                $gap={"1rem"}
             >
                 <div>
                     <button
-                        onClick={handleBottomLeftClick}>
+                        onClick={() => handleClick('bottom-left')}>
                         bottom-left
+                    </button>
+                </div>
+                <div>
+                    <button
+                        onClick={() => handleClick('bottom-middle')}>
+                        bottom-middle
+                    </button>
+                </div>
+                <div>
+                    <button
+                        onClick={() => handleClick('bottom-right')}>
+                        bottom-right
                     </button>
                 </div>
             </FlexContainer>
