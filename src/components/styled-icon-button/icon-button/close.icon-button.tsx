@@ -4,7 +4,7 @@ import { StyledIconButtonProps } from "../styled-icon-button.props";
 const CloseIconButton = (props: StyledIconButtonProps) => {
     return (
         <StyledIconButton {...props} >
-            <path d="M6.225 4.811a1 1 0 011.414 0L10 7.172l2.361-2.361a1 1 0 011.414 1.414L11.414 10l2.361 2.361a1 1 0 01-1.414 1.414L10 11.414l-2.361 2.361a1 1 0 01-1.414-1.414L8.586 10 6.225 7.639a1 1 0 010-1.414z" />
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.03.97A.75.75 0 00.97 2.03L5.94 7 .97 11.97a.75.75 0 101.06 1.06L7 8.06l4.97 4.97a.75.75 0 101.06-1.06L8.06 7l4.97-4.97A.75.75 0 0011.97.97L7 5.94 2.03.97z" fill="currentColor"></path></svg>
         </StyledIconButton>
     );
 }
