@@ -51,7 +51,7 @@ const ToastContainer = ({ children, $position }: ToastContainerProps) => {
         $top={0}
         $left={getLeft($position)}
         $transform={getTransform($position)}
-        $backgroundColor={'unset'}
+        $backgroundColor={'transparent'}
         $flexDirection={getFlexDirection($position)}
         $pointerEvents='none'
       >

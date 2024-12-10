@@ -3,14 +3,19 @@ import {AddToast, Toast, ToastContextProps, ToastProviderProps} from "./toast.pr
 import ToastMessage from "./toast-message";
 import ToastContainer from "./toast-container";
 import {DetailedPosition} from "../../shared";
-import CycleCloseIconButton from "../styled-icon-button/icon-button/cycle-close.icon-button";
+import { CycleCloseIconButton } from "../../components/styled-icon-button";
+import styled from "styled-components";
 
 export const ToastContext = createContext<ToastContextProps>({
     addToast: () => {
         console.warn("addToast called outside of ToastProvider.")
     }
 })
-
+const ToastMessageWrap = styled.div`
+    padding: 5px;
+    background-color: transparent;
+    position: relative;
+`
 export const ToastProvider = ({ children }: ToastProviderProps) => {
     const [ toasts, setToasts ] = useState<Toast[]>([])
     const [ positionToasts, setPositionToasts] = useState<DetailedPosition[]>([])
@@ -44,6 +49,10 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
         }, duration + (parseInt(String(fadeOutSecond))  * 1000))
     },[])
 
+    const handleCloseClick = (id: string) => {
+        setToasts((prev) => prev.filter((toast) => toast.id !== id));
+    }
+
     useEffect(() => {
         const positions: DetailedPosition[] = []
         toasts.forEach((toast) => {
@@ -73,18 +82,30 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
                                       position
                               }, index) => {
                             return (
-                                 <ToastMessage
-                                    key={id}
-                                    id={id}
-                                    duration={duration}
-                                    message={message}
-                                    delay={index * 0.1}
-                                    fadeInSecond={fadeInSecond}
-                                    fadeOutSecond={fadeOutSecond}
-                                    position={position}
-                                >
-                                    {message}
-                                </ToastMessage>
+                                <ToastMessageWrap>
+                                    <ToastMessage
+                                        key={id}
+                                        id={id}
+                                        duration={duration}
+                                        message={message}
+                                        delay={index * 0.1}
+                                        fadeInSecond={fadeInSecond}
+                                        fadeOutSecond={fadeOutSecond}
+                                        position={position}
+                                    >
+                                        {message}
+                                    </ToastMessage>
+                                    <CycleCloseIconButton
+                                        $position="absolute"
+                                        $top={0}
+                                        $right={0}
+                                        color="white"
+                                        $width="14px"
+                                        $height="14px"
+                                        $pointerEvents="auto"
+                                        onClick={() => handleCloseClick(id)}
+                                    />
+                                </ToastMessageWrap>
                             )
                         })}
                     </ToastContainer>

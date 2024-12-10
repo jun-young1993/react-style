@@ -1,11 +1,10 @@
 import styled, { css } from "styled-components";
 import { DefaultTheme } from "styled-components";
-import { Size, Variant, useStyledTheme } from "../../shared";
+import { Size, useStyledTheme } from "../../shared";
 import { ButtonProps } from "./styled-button.props";
 import {ButtonStyledThemeType} from "../../shared/theme/styled-theme.interface";
 
 const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) => {
-  console.log('theme',theme)
   return css`
     background-color: ${theme.button[variant].backgroundColor};
     color: ${theme.button[variant].color};
@@ -28,12 +27,16 @@ const getSizeStyles = (theme: DefaultTheme, size: Size) => {
   return css`
     padding: ${theme.buttonSize[size].padding};
     font-size: ${theme.buttonSize[size].fontSize};
-    width: ${theme.buttonSize[size].width};
-    height: ${theme.buttonSize[size].height};
+    width: ${ theme.buttonSize[size].width};
+    height: ${  theme.buttonSize[size].height};
   `;
 };
 
 const StyledButton = styled.button<ButtonProps>`
+  position: ${({$position}) => $position};
+  top: ${({$top}) => $top};
+  right: ${({$right}) => $right};
+  color: ${({$color}) => $color};
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +46,7 @@ const StyledButton = styled.button<ButtonProps>`
   pointer-events: ${({$pointerEvents}: ButtonProps) => $pointerEvents};
   gap: ${({$gap}) => $gap};
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  ${({ $variant, $size }: ButtonProps) => {
+  ${({ $variant, $size}: ButtonProps) => {
     const theme = useStyledTheme(); // 테마를 여기서 사용합니다.
     
     return css`

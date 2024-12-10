@@ -38,6 +38,7 @@ const ToastMessage = styled.div<Toast & { delay: number}>`
   box-sizing: border-box;
   opacity: 0;
   transform: translateY(20px);
+  width: 17rem;
   animation: ${({ duration, delay, fadeInSecond, fadeOutSecond }) => css`
     ${fadeIn} ${fadeInSecond}s ease-out ${delay}s, ${fadeOut} ${fadeOutSecond}s ease-in ${delay + duration / 1000}s
   `};
