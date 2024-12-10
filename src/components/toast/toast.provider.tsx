@@ -1,5 +1,5 @@
-import {createContext, useCallback, useEffect, useState} from "react";
-import {AddToast, Toast, ToastContextProps, ToastProviderProps} from "./toast.props";
+import {createContext, useCallback, useEffect, useRef, useState} from "react";
+import {AddToast, Toast, ToastContextProps, ToastProps, ToastProviderProps} from "./toast.props";
 import ToastMessage from "./toast-message";
 import ToastContainer from "./toast-container";
 import {DetailedPosition} from "../../shared";
@@ -19,7 +19,7 @@ const ToastMessageWrap = styled.div`
 export const ToastProvider = ({ children }: ToastProviderProps) => {
     const [ toasts, setToasts ] = useState<Toast[]>([])
     const [ positionToasts, setPositionToasts] = useState<DetailedPosition[]>([])
-
+    
     const addToast = useCallback<AddToast>((message, options) => {
         const defaultDuration = 3000
         const defaultFadeInSecond = 0.3
@@ -63,6 +63,7 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
         setPositionToasts([...positions])
     },[toasts])
 
+
     return (
         <ToastContext.Provider value={{ addToast }}>
             {children}
@@ -71,6 +72,7 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
                     <ToastContainer
                         key={positionToast}
                         $position={positionToast}
+                        $pointerEvents="none"
                     >
                         {toasts.filter(({position}) => position === positionToast)
                             .map(({

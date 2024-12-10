@@ -4,6 +4,7 @@ export interface HTMLDivElementInterface extends React.HTMLAttributes<HTMLDivEle
     backgroundColor?: string
     zIndex?: string
     overflow?: 'scroll' | 'auto' | 'hidden' | 'visible' | 'unset'
+    overflowY?: 'scroll' | 'auto' | 'hidden' | 'visible' | 'unset'
     pointerEvents?: 'none' | 'auto' | string
     visibility: string | 'hidden' | 'visible'
     position?: string | 'absolute' | 'fixed'

@@ -1,8 +1,9 @@
 import {ReactNode} from "react";
-import {DetailedPosition} from "../../shared";
+import {DetailedPosition, HTMLDivElementInterface} from "../../shared";
 
 export interface ToastContainerProps {
     $position: DetailedPosition
+    $pointerEvents: HTMLDivElementInterface['pointerEvents']
     children: ReactNode
 }
 export interface ToastProps extends ToastContainerProps{
