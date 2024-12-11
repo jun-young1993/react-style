@@ -12,7 +12,7 @@ export interface ToastProps extends ToastContainerProps{
     children: ReactNode
     $position: DetailedPosition
 }
-interface ToastOptions {
+export interface ToastOptions {
     duration?: number
     fadeInSecond?: string | number
     fadeOutSecond?: string | number
