@@ -44,30 +44,6 @@ const ToastContainer = forwardRef<HTMLDivElement,ToastContainerProps>(
             }
         }
 
-
-
-        // useEffect(() => {
-        //     const handleWheel = () => {
-        //         console.log('start whell')
-        //         if(pointerEvents === "none"){
-        //             setPointerEvents("auto");
-        //             const timer = setTimeout(() => {
-        //               setPointerEvents("none");
-        //               clearTimeout(timer)
-        //             }, 1000); // 1초 후 다시 pointer-events를 none으로
-        //         }   
-        //       };
-        //     const container = ref && typeof ref === "object" && ref.current;
-        //     if (container) {
-        //       container.addEventListener("wheel", handleWheel);
-        //     }
-        //     return () => {
-        //       if (container) {
-        //         container.removeEventListener("wheel", handleWheel);
-        //       }
-        //     };
-        // }, [pointerEvents, ref] )
-        
         return (
             <FlexContainer
                 {...props}
