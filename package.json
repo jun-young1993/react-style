@@ -1,6 +1,6 @@
 {
   "name": "juny-react-style",
-  "version": "1.10.67",
+  "version": "2.11.68",
   "private": false,
   "dependencies": {
     "jsx-runtime": "^1.2.0",
