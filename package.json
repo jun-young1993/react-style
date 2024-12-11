@@ -16,7 +16,7 @@
     "build-storybook": "storybook build",
     "test": "jest test --config jest.config.ts",
     "eject": "react-scripts eject",
-    "doc": "typedoc --plugin typedoc-plugin-markdown --out docs ./src/component"
+    "doc": "typedoc --out docs ./src/component"
   },
   "eslintConfig": {
     "extends": [

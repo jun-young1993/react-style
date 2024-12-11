@@ -1,5 +1,5 @@
-import {createContext, useCallback, useEffect, useRef, useState} from "react";
-import {AddToast, Toast, ToastContextProps, ToastProps, ToastProviderProps} from "./toast.props";
+import {createContext, useCallback, useEffect, useState} from "react";
+import {AddToast, Toast, ToastContextProps, ToastProviderProps} from "./toast.props";
 import ToastMessage from "./toast-message";
 import ToastContainer from "./toast-container";
 import {DetailedPosition} from "../../shared";
@@ -16,7 +16,7 @@ const ToastMessageWrap = styled.div`
     background-color: transparent;
     position: relative;
 `
-export const ToastProvider = ({ children }: ToastProviderProps) => {
+const ToastProvider = ({ children }: ToastProviderProps) => {
     const [ toasts, setToasts ] = useState<Toast[]>([])
     const [ positionToasts, setPositionToasts] = useState<DetailedPosition[]>([])
     
@@ -116,3 +116,5 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
         </ToastContext.Provider>
     )
 }
+
+export default ToastProvider
