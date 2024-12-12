@@ -10,8 +10,11 @@ const SideBarContainer = (props: SideBarContainerProps) => {
             <SideBar 
                 {...sideBarProps}
                 $isOpen={$isOpen}
-                $position="static"
-                $width={$isOpen ? sideBarProps.$width : '0px'}
+                $position={$isOpen ? "static" : 'absolute'}
+                $width={$isOpen ? sideBarProps.$width : '20px'}
+                $backgroundColor={!$isOpen ? 'transparent' : undefined}
+                $borderRight={!$isOpen ? 'none' : undefined}
+                $opacity={$isOpen ? '100%' : '0%'}
             >
                 {
                     $items &&

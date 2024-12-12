@@ -23,7 +23,7 @@ const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) =>
     }
   `;
 };
-const getSizeStyles = (theme: DefaultTheme, $size: Size, $padding: string | number) => {
+const getSizeStyles = (theme: DefaultTheme, $size: Size, $padding?: string | number) => {
   return css`
     padding: ${$padding || theme.buttonSize[$size].padding};
     font-size: ${theme.buttonSize[$size].fontSize};

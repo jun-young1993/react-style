@@ -12,14 +12,13 @@ const StyledSidebar = styled.div<SideBarProps>`
   z-index: ${zIndexConstants.sideBar};
   height: ${({$height}) => $height};
   width: ${({$width}) => $width};
-  border-right:  ${({$borderRight}) => $borderRight + useStyledTheme().darkGray};
+  border:  ${({$border}) => $border + useStyledTheme().darkGray};
   border-radius: ${({$borderRadius}) => $borderRadius};
   background-color: ${({$backgroundColor}) => $backgroundColor};
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.07);
   outline: none;
   pointer-events: auto;
-  transform: translateX(${({$isOpen}) => ($isOpen ? '0' : '-100vw')});
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
   opacity: ${({$opacity}) => $opacity};
 `;
 
@@ -51,7 +50,10 @@ const SideBar = ({
   children,
   $header,
   $opacity,
-  $headerHeight
+  $headerHeight,
+  $border,
+  $onMouseOver,
+  $onMouseOut,
 }: SideBarProps) => {
   const theme = useStyledTheme();
   $backgroundColor = $backgroundColor || theme.midLightGray;
@@ -59,32 +61,37 @@ const SideBar = ({
   
   return (
     <StyledSidebar 
+      onMouseOver={() =>  $onMouseOver && $onMouseOver()}
+      onMouseOut={() => $onMouseOut && $onMouseOut()}
       $borderRadius={$borderRadius || '0.5rem'}
       $position={$position || 'fixed'}
       $isOpen={$isOpen || false}
-      $width={$width || '25%'}
+      $width={$width || '20%'}
       $height={$height || '100%'}
       $borderRight={$borderRight || '1px solid '}
+      $border={$border || '1px solid'}
       $backgroundColor={$backgroundColor}
       $opacity={$opacity || '100%'}
     >
-      <StyledNav
+      {$isOpen 
+      &&<StyledNav
         $padding={$padding || '0.0rem'}
       >
-        {$header &&
-          <StyledHeader
-            $headerHeight={$headerHeight || '60px'}
-          >
-            {$header}
-          </StyledHeader>
-        }
-        <FlexContainer
-          $width="100%"
-          $backgroundColor={$backgroundColor}
+      {$header &&
+        <StyledHeader
+          $headerHeight={$headerHeight || '60px'}
         >
-          {children}
-        </FlexContainer>
+          {$header}
+        </StyledHeader>
+      }
+      <FlexContainer
+        $width="100%"
+        $backgroundColor={$backgroundColor}
+      >
+        {children}
+      </FlexContainer>
       </StyledNav>
+      }
     </StyledSidebar>
   );
 };
