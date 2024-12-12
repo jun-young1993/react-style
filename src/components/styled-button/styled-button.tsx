@@ -23,12 +23,12 @@ const getButtonStyles = (theme: DefaultTheme, variant: ButtonStyledThemeType) =>
     }
   `;
 };
-const getSizeStyles = (theme: DefaultTheme, size: Size) => {
+const getSizeStyles = (theme: DefaultTheme, $size: Size, $padding: string | number) => {
   return css`
-    padding: ${theme.buttonSize[size].padding};
-    font-size: ${theme.buttonSize[size].fontSize};
-    width: ${ theme.buttonSize[size].width};
-    height: ${  theme.buttonSize[size].height};
+    padding: ${$padding || theme.buttonSize[$size].padding};
+    font-size: ${theme.buttonSize[$size].fontSize};
+    width: ${ theme.buttonSize[$size].width};
+    height: ${  theme.buttonSize[$size].height};
   `;
 };
 
@@ -37,7 +37,7 @@ const StyledButton = styled.button<ButtonProps>`
   top: ${({$top}) => $top};
   right: ${({$right}) => $right};
   color: ${({$color}) => $color};
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-content: center;
   border-radius: 0.25rem;
@@ -46,12 +46,12 @@ const StyledButton = styled.button<ButtonProps>`
   pointer-events: ${({$pointerEvents}: ButtonProps) => $pointerEvents};
   gap: ${({$gap}) => $gap};
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  ${({ $variant, $size}: ButtonProps) => {
+  ${({ $variant, $size, $padding}: ButtonProps) => {
     const theme = useStyledTheme(); // 테마를 여기서 사용합니다.
     
     return css`
       ${getButtonStyles(theme, $variant || theme.buttonDefault)}
-      ${getSizeStyles(theme, $size || theme.buttonSizeDefault)}
+      ${getSizeStyles(theme, $size || theme.buttonSizeDefault, $padding)}
     `;
   }}
   ${({$fullWidth}) => $fullWidth && "width: 100%;"}

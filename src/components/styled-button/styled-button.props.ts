@@ -8,6 +8,7 @@ export interface ButtonProps extends JunyReactStyleInterface, ButtonHTMLAttribut
     $top?: HTMLDivElementInterface['top'];
     $right?: HTMLDivElementInterface['right'];
     $gap?: string;
+    $padding?: string | number
     $width?: string;
     $height?: string;
     $color?: string;
