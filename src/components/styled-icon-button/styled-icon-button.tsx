@@ -3,7 +3,7 @@ import { StyledButton } from "../styled-button";
 import { StyledIconButtonProps } from "./styled-icon-button.props";
 // import Tooltip from "../tool-tip/tool-tip";
 
-const StyledIconButton = (props: StyledIconButtonProps) => {
+const StyledIconButton = ({svg,...props}: StyledIconButtonProps) => {
     const { theme: styledTheme, $size, $fill, $tooltip, children, $label, ...styledButtonProps } = props;
     const theme = useStyledTheme();
     
@@ -18,12 +18,13 @@ const StyledIconButton = (props: StyledIconButtonProps) => {
             >
                 
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={"current"}
-                        height={"current"}
-                        fill={"currentColor"}
-                        viewBox={`0 0 14 14`}
-                        preserveAspectRatio="none"
+                        {...svg}
+                        xmlns={svg?.xmlns || "http://www.w3.org/2000/svg"}
+                        width={svg?.width || "current"}
+                        height={svg?.height || "current"}
+                        fill={svg?.fill || "currentColor"}
+                        viewBox={svg?.viewBox || `0 0 14 14`}
+                        
                     >
                         {children}
                     </svg>

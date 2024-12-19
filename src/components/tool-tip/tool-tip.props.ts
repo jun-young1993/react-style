@@ -7,5 +7,6 @@ export interface ToolTipProps extends JunyReactStyleInterface{
     $minWidth?: string
     $maxWidth?: string
     $zIndex?: number
+    $isActive?: boolean
 
 }

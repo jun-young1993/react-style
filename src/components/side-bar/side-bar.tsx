@@ -20,6 +20,7 @@ const StyledSidebar = styled.div<SideBarProps>`
   pointer-events: auto;
   transition: transform 1s ease;
   opacity: ${({$opacity}) => $opacity};
+  box-sizing: border-box;
 `;
 
 const StyledNav = styled.nav<SideBarProps>`

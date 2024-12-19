@@ -19,8 +19,8 @@ const styledTheme: StyledThemeInterface = {
         hoverBackgroundColor: 'transparent',
         disabledColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
-        hoverBorderColor: "#ffffff",
-        hoverColor: "#ffffff",
+        hoverBorderColor: "#d3d3d3",
+        hoverColor: "#d3d3d3",
         disabledBackgroundColor: ""
       },
       tertiary: {

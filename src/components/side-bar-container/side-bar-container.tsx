@@ -6,12 +6,15 @@ const SideBarContainer = (props: SideBarContainerProps) => {
     return (
         <FlexContainer
             $gap={$isOpen ? ($sideGap || '1rem') : undefined}
+            $height={sideBarProps.$height}
+            $boxSizing={sideBarProps.$boxSizing || 'border-box'}
         >
             <SideBar 
                 {...sideBarProps}
                 $isOpen={$isOpen}
                 $position={$isOpen ? "static" : 'absolute'}
                 $width={$isOpen ? sideBarProps.$width : '20px'}
+                $height={sideBarProps.$height || '100%'}
                 $backgroundColor={!$isOpen ? 'transparent' : undefined}
                 $borderRight={!$isOpen ? 'none' : undefined}
                 $opacity={$isOpen ? '100%' : '0%'}
@@ -24,6 +27,7 @@ const SideBarContainer = (props: SideBarContainerProps) => {
             </SideBar>
             <FlexContainer
                 $width="100%"
+                $height="100%"
                 $flex={$isOpen ? '1' : '0 1 auto'}
                 $transition="flex-grow 0.3s ease"
             >

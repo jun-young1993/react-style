@@ -7,4 +7,5 @@ export interface StyledIconButtonProps extends ButtonProps {
     $fill?: string
     $label?: string
     $tooltip?: ToolTipProps
+    svg?: React.SVGProps<SVGSVGElement>
 }

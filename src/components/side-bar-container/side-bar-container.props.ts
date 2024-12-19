@@ -4,4 +4,5 @@ import { ItemListContainerProps } from "../../components/item-list-container/ite
 export interface SideBarContainerProps extends SideBarProps{
     $items?: ItemListContainerProps['$items'],
     $sideGap?: HTMLFlexInterface['gap']
+    $boxSizing?: HTMLFlexInterface['boxSizing']
 }

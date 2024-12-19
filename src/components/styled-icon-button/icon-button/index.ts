@@ -4,3 +4,4 @@ export { default as SideBarIconButton } from "./side-bar.icon-button";
 export { default as MenuIconButton } from "./menu.icon-button"
 export { default as CloseIconButton } from "./close.icon-button"
 export { default as CycleCloseIconButton } from "./cycle-close.icon-button"
+export { default as OpenSideBarIconButton } from "./open-side-bar.icon-button"

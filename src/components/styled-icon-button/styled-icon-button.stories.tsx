@@ -6,7 +6,8 @@ import {
 	SideBarIconButton,
 	MenuIconButton,
 	CloseIconButton,
-	CycleCloseIconButton
+	CycleCloseIconButton,
+	OpenSideBarIconButton
 } from "./icon-button";
 
 
@@ -39,4 +40,8 @@ export const Close: Story = {
 
 export const CycleClose: Story = {
 	render: (args) => <CycleCloseIconButton {...args} />
+}
+
+export const OpenSideBar: Story = {
+	render: (args) => <OpenSideBarIconButton {...args} />
 }
