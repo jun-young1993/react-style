@@ -32,16 +32,59 @@ const TooltipText = styled.div<ToolTipProps>`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
-
- 
+  transition: opacity 0.3s ease; 
+   /* 화살표 추가 */
+  &::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    ${({ $position, theme }) => {
+      console.log('$position',$position)
+      switch ($position) {
+        case 'top':
+          return `
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px 5px 0 5px;
+            border-color: ${theme.darkGray} transparent transparent transparent;
+          `;
+        case 'right':
+          return `
+            top: 50%;
+            left: -5px;
+            transform: translateY(-50%);
+            border-width: 5px 5px 5px 0;
+            border-color: transparent ${theme.darkGray} transparent transparent;
+          `;
+        case 'left':
+          return `
+            top: 50%;
+            right: -5px;
+            transform: translateY(-50%);
+            border-width: 5px 0 5px 5px;
+            border-color: transparent transparent transparent ${theme.darkGray};
+          `;
+        case 'bottom-right':
+          return `
+            top: -5px;
+            left: 25%;
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent ${theme.darkGray} transparent;
+          `;
+        case 'bottom':
+        default:
+          return `
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent ${theme.darkGray} transparent;
+          `;
+      }
+    }}
 `;
-// &::after {
-//   content: '';
-//   position: absolute;
-//   border-width: 5px;
-//   border-style: solid;
-// }
+
 const Tooltip = ({
   children,
   $message,
@@ -59,7 +102,7 @@ const Tooltip = ({
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const calculatePosition = (rect: DOMRect, position: string): React.CSSProperties => {
+  const calculatePosition = (rect: DOMRect, position: ToolTipProps['$position']): React.CSSProperties => {
     const margin = 10; // 툴팁과 요소 사이 간격
     switch (position) {
       case 'top':
@@ -86,6 +129,14 @@ const Tooltip = ({
           opacity: 1,
           visibility: 'visible',
         };
+    case 'bottom-right':
+      return {
+        top: rect.bottom + margin,
+        left: rect.left + rect.width,
+        transform: 'translate(-50%, 0)',
+        opacity: 1,
+        visibility: 'visible',
+      };
       case 'bottom':
       default:
         return {
@@ -107,7 +158,7 @@ const Tooltip = ({
   };
 
   useEffect(() => {
-    if($isActive){
+    if($isActive && tooltipStyle.visibility === 'hidden'){
       handleMouseEnter()
     }
   },[$isActive, handleMouseEnter])
@@ -129,6 +180,7 @@ const Tooltip = ({
       {$message &&
         ReactDOM.createPortal(
           <TooltipText
+            $position={$position}
             style={tooltipStyle}
             $minWidth={$minWidth}
             $maxWidth={$maxWidth}
