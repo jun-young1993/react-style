@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { TableContainerProps, TableProps, TableStyledInterface } from './table.props';
-import { useStyledTheme } from 'shared';
+import { useStyledTheme } from '../../shared';
 
 const TableContainer = styled.div<TableContainerProps>`
   overflow-x: auto;
   overflow-y: ${({ $scrollable }) => ($scrollable ? 'auto' : 'hidden')};
   width: 100%;
   height: 100%;
-  border: 1px solid ${({$variant, theme}) => theme.table[theme.tableDefault].wrap.borderColor };
+  border: 1px solid ${({theme}) => theme.table[theme.tableDefault].wrap.borderColor };
   border-radius: 0.5rem;
 `;
 
@@ -17,7 +17,7 @@ const StyledTable = styled.table<TableStyledInterface>`
   font-size: 1rem;
 
   thead {
-    ${({ $sticky, theme, $variant }) =>
+    ${({ $sticky, theme }) =>
       $sticky &&
       `
         position: sticky;
