@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useStyledTheme } from "../../shared";
 import { FlexContainerProps } from "./flex-container.props";
 import { forwardRef } from "react";
-import { IStyledComponentBase } from "styled-components/dist/types";
 
 const FlexContainerStyled = styled.div<FlexContainerProps>`
   width: ${({ $width }) => $width || '100vw'};
@@ -21,8 +20,8 @@ const FlexContainerStyled = styled.div<FlexContainerProps>`
   flex: ${({ $flex }) => $flex || '0 1 auto'};
   transition: ${({$transition}) => $transition};
   transform: ${({$transform}) => $transform};
-  overflow: ${({$overflow}) => $overflow || 'auto'};
-  overflow-y: ${({$overflowY}) => $overflowY || 'auto'};
+  overflow: ${({$overflow}) => $overflow};
+  overflow-y: ${({$overflowY}) => $overflowY};
   pointer-events: ${({$pointerEvents}) => $pointerEvents || 'auto'};
   visibility: ${({$visibility}) => $visibility};
   position: ${({$position}) => $position};

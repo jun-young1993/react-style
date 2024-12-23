@@ -39,7 +39,6 @@ const TooltipText = styled.div<ToolTipProps>`
     position: absolute;
     border-style: solid;
     ${({ $position, theme }) => {
-      console.log('$position',$position)
       switch ($position) {
         case 'top':
           return `

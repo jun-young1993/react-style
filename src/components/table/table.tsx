@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { TableContainerProps, TableProps, TableStyledInterface } from './table.props';
+import { useStyledTheme } from 'shared';
 
 const TableContainer = styled.div<TableContainerProps>`
   overflow-x: auto;
   overflow-y: ${({ $scrollable }) => ($scrollable ? 'auto' : 'hidden')};
   width: 100%;
   height: 100%;
-  border: 1px solid ${({$variant, theme}) => theme.table[$variant || theme.tableDefault].wrap.borderColor };
+  border: 1px solid ${({$variant, theme}) => theme.table[theme.tableDefault].wrap.borderColor };
   border-radius: 0.5rem;
 `;
 
@@ -21,7 +22,7 @@ const StyledTable = styled.table<TableStyledInterface>`
       `
         position: sticky;
         top: 0;
-        background-color: ${theme.table[$variant || theme.tableDefault].head.backgroundColor};
+        background-color: ${theme.table[theme.tableDefault].head.backgroundColor};
         z-index: 1;
       `}
   }
@@ -40,14 +41,16 @@ const StyledTable = styled.table<TableStyledInterface>`
 `;
 
 
-const Table = ({ $columns, $data, $scrollable = false, $sticky = true, $variant, $onRowClick, $useRowCursorPointer }: TableProps & TableContainerProps & TableStyledInterface) => {
+const Table = ({ $columns, $data, $scrollable = false, $sticky = true, $onRowClick, $useRowCursorPointer }: TableProps & TableContainerProps & TableStyledInterface) => {
+  const theme = useStyledTheme();
+  
     return (
       <TableContainer
-        $variant={$variant}
+        theme={theme}
         $scrollable={$scrollable}
       >
         <StyledTable
-            $variant={$variant}
+            theme={theme}
             $sticky={$sticky}
             $useRowCursorPointer={$useRowCursorPointer || ($onRowClick ? true : false)}
         >

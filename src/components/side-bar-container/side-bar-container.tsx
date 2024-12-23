@@ -6,7 +6,7 @@ const SideBarContainer = (props: SideBarContainerProps) => {
     return (
         <FlexContainer
             $gap={$isOpen ? ($sideGap || '1rem') : undefined}
-            $height={sideBarProps.$height}
+            $height={sideBarProps.$height || '100%'}
             $boxSizing={sideBarProps.$boxSizing || 'border-box'}
         >
             <SideBar 
