@@ -6,7 +6,7 @@ const TableContainer = styled.div<TableContainerProps>`
   overflow-y: ${({ $scrollable }) => ($scrollable ? 'auto' : 'hidden')};
   width: 100%;
   height: 100%;
-  border: 1px solid #dee2e6;
+  border: 1px solid ${({$variant, theme}) => theme.table[$variant || theme.tableDefault].wrap.borderColor };
   border-radius: 0.5rem;
 `;
 
@@ -16,12 +16,12 @@ const StyledTable = styled.table<TableStyledInterface>`
   font-size: 1rem;
 
   thead {
-    ${({ $sticky }) =>
+    ${({ $sticky, theme, $variant }) =>
       $sticky &&
       `
         position: sticky;
         top: 0;
-        background-color: #f8f9fa;
+        background-color: ${theme.table[$variant || theme.tableDefault].head.backgroundColor};
         z-index: 1;
       `}
   }
@@ -30,22 +30,26 @@ const StyledTable = styled.table<TableStyledInterface>`
   td {
     padding: 0.75rem;
     text-align: left;
-    border: 1px solid #dee2e6;
+    border: 1px solid ${({$variant, theme}) => theme.table[$variant || theme.tableDefault].cell.borderColor };
   }
 
   tbody tr:hover {
-    background-color: #f1f3f5;
+    cursor: ${({$useRowCursorPointer}) => $useRowCursorPointer && 'pointer'};
+    background-color: ${({$variant, theme}) => theme.table[$variant || theme.tableDefault].row.hoverBackgroundColor };
   }
 `;
 
 
-const Table = ({ $columns, $data, $scrollable = false, $sticky = true }: TableProps & TableContainerProps & TableStyledInterface) => {
+const Table = ({ $columns, $data, $scrollable = false, $sticky = true, $variant, $onRowClick, $useRowCursorPointer }: TableProps & TableContainerProps & TableStyledInterface) => {
     return (
       <TableContainer
+        $variant={$variant}
         $scrollable={$scrollable}
       >
         <StyledTable
+            $variant={$variant}
             $sticky={$sticky}
+            $useRowCursorPointer={$useRowCursorPointer || ($onRowClick ? true : false)}
         >
           <thead>
             <tr>
@@ -56,7 +60,7 @@ const Table = ({ $columns, $data, $scrollable = false, $sticky = true }: TablePr
           </thead>
           <tbody>
             {$data.map((row, rowIndex) => (
-              <tr key={rowIndex}>
+              <tr key={rowIndex} onClick={(event) => $onRowClick && $onRowClick(event, row, rowIndex)}>
                 {$columns.map((column) => (
                   <td key={column.key}>{row[column.key]}</td>
                 ))}

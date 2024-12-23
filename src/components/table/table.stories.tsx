@@ -15,6 +15,15 @@ const columns = [
     { key: 'email', label: 'Email' },
     { key: 'email', label: 'Email' },
     { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
+    { key: 'email', label: 'Email' },
   ];
   
   const data = [
@@ -85,7 +94,7 @@ export const TableScroll: Story = {
           
         return (
             <FullScreen>
-                <Table $columns={columns} $data={data} $scrollable={true} />
+                <Table $columns={columns} $data={data} $scrollable={true} $onRowClick={() => {console.log('hi')}}/>
             </FullScreen>
         )
     }

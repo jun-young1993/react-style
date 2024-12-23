@@ -1,18 +1,8 @@
 import {StyledThemeInterface} from "./styled-theme.interface";
 const styledTheme: StyledThemeInterface = {
-    buttonDefault: 'secondary',
+    buttonDefault: 'primary',
     button: {
       primary: {
-        border: 'none',
-        backgroundColor: '#007bff',
-        color: '#ffffff',
-        hoverBackgroundColor: '#0056b3',
-        hoverBorderColor: '#0056b3',
-        disabledBackgroundColor: '#a0a0a0',
-        disabledBorderColor: '#a0a0a0',
-        disabledColor: "a0a0a0"
-      },
-      secondary: {
         border: 'none',
         backgroundColor: 'transparent',
         color: undefined,
@@ -21,15 +11,6 @@ const styledTheme: StyledThemeInterface = {
         disabledBorderColor: '#a0a0a0',
         hoverBorderColor: "#d3d3d3",
         hoverColor: "#d3d3d3",
-        disabledBackgroundColor: ""
-      },
-      tertiary: {
-        border: 'none',
-        backgroundColor: 'transparent',
-        color: '#007bff',
-        hoverBackgroundColor: 'rgba(0, 123, 255, 0.1)',
-        disabledColor: '#a0a0a0',
-        hoverBorderColor: "",
         disabledBackgroundColor: ""
       },
     },
@@ -60,37 +41,36 @@ const styledTheme: StyledThemeInterface = {
         width: '4rem',
       },
     },
-    itemDefault: 'seconday',
+    itemDefault: 'primary',
     item: {
       primary: {
         backgroundColor: 'transparent',
-        color: '#ffffff',
-        borderColor: '#007bff',
-        hoverBackgroundColor: undefined,
-        hoverBorderColor: '#0056b3',
-        disabledBackgroundColor: '#a0a0a0',
-        disabledBorderColor: '#a0a0a0',
-        disabledColor: "a0a0a0"
-      },
-      secondary: {
-        backgroundColor: 'transparent',
         color: '#007bff',
         borderColor: '#007bff',
         hoverBackgroundColor: undefined,
         disabledColor: '#a0a0a0',
         disabledBorderColor: '#a0a0a0',
-        hoverBorderColor: "",
-        disabledBackgroundColor: ""
-      },
-      tertiary: {
-        backgroundColor: 'transparent',
-        color: '#007bff',
-        hoverBackgroundColor: 'rgba(0, 123, 255, 0.1)',
-        disabledColor: '#a0a0a0',
-        borderColor: "",
         hoverBorderColor: "",
         disabledBackgroundColor: ""
       },
     },
+    tableDefault: 'primary',
+    table: {
+      primary: {
+        wrap: {
+          borderColor: '#dee2e6'
+        },
+        cell: {
+          borderColor: '#dee2e6'
+        },
+        row: {
+          hoverBackgroundColor: '#f1f3f5'
+        },
+        head: {
+          backgroundColor: '#f8f9fa'
+        },
+        
+      }
+    }
   };
 export default styledTheme;

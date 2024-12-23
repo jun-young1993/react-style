@@ -34,4 +34,19 @@ export interface StyledThemeInterface {
       disabledBorderColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
       disabledColor?: string; // 일부 타입에는 없으므로 optional로 처리합니다.
     }>;
+    tableDefault: StyledThemeType,
+    table: Record<StyledThemeType, {
+      wrap: {
+        borderColor?: string
+      },
+      cell: {
+        borderColor?: string
+      },
+      head: {
+        backgroundColor?: string
+      },
+      row: {
+        hoverBackgroundColor?: string
+      }
+    }>
   }
