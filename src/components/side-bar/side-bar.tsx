@@ -87,6 +87,7 @@ const SideBar = ({
       }
       <FlexContainer
         $width="100%"
+        $height="100%"
         $backgroundColor={$backgroundColor}
       >
         {children}
