@@ -29,7 +29,7 @@ export const Default: Story = {
             setSelectedData(item)
             setOpen(false)
         }
-        console.log(selectedData)
+        
         return <DropDownField<Item> $isOpen={isOpen} $onToggle={handleToggle} $onSelect={handleSelect} $items={items}><div>{selectedData && selectedData.name}</div></DropDownField>
     }
 }

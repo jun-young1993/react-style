@@ -9,6 +9,7 @@ const TableContainer = styled.div<TableContainerProps>`
   height: 100%;
   border: 1px solid ${({theme}) => theme.table[theme.tableDefault].wrap.borderColor };
   border-radius: 0.5rem;
+  box-sizing:border-box;
 `;
 
 const StyledTable = styled.table<TableStyledInterface>`
