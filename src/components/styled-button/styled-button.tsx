@@ -47,7 +47,7 @@ const StyledButton = styled.button<ButtonProps>`
   gap: ${({$gap}) => $gap};
   transition: background-color 0.2s ease, border-color 0.2s ease;
   ${({ $variant, $size, $padding}: ButtonProps) => {
-    const theme = useStyledTheme(); // 테마를 여기서 사용합니다.
+    const theme = useStyledTheme();
     
     return css`
       ${getButtonStyles(theme, $variant || theme.buttonDefault)}

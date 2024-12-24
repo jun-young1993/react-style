@@ -1,8 +1,14 @@
+import { DropDownContainerInterface } from "../../components/field/drop-down/drop-down-field.interface";
+
 export type Variant = "primary" | "secondary" | "tertiary";
 export type Size = "xs" | "small" | "medium" | "large";
 export type ButtonSize = Size;
 export type StyledThemeType = Variant | string;
 export type ButtonStyledThemeType = StyledThemeType;
+
+export interface dropDownStyledTheme {
+  size: Record<Size, DropDownContainerInterface>
+}
 export interface StyledThemeInterface {
     buttonDefault: StyledThemeType;
     button: Record<StyledThemeType, {
@@ -48,5 +54,9 @@ export interface StyledThemeInterface {
       row: {
         hoverBackgroundColor?: string
       }
+    }>,
+    fieldDefault: StyledThemeType,
+    field:  Record<StyledThemeType, {
+      dropDown: dropDownStyledTheme
     }>
   }

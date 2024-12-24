@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { DropDownArrowInterface, DropDownProps } from './drop-down-field.interface';
+import { DropDownArrowInterface, DropDownContainerInterface, DropDownItemInterface, DropDownProps } from './drop-down-field.interface';
+import { useStyledTheme } from '../../../shared';
 
-const DropdownContainer = styled.div`
+const DropdownContainer = styled.div<DropDownContainerInterface>`
   position: relative;
-  width: 200px;
-  height: 50px;
+  width: ${({width}) => width};
+  height: ${({height}) => height};
 `;
 
 const DropdownButton = styled.button`
@@ -60,20 +61,32 @@ const Arrow = styled.span<DropDownArrowInterface>`
   `}
 `;
 
-const DropdownField = ({$isOpen, $onToggle, $onSelect, $items, $children}:DropDownProps) => {
+const DropDownField = <T extends DropDownItemInterface,>({
+  $isOpen, 
+  $items, 
+  children,
+  $size = "xs",
+  $emptyText,
+  $onToggle, 
+  $onSelect, 
+}:DropDownProps<T>) => {
   
-
+  const {fieldDefault, field} = useStyledTheme();
+  const theme = field[fieldDefault].dropDown
   return (
-    <DropdownContainer>
+    <DropdownContainer
+      width={theme.size[$size].width}
+      height={theme.size[$size].height}
+    >
       <DropdownButton onClick={(event) => $onToggle && $onToggle(event)}>
-            {$children && 'sdf'}
+            {children || $emptyText}
         <Arrow open={$isOpen}>▼</Arrow>
       </DropdownButton>
       {$isOpen && (
         <DropdownMenu>
           {$items && $items.map((item, index) => (
             <DropdownItem key={index} onClick={(event) => $onSelect && $onSelect(event, item, index)}>
-              {item}
+              {item.name}
             </DropdownItem>
           ))}
         </DropdownMenu>
@@ -82,4 +95,4 @@ const DropdownField = ({$isOpen, $onToggle, $onSelect, $items, $children}:DropDo
   );
 };
 
-export default DropdownField;
+export default DropDownField;

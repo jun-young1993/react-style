@@ -12,16 +12,24 @@ type Story = StoryObj<typeof DropDownField>
 
 export const Default: Story = {
     render: () => {
+        interface Item {
+            name: string
+        }
         const [isOpen, setOpen] = useState(false)
-        const [selectedData, setSelectedData] = useState()
-        const items = [1,2,3,4,5,6]
+        const [selectedData, setSelectedData] = useState<Item | null>(null)
+        const items:Item[] = [{
+            name: 'I 1',
+        },{
+            name: 'I 2',
+        }]
         const handleToggle = () => {
             setOpen(!isOpen)
         }
-        const handleSelect = (_event: any, item: SetStateAction<undefined>) => {
+        const handleSelect = (_event: React.MouseEvent<HTMLLIElement>, item: Item) => {
             setSelectedData(item)
             setOpen(false)
         }
-        return <DropDownField $isOpen={isOpen} $onToggle={handleToggle} $onSelect={handleSelect} $items={items}><div>{selectedData}</div></DropDownField>
+        console.log(selectedData)
+        return <DropDownField<Item> $isOpen={isOpen} $onToggle={handleToggle} $onSelect={handleSelect} $items={items}><div>{selectedData && selectedData.name}</div></DropDownField>
     }
 }
