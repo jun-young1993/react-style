@@ -24,7 +24,6 @@ const StyledTable = styled.table<TableStyledInterface>`
         position: sticky;
         top: 0;
         background-color: ${theme.table[theme.tableDefault].head.backgroundColor};
-        z-index: 1;
       `}
   }
 
@@ -44,7 +43,7 @@ const StyledTable = styled.table<TableStyledInterface>`
 
 const Table = ({ $columns, $data, $scrollable = false, $sticky = true, $onRowClick, $useRowCursorPointer }: TableProps & TableContainerProps & TableStyledInterface) => {
   const theme = useStyledTheme();
-  
+    
     return (
       <TableContainer
         theme={theme}

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import { DropDownArrowInterface, DropDownContainerInterface, DropDownItemInterface, DropDownProps } from './drop-down-field.interface';
-import { useStyledTheme } from '../../../shared';
+import { DropDownArrowInterface, DropDownContainerInterface, DropDownItemContainerInterface, DropDownItemInterface, DropDownProps } from './drop-down-field.interface';
+import { useStyledTheme, zIndexConstants } from '../../../shared';
+import { useEffect } from 'react';
 
 const DropdownContainer = styled.div<DropDownContainerInterface>`
   position: relative;
   width: ${({width}) => width};
   height: ${({height}) => height};
+  z-index: ${({$zIndex}) => $zIndex || zIndexConstants.dropDownItem};
 `;
 
 const DropdownButton = styled.button`
@@ -26,7 +28,7 @@ const DropdownButton = styled.button`
   }
 `;
 
-const DropdownMenu = styled.ul`
+const DropdownMenu = styled.ul<DropDownItemContainerInterface>`
   position: absolute;
   top: 100%;
   left: 0;
@@ -38,7 +40,7 @@ const DropdownMenu = styled.ul`
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   list-style: none;
-  z-index: 10;
+  
 `;
 
 const DropdownItem = styled.li`
@@ -67,25 +69,35 @@ const DropDownField = <T extends DropDownItemInterface,>({
   children,
   $size = "xs",
   $emptyText,
+  $firstSelect,
   $onToggle, 
   $onSelect, 
-}:DropDownProps<T>) => {
+  $zIndex,
+}:DropDownProps<T> & DropDownItemContainerInterface) => {
   
   const {fieldDefault, field} = useStyledTheme();
   const theme = field[fieldDefault].dropDown
+  if($firstSelect && $items && $items.length > 0){
+    const firstItem = $items[0];
+    $onSelect && $onSelect(firstItem, 0)
+  }
+ 
   return (
     <DropdownContainer
       width={theme.size[$size].width}
       height={theme.size[$size].height}
+      $zIndex={$zIndex}
     >
       <DropdownButton onClick={(event) => $onToggle && $onToggle(event)}>
-            {children || $emptyText}
+            <div>{children || $emptyText}</div>
         <Arrow open={$isOpen}>▼</Arrow>
       </DropdownButton>
       {$isOpen && (
-        <DropdownMenu>
+        <DropdownMenu
+          $zIndex={$zIndex}
+        >
           {$items && $items.map((item, index) => (
-            <DropdownItem key={index} onClick={(event) => $onSelect && $onSelect(event, item, index)}>
+            <DropdownItem key={item.name} onClick={(event) => $onSelect && $onSelect(item, index, event)}>
               {item.name}
             </DropdownItem>
           ))}

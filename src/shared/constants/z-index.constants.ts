@@ -1,5 +1,6 @@
 const zIndexConstants = {
     sideBar: 1000,
-    tooltip: 1001
+    dropDownItem: 1001,
+    tooltip: 1002
 }
 export default zIndexConstants;
