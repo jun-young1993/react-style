@@ -1,4 +1,4 @@
-import { ButtonStyledThemeType } from "shared";
+import { ButtonStyledThemeType } from "../../shared";
 
 export interface TableColumn {
     key: string;
