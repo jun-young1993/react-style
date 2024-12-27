@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// 스타일 정의
 const TabContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@ const Tab = styled.button<{ isActive: boolean }>`
   }
 `;
 
-const TabPanel = styled.div`
+const TabPanelWrapper = styled.div`
   padding: 20px;
   font-size: 14px;
   background-color: #fff;
@@ -37,36 +36,41 @@ const TabPanel = styled.div`
   border-top: none;
 `;
 
-// 타입 정의
-interface TabPanelItem {
+interface TabProps {
   label: string;
-  content: React.ReactNode;
+  children: React.ReactNode;
 }
+
+const TabComponent: React.FC<TabProps> = ({ children }) => <>{children}</>;
 
 interface TabPanelProps {
-  tabs: TabPanelItem[];
+  children: React.ReactElement<TabProps> | React.ReactElement<TabProps>[]; // 단일 또는 배열
 }
 
-// 컴포넌트 정의
-const TabPanelComponent: React.FC<TabPanelProps> = ({ tabs }) => {
+const TabPanel: React.FC<TabPanelProps> & { Tab: React.FC<TabProps> } = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
+
+  // children을 항상 배열로 변환
+  const tabs = React.Children.toArray(children) as React.ReactElement<TabProps>[];
 
   return (
     <TabContainer>
       <TabList>
-        {tabs.map((tab, index) => (
+        {tabs.map((child, index) => (
           <Tab
             key={index}
             isActive={activeTab === index}
             onClick={() => setActiveTab(index)}
           >
-            {tab.label}
+            {child.props.label}
           </Tab>
         ))}
       </TabList>
-      <TabPanel>{tabs[activeTab]?.content}</TabPanel>
+      <TabPanelWrapper>{tabs[activeTab]}</TabPanelWrapper>
     </TabContainer>
   );
 };
 
-export default TabPanelComponent;
+TabPanel.Tab = TabComponent;
+
+export default TabPanel;

@@ -25,11 +25,11 @@ export const Default: Story = {
         const handleToggle = () => {
             setOpen(!isOpen)
         }
-        const handleSelect = (_event: React.MouseEvent<HTMLLIElement>, item: Item) => {
+        const handleSelect = (item: Item, index: number, _event: React.MouseEvent<HTMLLIElement>, ) => {
             setSelectedData(item)
             setOpen(false)
         }
         
-        return <DropDownField<Item> $isOpen={isOpen} $onToggle={handleToggle} $onSelect={handleSelect} $items={items}><div>{selectedData && selectedData.name}</div></DropDownField>
+        return <DropDownField<Item> $isOpen={isOpen} $onToggle={handleToggle} $onSelect={() => handleSelect} $items={items}><div>{selectedData && selectedData.name}</div></DropDownField>
     }
 }

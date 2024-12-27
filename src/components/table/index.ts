@@ -1,2 +1,2 @@
 export { default as Table } from './table'
-export { TableColumn } from './table.props'
+export { TableColumn, TableData } from './table.props'

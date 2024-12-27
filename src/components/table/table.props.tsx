@@ -6,7 +6,7 @@ export interface TableColumn {
   }
   
   export interface TableData {
-    [key: string]: string | number;
+    [key: string]: string | number | boolean | undefined | any | unknown;
   }
   
   export interface TableContainerProps {
@@ -23,7 +23,7 @@ export interface TableColumn {
   export interface TableProps {
     $variant?: ButtonStyledThemeType;
     $columns: TableColumn[];
-    $data: TableData[];
+    $data: TableData[] | [];
     $onRowClick?: (event: React.MouseEvent<HTMLTableRowElement, MouseEvent>, data: TableData, rowIndex: number) => void
   
   }

@@ -11,3 +11,4 @@ export * from "./toast"
 export * from './screen'
 export * from './table'
 export * from './field'
+export * from './tab-panel'
